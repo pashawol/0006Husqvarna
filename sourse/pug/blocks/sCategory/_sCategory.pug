@@ -2,8 +2,21 @@ mixin sCategory()
 	// start sCategory
 	+b.SECTION.sCategory.section#sCategory&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sCategory
-				
+			+b.section-title
+				h2 Популярные категории
 			.row
+				mixin item(i,t)
+					+e.col.col-xl-2.col-md-3.col-sm-4.col-6(href="#")
+						+e.DIV.img-wrap
+							img.res-i.lazy(src="#" data-src=`img/@2x/category-${i}.jpg`, alt="")
+						+e.DIV.title= t
+				- for (var x = 0; x < 2; x++)
+					+item("1","Бензопилы")
+					+item("2","Воздуходувы")
+					+item("3","Травокосилки")
+					+item("4","Садовые тракторы")
+					+item("5","Генераторы")
+					+item("6","Газонокосилки")
+			+b.btn-more(type="button")  Показать ещё 
+				+icon("chevron-down")
 	// end sCategory

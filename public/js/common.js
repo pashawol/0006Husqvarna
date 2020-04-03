@@ -105,8 +105,6 @@ var JSCCommon = {
 };
 
 function eventHandler() {
-	var _objectSpread2;
-
 	// полифил для object-fit
 	objectFitImages(); // Picture element HTML5 shiv
 
@@ -166,17 +164,43 @@ function eventHandler() {
 		}, 1100);
 		return false;
 	});
-	var defaultSl = {};
-	var swiper4 = new Swiper('.color-slider', _objectSpread({}, defaultSl, (_objectSpread2 = {
-		slidesPerView: 'auto',
-		watchOverflow: true,
+	var defaultSl = {
+		loop: true,
+		loopedSlides: 5,
+		//looped slides should be the same
+		lazy: {
+			loadPrevNext: true
+		}
+	};
+	var galleryThumbs = new Swiper('.gallery-thumbs', {
 		spaceBetween: 0,
-		freeMode: true
-	}, _defineProperty(_objectSpread2, "watchOverflow", true), _defineProperty(_objectSpread2, "slidesPerGroup", 3), _defineProperty(_objectSpread2, "loop", true), _defineProperty(_objectSpread2, "loopFillGroupWithBlank", true), _defineProperty(_objectSpread2, "touchRatio", 0.2), _defineProperty(_objectSpread2, "slideToClickedSlide", true), _defineProperty(_objectSpread2, "freeModeMomentum", true), _defineProperty(_objectSpread2, "navigation", {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev'
-	}), _objectSpread2))); // modal window
-
+		slidesPerView: 'auto',
+		loop: true,
+		freeMode: true,
+		loopedSlides: 5,
+		//looped slides should be the same
+		watchSlidesVisibility: true,
+		watchSlidesProgress: true
+	});
+	var galleryTop = new Swiper('.gallery-top', _objectSpread({}, defaultSl, {
+		spaceBetween: 0,
+		thumbs: {
+			swiper: galleryThumbs
+		}
+	}));
+	$(".sCatalog").each(function () {
+		var sliderCatalog = new Swiper($(this).find(".sCatalog__slider--js"), _objectSpread({}, defaultSl, {
+			spaceBetween: 30,
+			slidesPerView: 'auto',
+			freeMode: true,
+			watchSlidesVisibility: true,
+			watchSlidesProgress: true,
+			navigation: {
+				nextEl: $(this).find('.swiper-button-next'),
+				prevEl: $(this).find('.swiper-button-prev')
+			}
+		}));
+	});
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 
 	if (isIE11) {

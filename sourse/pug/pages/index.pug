@@ -10,7 +10,7 @@ include ../blocks/sArticals/_sArticals.pug
 block variables
 	- let  mainPage= null
 block title
-	- let  title= 'Главная'
+	- let  title= 'Main'
 	title= title
 block pagecontent 
 	+mob-mnu()
@@ -19,7 +19,8 @@ block pagecontent
 		+top-nav()
 	+headerBlock()
 	+sCategory
-	+sCatalog
+	+sCatalogHit
+	+sCatalogNew
 	+sArticals
 	+sContent()
 	+footer()

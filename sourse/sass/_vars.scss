@@ -46,7 +46,7 @@ $success: $green !default;
 $info: $cyan !default;
 $warning: $yellow !default;
 $danger: $red !default;
-$light: $gray-100 !default;
+$light: #eaebee !default;
 $dark: #273a60 !default;
 
 $theme-colors: () !default;
@@ -111,7 +111,7 @@ $container-max-widths: (xs: 480px,
   sm: 540px,
   md: 720px,
   lg: 960px,
-  xl: 1140px,
+  xl: 1170px,
   // xxl: 1340px
 ) !default;
 // Grid columns
@@ -140,8 +140,8 @@ $font-weight-base: $font-weight-normal !default;
 $line-height-base: 1.33 !default;
 
 // title 
-$h1-font-size: rem(60) !default;
-$h2-font-size: rem(36) !default;
+$h1-font-size: rem(60 * .8) !default;
+$h2-font-size: rem(36 * .8) !default;
 $h3-font-size: $font-size-base * 1.75 !default;
 $h4-font-size: $font-size-base * 1.5 !default;
 $h5-font-size: rem(24) !default;
@@ -222,12 +222,12 @@ $table-caption-color: $text-muted !default;
 $table-bg-level: -9 !default;
 $table-border-level: -6 !default;
 
-
+ $border-radius: 0 !default;
 // Buttons + Forms
 //
 // Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
 
-$input-btn-padding-y: .375rem !default;
+$input-btn-padding-y: .575rem !default;
 $input-btn-padding-x: .75rem !default;
 $input-btn-font-family: null !default;
 $input-btn-font-size: $font-size-base !default;

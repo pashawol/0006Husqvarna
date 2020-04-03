@@ -1,9 +1,88 @@
 .footer {
-		
+	margin-top: rem(30);
+	line-height: (22 / 18);
+	&__body{
+		background-color: $dark;
+		color: rgba(255, 255, 255, 0.5);
+		font-weight: 300;
+		padding-top: rem(65);
+		@include media-breakpoint-up(lg) {
 
+			padding-bottom: rem(95);
+		}
+		padding-bottom: rem(35);
 
+		}
+		p{
+			max-width: rem(360);
+		}
+		&__logo{
+			display: inline-block;
+			margin-bottom: rem(20);
+		}
+	&__title{
+	 
+		text-transform: uppercase;
+		margin-bottom: rem(20);
+		padding-top: rem(18);
+	}
+	a{
+		color: #ffffff;
+		text-decoration: none !important;  
+		// text-decoration: none !important;
+		&:hover{
+			color: $primary;
+		}
+	}
+	li{
+		list-style: none;
+		margin-bottom: rem(10);
+	}
+
+	&__item{
+		display: flex;
+		color: #ffffff;
+
+	}
+	&__icon-wrap{
+		display: block;
+		width: rem(18);
+		margin-right: rem(9);
+		text-align: center;
+		.icon{
+			font-size: rem(18);
+			&-email{
+				font-size: rem(14);
+
+			}
+			color: rgba(255, 255, 255, 0.25);
+		}
+	}
+
+		&__group{
+			margin-bottom: rem(24);
+		}
+
+		&__copy{
+			font-size: rem(14);
+			padding: rem(5);
+			background-color: #EAEBEE;
+			.row{
+				align-items: center;
+			}
+		}
+
+		p{
+			font-size: rem(14);
+		}
 // 
-@include media-breakpoint-up(xl) {}
+
+&__col{
+
+	@include media-breakpoint-up(xl) {
+		// margin-right: rem(30);
+	}
+}
 
 @include media-breakpoint-up(lg) {}
 

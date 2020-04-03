@@ -12,6 +12,7 @@ module.exports = function () {
                     $('[stroke]').removeAttr('stroke');
                     $('[style]').removeAttr('style');
                     $('[opacity]').removeAttr('opacity');
+                    $('[fill-opacity]').removeAttr('fill-opacity');
                 },
                 parserOptions: { xmlMode: true }
             }))

@@ -1,9 +1,46 @@
 mixin topLine()
 	// start topLine
-	+b.SECTION.topLine.section#topLine&attributes(attributes)
+	+b.topLine.d-none.d-md-block&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 topLine
-				
-			.row
+			+e.row.row
+				.col-lg-auto.col
+					+b.dropdown--place.--js
+						+e.toggle
+							+icon("mark")
+							span.text-primary.ttu Москва
+							+e.toggle-arrow--js 
+				.col-lg-auto.col
+					+b.dropdown--phone.--js
+						+e.toggle
+							+e.link--tel(href="tel:8495215-50-63") 
+								+icon("tel")
+								| 8 495 215-50-63
+							
+							+e.toggle-arrow--js 
+				.col.d-none.d-lg-block
+					+e.time
+						+icon('clock')
+						span пн. &mdash;&nbsp;пт.&nbsp;09:00&nbsp;&mdash; 20:00 | 
+						span сб. &mdash;&nbsp;вс.&nbsp;09:00&nbsp;&mdash; 18:00
+				.col-auto
+					+e.link--compare(href="#")
+						+icon("compare") 
+				.col-auto
+					+e.link--like(href="#")
+						+icon("like")
+ 
+				.col-auto
+					+b.dropdown--user.--js
+						+e.toggle
+							+icon("user")
+							| Николай
+ 
+				.col-auto
+					+b.dropdown--basket.--js
+						+e.toggle
+							+e.SPAN.icon-wrap
+								+icon("basket")
+								+e.SPAN.count 99 
+							| 236 990 ₽
+ 
 	// end topLine

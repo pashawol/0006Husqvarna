@@ -182,32 +182,50 @@ function eventHandler() {
 	});
 
 	let defaultSl = {
-
-	}
-	const swiper4 = new Swiper('.color-slider', {
-		// slidesPerView: 5,
-		...defaultSl,
-		slidesPerView: 'auto',
-		watchOverflow: true,
-		spaceBetween: 0,
-		freeMode: true,
-		watchOverflow: true,
-		slidesPerGroup: 3,
-
-		// centeredSlides: true,
 		loop: true,
-		loopFillGroupWithBlank: true,
-		touchRatio: 0.2,
-		slideToClickedSlide: true,
-		freeModeMomentum: true,
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
+		loopedSlides: 5, //looped slides should be the same
+		lazy: {
+			loadPrevNext: true,
 		},
-
+		
+		
+	}
+	var galleryThumbs = new Swiper('.gallery-thumbs', {
+		spaceBetween: 0,
+		slidesPerView: 'auto',
+		loop: true,
+		freeMode: true,
+		loopedSlides: 5, //looped slides should be the same
+		watchSlidesVisibility: true,
+		watchSlidesProgress: true,
 	});
-	// modal window
+	
+	var galleryTop = new Swiper('.gallery-top', {
+		...defaultSl,
+		spaceBetween: 0,
+		thumbs: {
+			swiper: galleryThumbs,
+		},
+	});
+	$(".sCatalog").each(function () {
 
+	 
+		
+		var sliderCatalog = new Swiper($(this).find(".sCatalog__slider--js"), {
+			...defaultSl,
+			
+		spaceBetween: 30,
+		slidesPerView: 'auto',
+		freeMode: true, 
+		watchSlidesVisibility: true,
+			watchSlidesProgress: true,
+			navigation: {
+				nextEl: $(this).find('.swiper-button-next'),
+				prevEl: $(this).find('.swiper-button-prev'),
+			},
+	});
+	
+})
 
 
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;

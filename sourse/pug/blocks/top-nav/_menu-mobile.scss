@@ -1,17 +1,19 @@
 // мобильное меню
 
 // мобильное меню
-$h: em(2);
 
 .toggle-menu-mobile {
+	$h: 2px;
 	display: block;
 	height: $h* 12;
-	position: relative;
-	color: $primary;
-	font-size: 32px;
+	position: relative; 
+	@include media-breakpoint-up(md) {
+
+		font-size: 40px;
+	}
+	font-size: 24px;
 
 	&.on {
-		color: #ffffff;
 	}
 
 	span:after,
@@ -27,12 +29,19 @@ $h: em(2);
 
 	span:before {
 
-
-		top: $h * 2;
+@include media-breakpoint-up(md) {
+	
+		top: $h * 5;
+	}
+	top: $h * 3;
 	}
 
 	span:after {
-		bottom: $h * 2;
+		@include media-breakpoint-up(md) {
+
+			bottom: $h * 5;
+		}
+		bottom: $h * 3;
 	}
 
 	span {
@@ -46,10 +55,9 @@ $h: em(2);
 		// width: 32px;
 		width: 1em;
 		height: $h;
-		background-color: currentColor;
+		background-color: #fff;
 		transition: all 0.3s;
-		backface-visibility: hidden;
-		border-radius: 6px;
+		backface-visibility: hidden; 
 	}
 
 	// &.on {
