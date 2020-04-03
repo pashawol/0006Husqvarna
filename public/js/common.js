@@ -1,5 +1,9 @@
 "use strict";
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var $ = jQuery;
@@ -101,7 +105,7 @@ var JSCCommon = {
 };
 
 function eventHandler() {
-	var _ref;
+	var _objectSpread2;
 
 	// полифил для object-fit
 	objectFitImages(); // Picture element HTML5 shiv
@@ -162,21 +166,16 @@ function eventHandler() {
 		}, 1100);
 		return false;
 	});
-	$('.s-gal__slider\
-	,.slider-for2 ').on('lazyLoaded', function (event, slick, image, imageSource) {
-		image.parent().css('background-image', 'url(' + image.attr('src') + ')');
-	});
-	slider;
-	var swiper4 = new Swiper('.color-slider', (_ref = {
-		// slidesPerView: 5,
+	var defaultSl = {};
+	var swiper4 = new Swiper('.color-slider', _objectSpread({}, defaultSl, (_objectSpread2 = {
 		slidesPerView: 'auto',
 		watchOverflow: true,
 		spaceBetween: 0,
 		freeMode: true
-	}, _defineProperty(_ref, "watchOverflow", true), _defineProperty(_ref, "slidesPerGroup", 3), _defineProperty(_ref, "loop", true), _defineProperty(_ref, "loopFillGroupWithBlank", true), _defineProperty(_ref, "touchRatio", 0.2), _defineProperty(_ref, "slideToClickedSlide", true), _defineProperty(_ref, "freeModeMomentum", true), _defineProperty(_ref, "navigation", {
+	}, _defineProperty(_objectSpread2, "watchOverflow", true), _defineProperty(_objectSpread2, "slidesPerGroup", 3), _defineProperty(_objectSpread2, "loop", true), _defineProperty(_objectSpread2, "loopFillGroupWithBlank", true), _defineProperty(_objectSpread2, "touchRatio", 0.2), _defineProperty(_objectSpread2, "slideToClickedSlide", true), _defineProperty(_objectSpread2, "freeModeMomentum", true), _defineProperty(_objectSpread2, "navigation", {
 		nextEl: '.swiper-button-next',
 		prevEl: '.swiper-button-prev'
-	}), _ref)); // modal window
+	}), _objectSpread2))); // modal window
 
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 

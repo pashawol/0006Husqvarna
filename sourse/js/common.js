@@ -186,6 +186,7 @@ function eventHandler() {
 	}
 	const swiper4 = new Swiper('.color-slider', {
 		// slidesPerView: 5,
+		...defaultSl,
 		slidesPerView: 'auto',
 		watchOverflow: true,
 		spaceBetween: 0,

@@ -19,7 +19,10 @@ html {
 
 body,
 html {
-	font-size: $em-base;
+		@include media-breakpoint-up(xl) {
+
+			font-size: $em-base;
+		}
 	// @include font-size(1rem);
 }
 
@@ -487,6 +490,7 @@ img.img-bg,
 a {
 	@include mt;
 }
+
 img.img-bg,
 .picture-bg {
 	position: absolute;
