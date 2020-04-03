@@ -1,5 +1,9 @@
 "use strict";
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var $ = jQuery;
@@ -101,8 +105,6 @@ var JSCCommon = {
 };
 
 function eventHandler() {
-	var _Swiper;
-
 	// полифил для object-fit
 	objectFitImages(); // Picture element HTML5 shiv
 
@@ -162,18 +164,43 @@ function eventHandler() {
 		}, 1100);
 		return false;
 	});
-	var defaultSl = {};
-	var swiper4 = new Swiper('.color-slider', (_Swiper = {
-		// slidesPerView: 5,
-		slidesPerView: 'auto',
-		watchOverflow: true,
+	var defaultSl = {
+		loop: true,
+		loopedSlides: 5,
+		//looped slides should be the same
+		lazy: {
+			loadPrevNext: true
+		}
+	};
+	var galleryThumbs = new Swiper('.gallery-thumbs', {
 		spaceBetween: 0,
-		freeMode: true
-	}, _defineProperty(_Swiper, "watchOverflow", true), _defineProperty(_Swiper, "slidesPerGroup", 3), _defineProperty(_Swiper, "loop", true), _defineProperty(_Swiper, "loopFillGroupWithBlank", true), _defineProperty(_Swiper, "touchRatio", 0.2), _defineProperty(_Swiper, "slideToClickedSlide", true), _defineProperty(_Swiper, "freeModeMomentum", true), _defineProperty(_Swiper, "navigation", {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev'
-	}), _Swiper)); // modal window
-
+		slidesPerView: 'auto',
+		loop: true,
+		freeMode: true,
+		loopedSlides: 5,
+		//looped slides should be the same
+		watchSlidesVisibility: true,
+		watchSlidesProgress: true
+	});
+	var galleryTop = new Swiper('.gallery-top', _objectSpread({}, defaultSl, {
+		spaceBetween: 0,
+		thumbs: {
+			swiper: galleryThumbs
+		}
+	}));
+	$(".sCatalog").each(function () {
+		var sliderCatalog = new Swiper($(this).find(".sCatalog__slider--js"), _objectSpread({}, defaultSl, {
+			spaceBetween: 30,
+			slidesPerView: 'auto',
+			freeMode: true,
+			watchSlidesVisibility: true,
+			watchSlidesProgress: true,
+			navigation: {
+				nextEl: $(this).find('.swiper-button-next'),
+				prevEl: $(this).find('.swiper-button-prev')
+			}
+		}));
+	});
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 
 	if (isIE11) {

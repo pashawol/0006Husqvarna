@@ -1,9 +1,55 @@
 mixin headerBlock()
 	// start headerBlock
-	+b.SECTION.headerBlock.section#headerBlock&attributes(attributes)
-		.container
-			+b.section-title.text-center
-				h2 headerBlock
-				
-			.row
+	+b.headerBlock#headerBlock&attributes(attributes)
+		+e.slider--js.swiper-container.gallery-top
+			.swiper-wrapper
+				mixin slide()
+					+e.slide.swiper-slide.bg-wrap
+						img.swiper-lazy.img-bg(src="#" data-src="img/@2x/slider.jpg", alt="")
+						.container
+							+e.title
+								block
+							p  Компания Husqvarna с&nbsp;гордостью представляет Вам новейший инструмент для работы&nbsp;&mdash; новые цепные пилы T540i XP<sup class="reg">&reg;</sup>&nbsp;и&nbsp;540i XP<sup class="reg">&reg;</sup>. Это&nbsp;&mdash; меняющие правила игры аккумуляторные инструменты, предназначенные для ухода за&nbsp;деревьями.
+							+e.btn(href="#")  Узнайть больше
+				+slide()
+					span НАСЛАЖДАЙТЕСЬ
+					br 
+					span ИДЕАЛЬНЫМ ГАЗОНОМ 
+					br
+					span С HUSQVARNA 
+					br
+					span AUTOMOWER®
+					
+				+slide()
+					span НАША СИЛА  
+					br 
+					span В&nbsp;ЭНЕРГИИ  
+					br
+					span АККУМУЛЯТОРА
+				+slide()
+					span КОНКУРС 
+					br 
+					span КАСТОМИЗИРОВАННЫЙ
+					br
+					span  HUSQVARNA 
+					br
+					span AUTOMOWER®
+				+slide()
+					span ВЫБЕРИТЕ СВОЙ 
+					br 
+					span СНЕГООТБРАСЫВАТЕЛЬ
+				+slide()
+					span АККУМУЛЯТОРНАЯ 
+					br 
+					span ТЕХНИКА
+
+		+e.slider-wrapper
+			.container
+				+e.slider-thumb--js.swiper-container.gallery-thumbs
+					.swiper-wrapper
+						+e.slide-thumb.swiper-slide ИДЕАЛЬНЫЙ  ГАЗОН С HUSQVARNA AUTOMOWER®
+						+e.slide-thumb.swiper-slide НАША СИЛА  В&nbsp;ЭНЕРГИИ  АККУМУЛЯТОРА
+						+e.slide-thumb.swiper-slide КОНКУРС КАСТОМИЗИРОВАННЫЙ HUSQVARNA AUTOMOWER®
+						+e.slide-thumb.swiper-slide ВЫБЕРИТЕ СВОЙ СНЕГООТБРАСЫВАТЕЛЬ
+						+e.slide-thumb.swiper-slide  АККУМУЛЯТОРНАЯ ТЕХНИКА
 	// end headerBlock

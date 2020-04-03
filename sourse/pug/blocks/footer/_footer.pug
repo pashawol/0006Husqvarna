@@ -1,4 +1,66 @@
 mixin footer()
 	+b.FOOTER.footer.block-with-lazy
-		.container
-			h2 footer
+		+e.body
+			.container
+				.row
+					+e.col.col-xl-5.col-lg-auto
+						+e.logo(href="#")
+							img(src="img/svg/logo.svg", alt="")
+						.d-none.d-md-block
+							p Более 330 лет наши инженеры создают продукцию для человека. В&nbsp;настоящее время&nbsp;&mdash; это мощные и&nbsp;эргономичные инструменты и&nbsp;машины для леса, парка, сада и&nbsp;строительства. Все изделия, которые мы&nbsp;создаем, отличаются высокими техническими характеристиками и&nbsp;инновационными решениями. Какая&nbsp;бы задача не&nbsp;стояла перед Вами, Вы&nbsp;всегда будете готовы решить ее&nbsp;вместе с&nbsp;Husqvarna.
+					.col-lg.col-auto
+						+e.title Информация
+						ul
+							li: a(href="#") О нас
+							li: a(href="#") Акции
+							li: a(href="#") Доставка
+							li: a(href="#") Оплата
+							li: a(href="#") Сервис 
+
+					.col-lg.col-auto
+						+e.title Дополнительно
+						ul
+							li: a(href="#") О бренде
+							li: a(href="#") Новости и статьи
+							li: a(href="#") Карта сайта
+							li: a(href="#") Политика конфиденциальности
+					.col-lg.col-auto
+						+e.title Контакты
+						+e.group
+							+e.item
+								+e.icon-wrap
+									+icon("mark")
+								| Москва,  
+								br
+								| ул. Павловская, 27/29 
+								br
+								| (м. Тульская)
+						+e.group
+							+e.item
+								+e.icon-wrap
+									+icon("tel") 
+								div
+									a(href="tel:8495215-50-63") 8 495 215-50-63
+									br
+									a(href="tel:8800333-18-92") 8 800 333-18-92
+							+e.item
+								+e.icon-wrap
+									+icon("email") 
+								a(href="mailto:info@husq.ru") info@husq.ru
+						+e.group
+							+e.item
+								+e.icon-wrap
+									+icon("clock")
+								| пн&nbsp;&mdash; пт: 09:00&nbsp;&mdash; 20:00 
+								br
+								| сб&nbsp;&mdash; вс: 09:00&nbsp;&mdash; 18:00
+		+e.copy.text-center.text-lg-left
+			.container
+				.row
+					.col-lg-auto.order-lg-last
+						img.lazy.res-i(src='#' data-src="img/@2x/payment-choice-long 1.png", alt="")
+					.col &copy;&nbsp;ОФИЦИАЛЬНЫЙ ПАРТНЕР HUSQVARNA В&nbsp;РОССИИ 2010&nbsp;&mdash; 2020
+
+
+
+
