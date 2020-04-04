@@ -34,3 +34,26 @@
 	}
 }
 
+//my custom code
+
+.headline{
+	h1{
+		color: $dark;
+		//font-size: rem(58px);
+		font-weight: 500;
+		line-height: 120%;
+		@include media-breakpoint-up(lg) {
+			font-size: rem(58px);
+			margin-left: 0px;
+		}
+		@include media-breakpoint-up(md) {
+			font-size: rem(53px);
+			margin-left: -10px;
+			padding-top: rem(58px);
+		}
+		font-size: 30px;
+		padding-top: 33px;
+		margin-left: 3px;
+	}
+}
+
