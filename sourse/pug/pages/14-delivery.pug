@@ -1,0 +1,24 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug 
+include ../blocks/sCategory/_sCategory.pug 
+include ../blocks/sCatalog/_sCatalog.pug 
+include ../blocks/sArticals/_sArticals.pug
+
+include ../blocks/sDelivery/_sDelivery.pug
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'Main'
+	title= title
+block pagecontent 
+	+mob-mnu()
+	+header()
+		+topLine()
+		+top-nav()
+	+headline('Доставка')
+	+sDelivery()
+	+footer()

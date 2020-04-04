@@ -21,6 +21,8 @@ $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black: #000 !default;
 
+$delivery-txt-color: #444444;
+
 $grays: () !default;
 
 
@@ -494,6 +496,10 @@ $custom-file-button-bg: $input-group-addon-bg !default;
 $custom-file-text: (en: "Browse"
 ) !default;
 
+
+//sDelivery
+$delivery-text-font-size: 16.7px;
+$delivery-text-line-height: 24px;
 
 // Form validation
 
