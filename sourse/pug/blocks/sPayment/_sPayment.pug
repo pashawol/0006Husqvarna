@@ -1,0 +1,34 @@
+mixin sPayment()
+	// start sPayment
+	+b.SECTION.sPayment.section#sPayment&attributes(attributes)
+		.container
+			.inner-content
+				p Уважаемые покупатели!
+				p В нашем магазине вы можете оплатить Ваш товар наличными или безналичным способом.
+				+b.payment-pills
+					+e.item
+						.img-container.coin-cont
+							+icon("coins")
+						.txt-container
+							p.payment-pills-item-headline.fw-500 Оплата наличными
+							p Расплатиться наличными можно с курьером при доставке заказа или в наших розничных магазинах.
+					+e.item
+						.img-container.card-cont
+							+icon("card")
+						.txt-container
+							p.payment-pills-item-headline.fw-500 Оплата банковской картой 
+							p
+								|Пластиковой картой Visa, MasterCard, Maestro при получении товара
+								br
+								| (только в розничных магазинах).
+					+e.item
+						.img-container.blank-cont
+							+icon("blank")
+						.txt-container
+							p.payment-pills-item-headline.fw-500 Безналичным расчёт для юридических лиц
+							p
+								|Пришлите Ваши реквизиты на почту  info@tehnosadov.ru
+								br
+								| или сделайте заказ на сайте и мы выставим счет.
+	// end sPayment
+
