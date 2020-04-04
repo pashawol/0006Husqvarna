@@ -1,6 +1,17 @@
+mixin itemNews(i,l ,t="Позаботьтесь о тепле и безопасности с принадлежностями для работы  с цепной пилой")
+	+e.col.col-lg-4.col-sm-6
+		+e.img-wrap(href="#").bg-wrap
+			img.object-fit-js.img-bg.lazy(src="#" data-src=`img/@2x/artical-${i}.jpg`, alt="")
+		+e.label= l
+		+e.title
+			a(href="#")= t
+		p В разных странах действуют различные правила и нормативы касательно защитной одежды и оборудования. Но дело даже не в соблюдении стандартов и норм. Ради собственной безопасности при работе с цепной пилой не забывайте о следующих средствах защиты.
+		+e.link(href="#") Читать
+			+icon('chevron-right')
+
 mixin sArticals()
 	// start sArticals
-	+b.SECTION.sArticals.section#sArticals&attributes(attributes)
+	+b.SECTION.sArticals--main-page.section#sArticals&attributes(attributes)
 		.container
 			+b.section-title
 				.row
@@ -9,17 +20,27 @@ mixin sArticals()
 					.col-auto
 						a.text-dark(href="#") Все новости
 			.row
-				mixin item(i,l ,t="Позаботьтесь о тепле и безопасности с принадлежностями для работы  с цепной пилой")
-					+e.col.col-lg-4.col-sm-6
-						+e.img-wrap(href="#").bg-wrap
-							img.object-fit-js.img-bg.lazy(src="#" data-src=`img/@2x/artical-${i}.jpg`, alt="")
-						+e.label= l
-						+e.title
-							a(href="#")= t
-						p В разных странах действуют различные правила и нормативы касательно защитной одежды и оборудования. Но дело даже не в соблюдении стандартов и норм. Ради собственной безопасности при работе с цепной пилой не забывайте о следующих средствах защиты.
-						+e.link(href="#") Читать
-							+icon('chevron-right')
-				+item("1","лес")
-				+item("2","безопасность")
-				+item("3","мероприятия")
+				+itemNews("1","лес")
+				+itemNews("2","безопасность")
+				+itemNews("3","мероприятия")
+	// end sArticals
+
+
+mixin itemNews13(i,l ,t="Позаботьтесь о тепле и безопасности с принадлежностями для работы  с цепной пилой")
+	+e.col.col-lg-6.col-sm-6
+		+e.img-wrap(href="#").bg-wrap
+			img.object-fit-js.img-bg.lazy(src="#" data-src=`img/@2x/artical-${i}.jpg`, alt="")
+		+e.label= l
+		+e.title
+			a(href="#")= t
+		p В разных странах действуют различные правила и нормативы касательно защитной одежды и оборудования. Но дело даже не в соблюдении стандартов и норм. Ради собственной безопасности при работе с цепной пилой не забывайте о следующих средствах защиты.
+		+e.link(href="#") Читать
+			+icon('chevron-right')
+
+mixin sArticals13()
+	// start sArticals
+	+b.SECTION.sArticals.articals-13.section#sArticals&attributes(attributes)
+			.row
+				+itemNews13("1","лес")
+				+itemNews13("2","безопасность")
 	// end sArticals
