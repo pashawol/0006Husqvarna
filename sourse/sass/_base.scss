@@ -649,3 +649,70 @@ iframe {
 		}
 	}
 }
+
+//pagination
+.pagination-wrapper{
+	margin-bottom: rem(120px);
+}
+.page-numbers{//
+	justify-content: center;
+	position: relative;
+	//background-color: red;
+	li{
+		margin: 0 rem(5px);
+		text-align: center;
+		.page-numbers{
+			background-color: white;
+			border-color: $light;
+			color: $dark;
+			height: rem(40px);
+			font-size: rem(18px);
+
+			line-height: rem(40px);
+			min-width: 100%;
+			padding: 0 rem(15px);
+			&:hover{
+				box-shadow: 0px 0px 9px -6px $dark;
+				transform: scale(1.02);
+				background-color: $light;
+				color: $dark;
+			}
+			&.current{
+				background-color: $dark;
+				border-color: $dark;
+				color: white;
+				transform: scale(1);
+			}
+		}
+		&.prev-arr, &.next-arr{
+			position: absolute;
+			top: 0;
+			margin: 0;
+			.page-numbers{
+				border-color: transparent;
+				background-color: transparent;
+				box-shadow: none;
+				svg{
+					stroke: $dark;
+					color: transparent;
+					line-height: rem(40px);
+					font-size: rem(28px);
+				}
+			}
+		}
+		&.prev-arr{
+			left: 0;
+			text-align: left;
+			.page-numbers{
+				padding-left: 0;
+			}
+		}
+		&.next-arr{
+			right: 0;
+			text-align: right;
+			.page-numbers{
+				padding-right: 0;
+			}
+		}
+	}
+}

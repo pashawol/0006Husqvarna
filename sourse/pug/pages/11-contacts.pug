@@ -7,19 +7,21 @@ include ../blocks/sCategory/_sCategory.pug
 include ../blocks/sCatalog/_sCatalog.pug 
 include ../blocks/sArticals/_sArticals.pug
 
-include ../blocks/sNewsInDetail/_sNewsInDetail.pug
+include ../blocks/sNews/_sNews.pug
 
 block variables
 	- let  mainPage= null
 block title
-	- let  title= '13-news-detail'
+	- let  title= '12-news'
 	title= title
 block pagecontent 
 	+mob-mnu()
 	+header()
 		+topLine()
 		+top-nav()
-	+headline('Новости и статьи')
-		+breadcrumb("Все материалы","Характеристики", "комплектация", "ДОКУМЕНТАЦИЯ", "запасные части")
-	+sNewsInDetail()
+	+headline('Контакты')
+	+sContact()
+	//+breadcrumb("Все материалы","Характеристики", "комплектация", "ДОКУМЕНТАЦИЯ", "запасные части")
+	//+sNewsInDetail()
+	//+sNews()
 	+footer()

@@ -13,7 +13,6 @@ mixin icon(name,mod)
 
 //- breadcrumb
 mixin breadcrumb(...items)
-	.container
 		nav(aria-label="breadcrumb" ).breadcrumb-slider-js.swiper-container
 			ol.breadcrumb.swiper-wrapper(itemscope itemtype="http://schema.org/BreadcrumbList")
 				-for (var i = 0; i < items.length; i++)
