@@ -9,14 +9,14 @@ mixin sPayment()
 					+e.item
 						.img-container.coin-cont
 							+icon("coins")
-						.txt-container
-							p.payment-pills-item-headline.fw-500 Оплата наличными
+						+b.txt-container
+							+e.P.headline.fw-500 Оплата наличными
 							p Расплатиться наличными можно с курьером при доставке заказа или в наших розничных магазинах.
 					+e.item
 						.img-container.card-cont
 							+icon("card")
-						.txt-container
-							p.payment-pills-item-headline.fw-500 Оплата банковской картой 
+						+b.txt-container
+							+e.P.headline.fw-500 Оплата банковской картой 
 							p
 								|Пластиковой картой Visa, MasterCard, Maestro при получении товара
 								br
@@ -24,8 +24,8 @@ mixin sPayment()
 					+e.item
 						.img-container.blank-cont
 							+icon("blank")
-						.txt-container
-							p.payment-pills-item-headline.fw-500 Безналичным расчёт для юридических лиц
+						+b.txt-container
+							+e.P.headline.fw-500 Безналичным расчёт для юридических лиц
 							p
 								|Пришлите Ваши реквизиты на почту  info@tehnosadov.ru
 								br

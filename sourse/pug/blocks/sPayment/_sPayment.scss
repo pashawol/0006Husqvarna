@@ -27,30 +27,30 @@
 		}
 
 		.img-container{
-			min-width: 42px;
+			min-width: rem(42px);
 			text-align: center;
-			margin-right: 25px;
+			margin-right: rem(25px);
 			svg{
-				font-size: 35px;
+				font-size: rem(35px);
 				color: $orange;
 			}
 			&.coin-cont{
 				svg{
-					font-size: 40px;
+					font-size: rem(40px);
 				}
 			}
 			&.card-cont{
 				svg{
-					font-size: 32px;
+					font-size: rem(32px);
 				}
 			}
 			&.blank-cont{
 				svg{
-					font-size: 42.5px;
+					font-size: rem(42.5px);
 				}
 			}
 		}
-		.payment-pills-item-headline{
+		.txt-container__headline{
 			color: $body-color;
 			font-size: rem(22.8px);
 			line-height: rem(24px);

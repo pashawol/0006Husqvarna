@@ -15,7 +15,7 @@
 		}
 		.material-txt{
 			position: relative;
-			margin: 0;
+			margin: 0 0 rem(10px) 0;
 			padding: rem(8.5px) 0;
 			text-transform: uppercase;
 			font-size: 14.8px;
@@ -29,16 +29,18 @@
 				height: 1px;
 			}
 		}
-		.news-in-detail-headline{
-			font-size: $h5-font-size;
-			padding-top: rem(10px);
-			margin-bottom: 0;
-			padding-bottom: rem(12px);
-		}
-		.news-in-detail-par{
-			//color: red;
-			line-height: rem(24px);
-			margin-bottom: rem(25px);
+		//.news-in-detail-headline{
+			//font-size: $h5-font-size;
+			//padding-top: rem(10px);
+			//margin-bottom: 0;
+			//padding-bottom: rem(12px);
+		//}
+		.title-txt {
+			p {
+				//color: red;
+				line-height: rem(24px);
+				margin-bottom: rem(25px);
+			}
 		}
 		.back-btn{
 			//background-color: red;
@@ -70,8 +72,9 @@
 		.item-prod-col {
 			.prod-item {
 				//background-color: red;
-				height: 450px;
-				width: 295px;
+				//height: 450px;
+				height: initial;
+				max-width: rem(295px);
 				margin: auto;
 				margin-bottom: 30px;
 				.prod-item__img-wrap {
