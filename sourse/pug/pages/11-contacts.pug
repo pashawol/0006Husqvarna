@@ -7,12 +7,10 @@ include ../blocks/sCategory/_sCategory.pug
 include ../blocks/sCatalog/_sCatalog.pug 
 include ../blocks/sArticals/_sArticals.pug
 
-include ../blocks/sNews/_sNews.pug
-
 block variables
 	- let  mainPage= null
 block title
-	- let  title= '12-news'
+	- let  title= '11-contacts'
 	title= title
 block pagecontent 
 	+mob-mnu()
@@ -21,7 +19,4 @@ block pagecontent
 		+top-nav()
 	+headline('Контакты')
 	+sContact()
-	//+breadcrumb("Все материалы","Характеристики", "комплектация", "ДОКУМЕНТАЦИЯ", "запасные части")
-	//+sNewsInDetail()
-	//+sNews()
 	+footer()
