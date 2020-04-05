@@ -1,5 +1,5 @@
 
-mixin item-prod(i, t="Триммер бензиновый  Husqvarna 122C")
+mixin item-prod(i, slider ,t="Триммер бензиновый  Husqvarna 122C")
 	+b.prod-item
 		+e.DIV.img-wrap
 			block
@@ -11,7 +11,10 @@ mixin item-prod(i, t="Триммер бензиновый  Husqvarna 122C")
 					+icon("like-alt")
 
 			a(href="#")
-				img.swiper-lazy(src="#" data-src=`img/@2x/${i}`, alt="")
+				if !slider
+					img.swiper-lazy(src="img/@2x/trimer-img.png", alt="")
+				else
+					img.swiper-lazy(src="#" data-src=`img/@2x/${i}`, alt="")
 		+e.title
 			a(href="#")= t
 		+e.price--old 15 990 ₽
@@ -34,19 +37,19 @@ mixin sCatalogHit()
 				+e.slider--js.swiper-container
 					.swiper-wrapper
 						+e.slide.swiper-slide
-							+item-prod('category-1.jpg')
+							+item-prod('category-1.jpg', 'slider')
 								+e.badge.bg-blue Бестселлер 
 						+e.slide.swiper-slide
-							+item-prod('category-2.jpg')
+							+item-prod('category-2.jpg', 'slider')
 								+e.badge.bg-blue Бестселлер 
 						+e.slide.swiper-slide
-							+item-prod('category-3.jpg')
+							+item-prod('category-3.jpg', 'slider')
 								+e.badge.bg-blue Бестселлер 
 						+e.slide.swiper-slide
-							+item-prod('category-4.jpg')
+							+item-prod('category-4.jpg', 'slider')
 								+e.badge.bg-blue Бестселлер 
 						+e.slide.swiper-slide
-							+item-prod('category-5.jpg')
+							+item-prod('category-5.jpg', 'slider')
 								+e.badge.bg-blue Бестселлер 
 	// end sCatalog
 
@@ -68,19 +71,18 @@ mixin sCatalogNew()
 				+e.slider--js.swiper-container
 					.swiper-wrapper
 						+e.slide.swiper-slide
-							+item-prod('category-1.jpg')
+							+item-prod('category-1.jpg', 'slider')
 								+e.badge.bg-success Новинка
 						+e.slide.swiper-slide
-							+item-prod('category-2.jpg')
+							+item-prod('category-2.jpg', 'slider')
 								+e.badge.bg-success Новинка
 						+e.slide.swiper-slide
-							+item-prod('category-3.jpg')
+							+item-prod('category-3.jpg', 'slider')
 								+e.badge.bg-success Новинка
 						+e.slide.swiper-slide
-							+item-prod('category-4.jpg')
+							+item-prod('category-4.jpg', 'slider')
 								+e.badge.bg-success Новинка
 						+e.slide.swiper-slide
-							+item-prod('category-5.jpg')
+							+item-prod('category-5.jpg', 'slider')
 								+e.badge.bg-success Новинка
 	// end sCatalog
-
