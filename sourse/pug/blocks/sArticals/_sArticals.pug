@@ -1,5 +1,5 @@
 mixin itemNews(i,l ,t="Позаботьтесь о тепле и безопасности с принадлежностями для работы  с цепной пилой")
-	+e.col.col-lg-4.col-sm-6
+	+e.col.col-lg-4.col-sm-6&attributes(attributes)
 		+e.img-wrap(href="#").bg-wrap
 			img.object-fit-js.img-bg.lazy(src="#" data-src=`img/@2x/artical-${i}.jpg`, alt="")
 		+e.label= l
@@ -44,3 +44,15 @@ mixin sArticals13()
 				+itemNews13("1","лес")
 				+itemNews13("2","безопасность")
 	// end sArticals
+
+
+mixin sArticals12()
+	// start sArticals
+	+b.SECTION.sArticals.articals-13.section#sArticals&attributes(attributes)
+		.row
+			+itemNews("1","лес")
+			+itemNews("2","безопасность")
+			+itemNews("3","мероприятия")(class='d-none d-sm-block')
+			+itemNews("1","лес")(class='d-none d-sm-block')
+			+itemNews("2","безопасность")(class='d-none d-lg-block')
+			+itemNews("3","мероприятия")(class='d-none d-lg-block')
