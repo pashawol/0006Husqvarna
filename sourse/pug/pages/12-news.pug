@@ -6,8 +6,7 @@ include ../blocks/sContact/_sContact.pug
 include ../blocks/sCategory/_sCategory.pug 
 include ../blocks/sCatalog/_sCatalog.pug 
 include ../blocks/sArticals/_sArticals.pug
-
-include ../blocks/sNews/_sNews.pug
+	//include ../blocks/sNews/_sNews.pug 
 
 block variables
 	- let  mainPage= null
@@ -20,7 +19,8 @@ block pagecontent
 		+topLine()
 		+top-nav()
 	+headline('Новости и статьи')
-	+breadcrumb("Все материалы","Характеристики", "комплектация", "ДОКУМЕНТАЦИЯ", "запасные части")
-	//+sNewsInDetail()
-	+sNews()
+		+breadcrumb("Все материалы","Характеристики", "комплектация", "ДОКУМЕНТАЦИЯ", "запасные части")
+	.container
+		+sArticals12()(class="s-articals-12")
+		+pugin()
 	+footer()

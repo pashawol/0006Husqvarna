@@ -117,7 +117,7 @@ function eventHandler() {
 	JSCCommon.inputMask(); // JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
 
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/12-news-1440.png);"></div>'); // /добавляет подложку для pixel perfect
+	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/11-Contacts-1440.png);"></div>'); // /добавляет подложку для pixel perfect
 	// const url = document.location.href;
 	// $.each($(".top-nav__nav a "), function() {
 	// 	if (this.href == url) {
