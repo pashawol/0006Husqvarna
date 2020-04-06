@@ -56,7 +56,25 @@ mixin in-c(typ="checkbox", text, name= typ )
 			block 
 		else
 			+e.SPAN.text= text
- 
+
+mixin in-c06(typ="checkbox", text, name= typ )
+	+b.LABEL.custom-input&attributes(attributes)
+		+e.INPUT.input(type= typ , name= name)
+		+e.SPAN.lab
+		if block
+			block
+		else
+			+e.SPAN.text= text
+
+mixin in-r(name='radio-btn-group', checked=false)
+	+b.LABEL.custom-radio&attributes(attributes)
+		if checked
+			+e.INPUT.radio-input(type="radio", name = name, checked)
+			block
+		else
+			+e.INPUT.radio-input(type="radio", name = name)
+			block
+
 mixin add-file(n)
 	+b.add-file
 		label

@@ -180,143 +180,7 @@
 					}
 			 }
 		 }
-		.order-cont{
-			//height: 500px;
-			padding: rem(25px) rem(30px);
-			box-shadow: 0px 8px 24px rgba(39, 58, 96, 0.08);
 
-			margin-top: rem(40px);
-			margin-bottom: rem(30px);
-			@include media-breakpoint-up(lg){
-				margin-top: 0;
-			}
-			&__headline{
-				@extend .h5;
-				margin-bottom: rem(25px);
-			}
-			&__prors-item {
-				display: flex;
-				span{
-					font-size: rem(16.8px);
-					color: $body-color;
-				}
-				span:first-child{
-
-				}
-				span:last-child{
-					margin-left: auto;
-				}
-				&.discount, &.promo{
-					span{
-						color: $primary;
-					}
-				}
-				&.result{
-					span{
-						font-size: rem(24px);
-						line-height: rem(42px);
-					}
-				}
-			}
-			.form-wrap{
-				margin-top: rem(15px);
-				&__input-wrap{
-					display: flex;
-					flex-wrap: nowrap;
-					input{
-						height: rem(50px);
-						@include placeholder{
-							color: $deep-gray;
-						}
-						&:focus{
-							outline: none;
-							border: 1px solid $blue;
-							box-shadow: 0px 0px 0px 0px blue;
-						}
-					}
-					.send-promo-btn{
-						min-width: rem(50px);
-						@include media-breakpoint-up(sm){
-							min-width: rem(200px);
-						}
-						@include media-breakpoint-up(lg){
-							min-width: rem(50px);
-						}
-						height: rem(50px);
-						background-color: $blue;
-						text-align: center;
-						cursor: pointer;
-						display: flex;
-
-						svg{
-							height: 100%;
-							color: white;
-							font-size: rem(20px);
-							line-height: rem(50px);
-							margin: auto;
-						}
-						span{
-							font-size: rem(16.8px);
-							line-height: rem(50px);
-							color: white;
-							margin: auto;
-							display: none;
-							@include media-breakpoint-up(sm){
-								display: block;
-							}
-							@include media-breakpoint-up(lg){
-								display: none;
-							}
-						}
-						transition: background-color .3s ease-in-out, box-shadow .05s ease-in-out;
-						&:hover{
-							background-color: lighten($blue, 10);
-						}
-						&:active{
-							box-shadow: inset 0px 0px 10px -5px black;
-						}
-						&.success-btn{
-							background-color: $green;
-							svg{
-								color: transparent;
-								stroke: white;
-							}
-						}
-					}
-				}
-			}
-			.order-bnt, .bill-btn{
-				width: 100%;
-				height: rem(50px);
-				outline: none;
-				margin-bottom: rem(10px);
-			}
-			.order-bnt{
-				color: white;
-				background-color: $primary;
-				border: none;
-				margin-top: rem(15px);
-				&:hover{
-					color: white;
-					background-color: $primary;
-					box-shadow: 0px 0px 12px -3px darken($primary, 10);
-				}
-				&:active{
-					box-shadow: 0px 0px 6px -3px darken($primary, 10), inset 0px 0px 12px -5px black;
-				}
-			}
-			.bill-btn{
-				border: 1px solid $light;
-				background-color: white;
-			}
-			.lower-txt{
-				text-align: center;
-				font-weight: 300;
-				font-size: rem(12.5px);
-				max-width: rem(200px);
-				margin: auto;
-			}
-		}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}
@@ -342,3 +206,141 @@
 	@include media-breakpoint-down(xs) {} 
 
 } // end.sBasket
+
+.order-cont{
+	//height: 500px;
+	padding: rem(25px) rem(30px);
+	box-shadow: 0px 8px 24px rgba(39, 58, 96, 0.08);
+
+	margin-top: rem(40px);
+	margin-bottom: rem(30px);
+	@include media-breakpoint-up(lg){
+		margin-top: 0;
+	}
+	&__headline{
+		@extend .h5;
+		margin-bottom: rem(25px);
+	}
+	&__prors-item {
+		display: flex;
+		span{
+			font-size: rem(16.8px);
+			color: $body-color;
+		}
+		span:first-child{
+
+		}
+		span:last-child{
+			margin-left: auto;
+		}
+		&.discount, &.promo{
+			span{
+				color: $primary;
+			}
+		}
+		&.result{
+			span{
+				font-size: rem(24px);
+				line-height: rem(42px);
+			}
+		}
+	}
+	.form-wrap{
+		margin-top: rem(15px);
+		&__input-wrap{
+			display: flex;
+			flex-wrap: nowrap;
+			input{
+				height: rem(50px);
+				@include placeholder{
+					color: $deep-gray;
+				}
+				&:focus{
+					outline: none;
+					border: 1px solid $blue;
+					box-shadow: 0px 0px 0px 0px blue;
+				}
+			}
+			.send-promo-btn{
+				min-width: rem(50px);
+				@include media-breakpoint-up(sm){
+					min-width: rem(200px);
+				}
+				@include media-breakpoint-up(lg){
+					min-width: rem(50px);
+				}
+				height: rem(50px);
+				background-color: $blue;
+				text-align: center;
+				cursor: pointer;
+				display: flex;
+
+				svg{
+					height: 100%;
+					color: white;
+					font-size: rem(20px);
+					line-height: rem(50px);
+					margin: auto;
+				}
+				span{
+					font-size: rem(16.8px);
+					line-height: rem(50px);
+					color: white;
+					margin: auto;
+					display: none;
+					@include media-breakpoint-up(sm){
+						display: block;
+					}
+					@include media-breakpoint-up(lg){
+						display: none;
+					}
+				}
+				transition: background-color .3s ease-in-out, box-shadow .05s ease-in-out;
+				&:hover{
+					background-color: lighten($blue, 10);
+				}
+				&:active{
+					box-shadow: inset 0px 0px 10px -5px black;
+				}
+				&.success-btn{
+					background-color: $green;
+					svg{
+						color: transparent;
+						stroke: white;
+					}
+				}
+			}
+		}
+	}
+	.order-bnt, .bill-btn{
+		width: 100%;
+		height: rem(50px);
+		outline: none;
+		margin-bottom: rem(10px);
+	}
+	.order-bnt{
+		color: white;
+		background-color: $primary;
+		border: none;
+		margin-top: rem(15px);
+		&:hover{
+			color: white;
+			background-color: $primary;
+			box-shadow: 0px 0px 12px -3px darken($primary, 10);
+		}
+		&:active{
+			box-shadow: 0px 0px 6px -3px darken($primary, 10), inset 0px 0px 12px -5px black;
+		}
+	}
+	.bill-btn{
+		border: 1px solid $light;
+		background-color: white;
+	}
+	.lower-txt{
+		text-align: center;
+		font-weight: 300;
+		font-size: rem(12.5px);
+		max-width: rem(200px);
+		margin: auto;
+	}
+}
