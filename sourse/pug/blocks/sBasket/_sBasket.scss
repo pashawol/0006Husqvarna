@@ -1,0 +1,344 @@
+
+	// start .sBasket
+	.sBasket {
+		padding: rem(23px) 0 0 0 !important;
+		 .goods{
+			 &__item{
+				 position: relative;
+				 display: flex;
+				 border-bottom: 1px solid $light;
+				 padding-bottom: rem(5px);
+				 padding-top: rem(30px);
+
+				 flex-wrap: wrap;
+				 @include media-breakpoint-up(md){
+					 flex-wrap: nowrap;
+				 }
+			 }
+			 &__item-img-descr{
+				 min-width: 100%;
+				 order: 1;
+				 @include media-breakpoint-up(md){
+					 width: rem(263px);
+					 min-width: rem(263px);
+					 order: 1;
+				 }
+
+				 display: flex;
+				 align-items: flex-start;
+				 font-weight: 300;
+				 img{
+					 max-width: 66px;
+					 height: auto;
+				 }
+				 p{
+					 @include media-breakpoint-up(xl){
+						 margin-left: auto;
+					 }
+					 margin-left: rem(30px);
+					 width: rem(165px);
+					 color: $dark;
+					 font-size: rem(16.8px);
+					 line-height: rem(22px);
+					 span{
+						 display: block;
+						 color: $deep-gray;
+						 //color: red;
+
+						 font-size: rem(14.7px);
+					 }
+					 span:first-child{
+						 margin-top: rem(8px);
+					 }
+					 span:last-child{
+						 margin-top: rem(0px);
+					 }
+				 }
+			 }
+			 &__amount-inp{
+				 //min-width: 50%;
+				 padding: rem(25px) 0 0 0;
+				 margin-left: auto;
+				 order: 3;
+				 @include media-breakpoint-up(md){
+					 //min-width: 0px;
+					 padding: rem(35px) 0 0 0;
+					 margin: 0 rem(15px);
+					 order: 2;
+				 }
+				 @include media-breakpoint-up(lg){
+					 margin: 0 rem(30px);
+				 }
+
+				 display: flex;
+				 align-items: center;
+				 align-self: flex-start;
+					button{
+						width: rem(40px);
+						height: rem(40px);
+						border: 1px solid $light;
+						background-color: transparent;
+						outline: none;
+						transition: border .3s ease-in-out, box-shadow .05s ease-in-out;
+						&:hover{
+							border: 1px solid $primary;
+						}
+						&:active{
+							box-shadow: inset 0px 0px 10px -5px darken($primary, 50);
+						}
+					}
+				 	input{
+						height: rem(40px);
+						width: rem(90px);
+						border: 1px solid $light;
+						background-color: white;
+						text-align: center;
+						outline: none;
+						transition: transform .25s ease-in-out, border .25s ease-in-out;
+						&:hover, &:focus{
+							border: 1px solid $primary;
+						}
+						&:focus{
+							transform: scale(1.1);
+						}
+					}
+			 }
+			 &__price-bl{
+				 //min-width: 50%;
+				 order: 2;
+				 margin: 0;
+				 .old-price{
+					 font-size: rem(13px);
+					 margin-top: rem(-4px);
+				 }
+				 .new-price {
+					 font-size: rem(21px);
+				 }
+				 @include media-breakpoint-up(md){
+					 order: 3;
+					 margin-left: rem(20px);
+					 .old-price{
+						 font-size: rem(14.8px);
+						 margin-top: rem(0px);
+					 }
+					 .new-price {
+						 font-size: rem(24px);
+					 }
+				 }
+				 @include media-breakpoint-up(xl){
+					 margin-left: rem(40px);
+					 margin-right: 0;
+				 }
+				 padding-top: rem(25px);
+				 display: flex;
+				 flex-direction: column;
+				 .old-price{
+					 text-decoration-line: line-through;
+					 text-transform: uppercase;
+					 color: #f35321;
+					 //color: blue;
+					 white-space: nowrap;
+				 }
+				 .new-price{
+						//font-size: rem(24px);
+					 	white-space: nowrap;
+				 }
+			 }
+			 &__cross-bl{
+				 	order: 4;
+					width: 20px;
+				 	height: 20px;
+				 	background-color: transparent;
+				 	margin-top: rem(45px);
+				 	@include media-breakpoint-up(lg){
+						 margin-right: rem(20px);
+				 	}
+
+				 	position: absolute;
+				 	top: rem(30px);
+				 	right: 0;
+				 	margin: 0;
+				 	@include media-breakpoint-up(md){
+						position: static;
+						margin-top: rem(45px);
+						margin-left: auto;
+				 	}
+				 	border: none;
+				 	outline: none;
+				 	padding: 0;
+				 	line-height: 20px;
+					svg{
+						stroke: $primary;
+						font-size: rem(20px);
+					}
+				 	transition: transform .2s;
+				 	&:hover{
+						transform: scale(1.1);
+						svg{
+							stroke: darken($primary, 10);
+						}
+					}
+			 }
+		 }
+		.order-cont{
+			//height: 500px;
+			padding: rem(25px) rem(30px);
+			box-shadow: 0px 8px 24px rgba(39, 58, 96, 0.08);
+
+			margin-top: rem(40px);
+			margin-bottom: rem(30px);
+			@include media-breakpoint-up(lg){
+				margin-top: 0;
+			}
+			&__headline{
+				@extend .h5;
+				margin-bottom: rem(25px);
+			}
+			&__prors-item {
+				display: flex;
+				span{
+					font-size: rem(16.8px);
+					color: $body-color;
+				}
+				span:first-child{
+
+				}
+				span:last-child{
+					margin-left: auto;
+				}
+				&.discount, &.promo{
+					span{
+						color: $primary;
+					}
+				}
+				&.result{
+					span{
+						font-size: rem(24px);
+						line-height: rem(42px);
+					}
+				}
+			}
+			.form-wrap{
+				margin-top: rem(15px);
+				&__input-wrap{
+					display: flex;
+					flex-wrap: nowrap;
+					input{
+						height: rem(50px);
+						@include placeholder{
+							color: $deep-gray;
+						}
+						&:focus{
+							outline: none;
+							border: 1px solid $blue;
+							box-shadow: 0px 0px 0px 0px blue;
+						}
+					}
+					.send-promo-btn{
+						min-width: rem(50px);
+						@include media-breakpoint-up(sm){
+							min-width: rem(200px);
+						}
+						@include media-breakpoint-up(lg){
+							min-width: rem(50px);
+						}
+						height: rem(50px);
+						background-color: $blue;
+						text-align: center;
+						cursor: pointer;
+						display: flex;
+
+						svg{
+							height: 100%;
+							color: white;
+							font-size: rem(20px);
+							line-height: rem(50px);
+							margin: auto;
+						}
+						span{
+							font-size: rem(16.8px);
+							line-height: rem(50px);
+							color: white;
+							margin: auto;
+							display: none;
+							@include media-breakpoint-up(sm){
+								display: block;
+							}
+							@include media-breakpoint-up(lg){
+								display: none;
+							}
+						}
+						transition: background-color .3s ease-in-out, box-shadow .05s ease-in-out;
+						&:hover{
+							background-color: lighten($blue, 10);
+						}
+						&:active{
+							box-shadow: inset 0px 0px 10px -5px black;
+						}
+						&.success-btn{
+							background-color: $green;
+							svg{
+								color: transparent;
+								stroke: white;
+							}
+						}
+					}
+				}
+			}
+			.order-bnt, .bill-btn{
+				width: 100%;
+				height: rem(50px);
+				outline: none;
+				margin-bottom: rem(10px);
+			}
+			.order-bnt{
+				color: white;
+				background-color: $primary;
+				border: none;
+				margin-top: rem(15px);
+				&:hover{
+					color: white;
+					background-color: $primary;
+					box-shadow: 0px 0px 12px -3px darken($primary, 10);
+				}
+				&:active{
+					box-shadow: 0px 0px 6px -3px darken($primary, 10), inset 0px 0px 12px -5px black;
+				}
+			}
+			.bill-btn{
+				border: 1px solid $light;
+				background-color: white;
+			}
+			.lower-txt{
+				text-align: center;
+				font-weight: 300;
+				font-size: rem(12.5px);
+				max-width: rem(200px);
+				margin: auto;
+			}
+		}
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-up(xs) {}
+	
+	//
+	@include media-breakpoint-between(md, xl) { }
+	
+	
+	//
+	@include media-breakpoint-only(xs) {}
+	@include media-breakpoint-only(sm) {}
+	@include media-breakpoint-only(md) {}
+	@include media-breakpoint-only(lg) {}
+	@include media-breakpoint-only(xl) {}
+	
+	//
+	@include media-breakpoint-down(xl) {}
+	@include media-breakpoint-down(lg) {}
+	@include media-breakpoint-down(md) {}
+	@include media-breakpoint-down(sm) {}
+	@include media-breakpoint-down(xs) {} 
+
+} // end.sBasket

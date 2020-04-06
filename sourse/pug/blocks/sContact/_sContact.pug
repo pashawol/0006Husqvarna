@@ -62,9 +62,8 @@ mixin sContact()
 							span 127474 г.Москва, ш. Дмитровское, д.62, строение&nbsp;5, этаж&nbsp;1,&nbsp;помещение&nbsp;X,&nbsp;комната&nbsp;1
 						+b.btn-more.btn-get-props(type="button")  Скачать реквизиты
 				.col
-					+b.form-cont
-						+e.headline Обратная связь
 						+form-wrap()
+							+e.headline Обратная связь
 							+input('', 'textarea', 'Ваше сообщение', 'message')
 							+input('', 'text', 'ФИО*', 'user-name')(require)
 							+input('', 'tel', 'Телефон*', 'phone')(require)

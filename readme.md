@@ -5,3 +5,4 @@
 1. <https://pashawol.github.io/0006Husqvarna/public/13-news-detail.html>
 1. <https://pashawol.github.io/0006Husqvarna/public/12-news.html>
 1. <https://pashawol.github.io/0006Husqvarna/public/11-contacts.html>
+1. <https://pashawol.github.io/0006Husqvarna/public/05-basket.html>
