@@ -53,5 +53,39 @@
 		//font-size: 30px;
 		padding-top: 33px;
 }
-
+//mixin amountInpBlock
+.amount-inp{
+	display: flex;
+	align-items: center;
+	align-self: flex-start;
+	button{
+		width: rem(40px);
+		height: rem(40px);
+		border: 1px solid $light;
+		background-color: transparent;
+		outline: none;
+		transition: border .3s ease-in-out, box-shadow .05s ease-in-out;
+		&:hover{
+			border: 1px solid $primary;
+		}
+		&:active{
+			box-shadow: inset 0px 0px 10px -5px darken($primary, 50);
+		}
+	}
+	input{
+		height: rem(40px);
+		width: rem(90px);
+		border: 1px solid $light;
+		background-color: white;
+		text-align: center;
+		outline: none;
+		transition: transform .25s ease-in-out, border .25s ease-in-out;
+		&:hover, &:focus{
+			border: 1px solid $primary;
+		}
+		&:focus{
+			transform: scale(1.1);
+		}
+	}
+}
 

@@ -35,8 +35,12 @@
 					 @include media-breakpoint-up(xl){
 						 margin-left: auto;
 					 }
+					 padding-right: 30px;
+					 @include media-breakpoint-up(md){
+						 width: rem(165px);
+						 padding-right: 0px;
+					 }
 					 margin-left: rem(30px);
-					 width: rem(165px);
 					 color: $dark;
 					 font-size: rem(16.8px);
 					 line-height: rem(22px);
@@ -55,13 +59,11 @@
 					 }
 				 }
 			 }
-			 &__amount-inp{
-				 //min-width: 50%;
+			 .amount-inp{
 				 padding: rem(25px) 0 0 0;
 				 margin-left: auto;
 				 order: 3;
 				 @include media-breakpoint-up(md){
-					 //min-width: 0px;
 					 padding: rem(35px) 0 0 0;
 					 margin: 0 rem(15px);
 					 order: 2;
@@ -69,39 +71,6 @@
 				 @include media-breakpoint-up(lg){
 					 margin: 0 rem(30px);
 				 }
-
-				 display: flex;
-				 align-items: center;
-				 align-self: flex-start;
-					button{
-						width: rem(40px);
-						height: rem(40px);
-						border: 1px solid $light;
-						background-color: transparent;
-						outline: none;
-						transition: border .3s ease-in-out, box-shadow .05s ease-in-out;
-						&:hover{
-							border: 1px solid $primary;
-						}
-						&:active{
-							box-shadow: inset 0px 0px 10px -5px darken($primary, 50);
-						}
-					}
-				 	input{
-						height: rem(40px);
-						width: rem(90px);
-						border: 1px solid $light;
-						background-color: white;
-						text-align: center;
-						outline: none;
-						transition: transform .25s ease-in-out, border .25s ease-in-out;
-						&:hover, &:focus{
-							border: 1px solid $primary;
-						}
-						&:focus{
-							transform: scale(1.1);
-						}
-					}
 			 }
 			 &__price-bl{
 				 //min-width: 50%;
@@ -180,7 +149,11 @@
 					}
 			 }
 		 }
-
+		//.modal-order-request{
+			//width: 100%;
+			//height: 200px;
+			//background-color: red;
+		//}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}
@@ -208,12 +181,12 @@
 } // end.sBasket
 
 .order-cont{
-	//height: 500px;
-	padding: rem(25px) rem(30px);
-	box-shadow: 0px 8px 24px rgba(39, 58, 96, 0.08);
-
 	margin-top: rem(40px);
 	margin-bottom: rem(30px);
+	@include media-breakpoint-up(sm){
+		box-shadow: 0px 8px 24px rgba(39, 58, 96, 0.08);
+		padding: rem(25px) rem(30px);
+	}
 	@include media-breakpoint-up(lg){
 		margin-top: 0;
 	}
@@ -263,6 +236,8 @@
 			}
 			.send-promo-btn{
 				min-width: rem(50px);
+				outline: none;
+				border: none;
 				@include media-breakpoint-up(sm){
 					min-width: rem(200px);
 				}
@@ -321,7 +296,13 @@
 		text-align: center;
 		font-weight: 300;
 		font-size: rem(12.5px);
-		max-width: rem(200px);
 		margin: auto;
+		max-width: rem(280px);
+		@include media-breakpoint-up(md){
+			max-width: rem(380px);
+		}
+		@include media-breakpoint-up(lg){
+			max-width: rem(200px);
+		}
 	}
 }

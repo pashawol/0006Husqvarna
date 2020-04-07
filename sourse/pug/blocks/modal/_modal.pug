@@ -43,4 +43,27 @@ mixin modal()
 			+e.INPUT.btn(type="submit" value="Рассчитать") 
 			+polite()
 		// #modal-call
-	// modal
+		+form-wrap()(id="modal-order-request" class="modal-order-request")
+			+e.close-bl.d-block.d-md-none
+				a(href='#modal-order-request')
+					+icon('angle-left')
+					span назад
+			+e.content
+				+e.big-headline Запрос счёта
+				+e.headline Контактные данные
+				+input('', 'text', 'ФИО*', 'user-name')(required)
+				+input('', 'tel', 'Телефон*', 'phone')(required)
+				+input('', 'email', 'E-mail*')(required)
+				+e.props-pills
+					+e.props-pills-item.active Заполнить реквизиты
+					+e.props-pills-item Загрузить реквизиты
+				+e.headline Реквизиты
+				+input('', 'text', 'Корр. счёт', 'account-1')
+				+input('', 'text', 'Расч. счёт', 'account-2')
+				+input('', 'email', 'E-mail*')(required)
+				+e.headline.file-headline Прикрепить файл
+				+add-file('Перенесите сюда файл или выберите на компьютере')
+				button.order-bnt.send-props-btn Отправить
+				p.private-policy-txt Нажимая кнопку &laquo;Оформить заказ&raquo;,  вы&nbsp;соглашаетесь с&nbsp;
+					a(href='#') Политикой конфиденциальности.
+// modal

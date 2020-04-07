@@ -268,3 +268,8 @@ mixin headline(hlCont)
 			h1= hlCont
 			block
 
+mixin amountInpBlock(value="1")
+	+b.amount-inp&attributes(attributes)
+		button -
+		input(type="text" value=value)
+		button +
