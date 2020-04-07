@@ -1,0 +1,23 @@
+mixin sConfirm()
+	// start sConfirm
+	+b.sConfirm.section#sConfirm&attributes(attributes)
+		.container
+			.row
+				+e.order-formed-txt.col-sm-auto
+					| Заказ&#160;
+					br.d-none.d-sm-block
+					| оплачен
+				+e.order-info.col
+					span Номер Вашего заказа:&#160;
+						strong № 121212
+					span
+						|Ожидайте подтверждения заказа в ближайшее время. 
+						br
+						|Спасибо за покупку!
+				+icon('gray-logo')
+	.you-may-like-slider-cont
+		+headline('Вам может понравится')
+		+sCatalogHit(false)
+		+b.btn-more.btn-more08(type="button")  Показать ещё
+			+icon("chevron-down")
+	// end sConfirm

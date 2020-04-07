@@ -21,18 +21,20 @@ mixin item-prod(i, slider ,t="Триммер бензиновый  Husqvarna 122
 		+e.price--old 15 990 ₽
 		+e.price--new 11 490 ₽
 		+e.btn(href="#") Купить
-mixin sCatalogHit()
+
+mixin sCatalogHit(showTitle='true')
 	// start sCatalog
 	+b.SECTION.sCatalog.section#sCatalog.pb-0&attributes(attributes)
 		.container
-			+b.section-title
-				.row
-					.col
-						h2 Хиты продаж
-					.col-auto
-						a.text-dark(href="#") Все товары
+			if showTitle
+				+b.section-title
+					.row
+						.col
+							h2 Хиты продаж
+						.col-auto
+							a.text-dark(href="#") Все товары
 
-				
+
 			+e.slider-wrappper
 				+arrow()
 				+e.slider--js.swiper-container

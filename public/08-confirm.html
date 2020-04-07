@@ -2,7 +2,7 @@
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
-		<title>07-confirm-payment</title>
+		<title>08-confirm</title>
 		<meta name="description" content="о чем страница">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, shrink-to-fit=no">
@@ -200,14 +200,13 @@
 					<h1>Оформление заказа</h1>
 				</div>
 			</div>
-			<!-- start sConfirmPayment-->
-			<div class="sConfirmPayment section" id="sConfirmPayment">
+			<!-- start sConfirm-->
+			<div class="sConfirm section" id="sConfirm">
 				<div class="container">
 					<div class="row">
-						<div class="sConfirmPayment__order-formed-txt col-sm-auto">Заказ&#160;<br class="d-none d-sm-block"/>оформлен
+						<div class="sConfirm__order-formed-txt col-sm-auto">Заказ&#160;<br class="d-none d-sm-block"/>оплачен
 						</div>
-						<div class="sConfirmPayment__order-info col"><span>Номер Вашего заказа:&#160;<strong>№ 121212</strong></span><span>Итоговая сумма заказа:&#160;<strong>11 333 294 ₽</strong></span>
-							<button class="order-bnt">Перейти к оплате</button>
+						<div class="sConfirm__order-info col"><span>Номер Вашего заказа:&#160;<strong>№ 121212</strong></span><span>Ожидайте подтверждения заказа в ближайшее время. <br/>Спасибо за покупку!</span>
 						</div>
 						<svg class="icon icon-gray-logo ">
 							<use xlink:href="img/svg/sprite.svg#gray-logo"></use>
@@ -215,7 +214,163 @@
 					</div>
 				</div>
 			</div>
-			<!-- end sConfirmPayment-->
+			<div class="you-may-like-slider-cont">
+				<div class="headline">
+					<div class="container">
+						<h1>Вам может понравится</h1>
+					</div>
+				</div>
+				<!-- start sCatalog-->
+				<section class="sCatalog section pb-0" id="sCatalog">
+					<div class="container">
+						<div class="sCatalog__slider-wrappper">
+							<div class="swiper-button-hand swiper-button-hand-prev swiper-button-prev"> </div>
+							<div class="swiper-button-hand swiper-button-hand-next swiper-button-next"> </div>
+							<div class="sCatalog__slider sCatalog__slider--js swiper-container">
+								<div class="swiper-wrapper">
+									<div class="sCatalog__slide swiper-slide">
+										<div class="prod-item">
+											<div class="prod-item__img-wrap">
+												<div class="prod-item__badge bg-blue">Бестселлер 
+												</div>
+												<div class="prod-item__labels">
+													<button class="prod-item__label-link active" type="button">
+														<svg class="icon icon-compare ">
+															<use xlink:href="img/svg/sprite.svg#compare"></use>
+														</svg>
+													</button>
+													<button class="prod-item__label-link" type="button">
+														<svg class="icon icon-like-alt ">
+															<use xlink:href="img/svg/sprite.svg#like-alt"></use>
+														</svg>
+													</button>
+												</div><a href="#"><img class="swiper-lazy" src="#" data-src="img/@2x/category-1.jpg" alt=""/></a>
+											</div>
+											<div class="prod-item__title"><a href="#">Триммер бензиновый  Husqvarna 122C</a>
+											</div>
+											<div class="prod-item__price prod-item__price--old">15 990 ₽
+											</div>
+											<div class="prod-item__price prod-item__price--new">11 490 ₽
+											</div><a class="prod-item__btn" href="#">Купить</a>
+										</div>
+									</div>
+									<div class="sCatalog__slide swiper-slide">
+										<div class="prod-item">
+											<div class="prod-item__img-wrap">
+												<div class="prod-item__badge bg-blue">Бестселлер 
+												</div>
+												<div class="prod-item__labels">
+													<button class="prod-item__label-link active" type="button">
+														<svg class="icon icon-compare ">
+															<use xlink:href="img/svg/sprite.svg#compare"></use>
+														</svg>
+													</button>
+													<button class="prod-item__label-link" type="button">
+														<svg class="icon icon-like-alt ">
+															<use xlink:href="img/svg/sprite.svg#like-alt"></use>
+														</svg>
+													</button>
+												</div><a href="#"><img class="swiper-lazy" src="#" data-src="img/@2x/category-2.jpg" alt=""/></a>
+											</div>
+											<div class="prod-item__title"><a href="#">Триммер бензиновый  Husqvarna 122C</a>
+											</div>
+											<div class="prod-item__price prod-item__price--old">15 990 ₽
+											</div>
+											<div class="prod-item__price prod-item__price--new">11 490 ₽
+											</div><a class="prod-item__btn" href="#">Купить</a>
+										</div>
+									</div>
+									<div class="sCatalog__slide swiper-slide">
+										<div class="prod-item">
+											<div class="prod-item__img-wrap">
+												<div class="prod-item__badge bg-blue">Бестселлер 
+												</div>
+												<div class="prod-item__labels">
+													<button class="prod-item__label-link active" type="button">
+														<svg class="icon icon-compare ">
+															<use xlink:href="img/svg/sprite.svg#compare"></use>
+														</svg>
+													</button>
+													<button class="prod-item__label-link" type="button">
+														<svg class="icon icon-like-alt ">
+															<use xlink:href="img/svg/sprite.svg#like-alt"></use>
+														</svg>
+													</button>
+												</div><a href="#"><img class="swiper-lazy" src="#" data-src="img/@2x/category-3.jpg" alt=""/></a>
+											</div>
+											<div class="prod-item__title"><a href="#">Триммер бензиновый  Husqvarna 122C</a>
+											</div>
+											<div class="prod-item__price prod-item__price--old">15 990 ₽
+											</div>
+											<div class="prod-item__price prod-item__price--new">11 490 ₽
+											</div><a class="prod-item__btn" href="#">Купить</a>
+										</div>
+									</div>
+									<div class="sCatalog__slide swiper-slide">
+										<div class="prod-item">
+											<div class="prod-item__img-wrap">
+												<div class="prod-item__badge bg-blue">Бестселлер 
+												</div>
+												<div class="prod-item__labels">
+													<button class="prod-item__label-link active" type="button">
+														<svg class="icon icon-compare ">
+															<use xlink:href="img/svg/sprite.svg#compare"></use>
+														</svg>
+													</button>
+													<button class="prod-item__label-link" type="button">
+														<svg class="icon icon-like-alt ">
+															<use xlink:href="img/svg/sprite.svg#like-alt"></use>
+														</svg>
+													</button>
+												</div><a href="#"><img class="swiper-lazy" src="#" data-src="img/@2x/category-4.jpg" alt=""/></a>
+											</div>
+											<div class="prod-item__title"><a href="#">Триммер бензиновый  Husqvarna 122C</a>
+											</div>
+											<div class="prod-item__price prod-item__price--old">15 990 ₽
+											</div>
+											<div class="prod-item__price prod-item__price--new">11 490 ₽
+											</div><a class="prod-item__btn" href="#">Купить</a>
+										</div>
+									</div>
+									<div class="sCatalog__slide swiper-slide">
+										<div class="prod-item">
+											<div class="prod-item__img-wrap">
+												<div class="prod-item__badge bg-blue">Бестселлер 
+												</div>
+												<div class="prod-item__labels">
+													<button class="prod-item__label-link active" type="button">
+														<svg class="icon icon-compare ">
+															<use xlink:href="img/svg/sprite.svg#compare"></use>
+														</svg>
+													</button>
+													<button class="prod-item__label-link" type="button">
+														<svg class="icon icon-like-alt ">
+															<use xlink:href="img/svg/sprite.svg#like-alt"></use>
+														</svg>
+													</button>
+												</div><a href="#"><img class="swiper-lazy" src="#" data-src="img/@2x/category-5.jpg" alt=""/></a>
+											</div>
+											<div class="prod-item__title"><a href="#">Триммер бензиновый  Husqvarna 122C</a>
+											</div>
+											<div class="prod-item__price prod-item__price--old">15 990 ₽
+											</div>
+											<div class="prod-item__price prod-item__price--new">11 490 ₽
+											</div><a class="prod-item__btn" href="#">Купить</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- end sCatalog-->
+				<button class="btn-more btn-more08" type="button"> Показать ещё
+					<svg class="icon icon-chevron-down ">
+						<use xlink:href="img/svg/sprite.svg#chevron-down"></use>
+					</svg>
+				</button>
+			</div>
+			<!-- end sConfirm-->
 			<footer class="footer block-with-lazy">
 				<div class="footer__body">
 					<div class="container">

@@ -8,3 +8,4 @@
 1. <https://pashawol.github.io/0006Husqvarna/public/05-basket.html>
 1. <https://pashawol.github.io/0006Husqvarna/public/06-ordering-individual.html>
 1. <https://pashawol.github.io/0006Husqvarna/public/07-confirm-payment.html>
+1. <https://pashawol.github.io/0006Husqvarna/public/08-confirm.html>
