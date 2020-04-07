@@ -86,6 +86,7 @@
 						color: white;
 					}
 					&__item{
+						min-width: 100%;
 						box-shadow: 0px 8px 24px rgba(39, 58, 96, 0.08);
 						margin-bottom: rem(15px);
 						display: flex;

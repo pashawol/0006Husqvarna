@@ -2,7 +2,7 @@
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
-		<title>06-ordering-individual</title>
+		<title>07-confirm-payment</title>
 		<meta name="description" content="о чем страница">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, shrink-to-fit=no">
@@ -200,192 +200,22 @@
 					<h1>Оформление заказа</h1>
 				</div>
 			</div>
-			<!-- start sOrderingIndividual-->
-			<div class="sOrderingIndividual section" id="sOrderingIndividual">
+			<!-- start sConfirmPayment-->
+			<div class="sConfirmPayment section" id="sConfirmPayment">
 				<div class="container">
 					<div class="row">
-						<div class="col-12 col-lg-7">
-							<div class="sOrderingIndividual__authorization-box">
-								<div class="sOrderingIndividual__headline">Авторизация
-								</div>
-								<p>Если у Вас есть аккаунт авторизуйтесь на сайте. Мы сохраним всю информацию по заказу  и автоматически заполним ваши контактные данные.</p>
-								<button class="btn-more authorization-btn" type="button">Авторизоваться
-								</button>
-							</div>
-							<div class="form-wrap">
-								<form>
-									<input type="hidden" name="example-input-field"/>
-									<input class="order" type="hidden" name="order" value="Заявка  с сайта"/>
-									<input class="utm_source" type="hidden" name="utm_source"/>
-									<input class="utm_term" type="hidden" name="utm_term"/>
-									<input class="utm_medium" type="hidden" name="utm_medium"/>
-									<input class="utm_campaign" type="hidden" name="utm_campaign"/>
-									<div class="form-wrap__headline">Контактные данные
-									</div>
-									<div class="form-wrap__input-wrap form-group">
-										<label><span class="form-wrap__title">ФИО*</span><input class="form-wrap__input form-control" type="text" placeholder="" name="user-name" required="required"/>
-										</label>
-									</div>
-									<!-- +e.input-wrap-->
-									<div class="form-wrap__input-wrap form-group">
-										<label><span class="form-wrap__title">Телефон*</span><input class="form-wrap__input form-control" type="tel" placeholder="" name="phone" required="required"/>
-										</label>
-									</div>
-									<!-- +e.input-wrap-->
-									<div class="form-wrap__input-wrap form-group">
-										<label><span class="form-wrap__title">E-mail*</span><input class="form-wrap__input form-control" type="email" placeholder="" name="email" required="required"/>
-										</label>
-									</div>
-									<!-- +e.input-wrap-->
-									<div class="form-wrap__headline">Способ получения
-									</div>
-									<div class="form-wrap__input-wrap form-group">
-										<label><span class="form-wrap__title">Город*</span><input class="form-wrap__input form-control" type="text" placeholder="Введите название" name="city" required="required"/>
-										</label>
-									</div>
-									<!-- +e.input-wrap-->
-									<label class="custom-input no-my-city"><input class="custom-input__input" type="checkbox" name="no-my-city"/><span class="custom-input__lab"></span><span class="custom-input__text">Моего города нет в списке</span>
-									</label>
-									<div class="form-wrap__delivery-type"><span>Варианты доставки</span>
-										<div class="delivery-radio-group">
-											<label class="custom-radio"><input class="custom-radio__radio-input" type="radio" name="delivery-type" checked="checked"/><span class="custom-radio__item">
-												<svg class="icon icon-car ">
-													<use xlink:href="img/svg/sprite.svg#car"></use>
-												</svg><span class="custom-radio__delivery-type">Курьерская доставка по Москве</span><span class="custom-radio__delivery-price">от 200 до 500 ₽</span><span class="custom-radio__delivery-time">1-2 дня</span></span>
-											</label>
-											<label class="custom-radio"><input class="custom-radio__radio-input" type="radio" name="delivery-type"/><span class="custom-radio__item">
-												<svg class="icon icon-car ">
-													<use xlink:href="img/svg/sprite.svg#car"></use>
-												</svg><span class="custom-radio__delivery-type"> Доставка по России</span><span class="custom-radio__delivery-price">от 500 ₽</span><span class="custom-radio__delivery-time">от 1-2 дней</span></span>
-											</label>
-											<label class="custom-radio"><input class="custom-radio__radio-input" type="radio" name="delivery-type"/><span class="custom-radio__item">
-												<svg class="icon icon-car ">
-													<use xlink:href="img/svg/sprite.svg#car"></use>
-												</svg><span class="custom-radio__delivery-type"> Самовывоз</span><span class="custom-radio__delivery-price">от 250 ₽</span><span class="custom-radio__delivery-time"></span></span>
-											</label>
-										</div>
-									</div>
-									<div class="form-wrap__adress-inp">
-										<div class="form-wrap__input-wrap form-group">
-											<label><span class="form-wrap__title">Адрес*</span><input class="form-wrap__input form-control" type="text" placeholder="" name="user-address" required="required"/>
-											</label>
-										</div>
-										<!-- +e.input-wrap-->
-									</div>
-									<div class="form-wrap__message-inp">
-										<div class="form-wrap__input-wrap form-group">
-											<label><span class="form-wrap__title">Ваше сообщение</span><textarea class="form-wrap__input form-control textarea-message" placeholder="" name="message"></textarea>
-											</label>
-										</div>
-										<!-- +e.input-wrap-->
-									</div>
-									<div class="way-to-pay">
-										<div class="container">
-											<div class="way-to-pay__headline">Способ оплаты
-											</div>
-											<div class="row">
-												<div class="col-12 col-sm-4">
-													<label class="custom-radio"><input class="custom-radio__radio-input" type="radio" name="payment-type"/><span class="custom-radio__item">
-														<svg class="icon icon-coins ">
-															<use xlink:href="img/svg/sprite.svg#coins"></use>
-														</svg><span>Наличный расчет</span></span>
-													</label>
-												</div>
-												<div class="col-12 col-sm-4">
-													<label class="custom-radio"><input class="custom-radio__radio-input" type="radio" name="payment-type" checked="checked"/><span class="custom-radio__item">
-														<svg class="icon icon-card ">
-															<use xlink:href="img/svg/sprite.svg#card"></use>
-														</svg><span>Оплата online</span></span>
-													</label>
-												</div>
-												<div class="col-12 col-sm-4">
-													<label class="custom-radio"><input class="custom-radio__radio-input" type="radio" name="payment-type"/><span class="custom-radio__item">
-														<svg class="icon icon-blank ">
-															<use xlink:href="img/svg/sprite.svg#blank"></use>
-														</svg><span>Оплата по&nbsp;счёту для&nbsp;юр.&nbsp;лиц</span></span>
-													</label>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="form-wrap__sent-btn-cont">
-										<p>Нажимая кнопку &laquo;Оформить заказ&raquo;,  вы&nbsp;соглашаетесь с&nbsp;<a href="#">Политикой конфиденциальности.</a></p>
-										<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="submit" name="submit" value="Отправить"/>
-										</div>
-										<!-- +e.input-wrap-->
-									</div>
-								</form>
-							</div>
+						<div class="sConfirmPayment__order-formed-txt col-sm-auto">Заказ&#160;<br class="d-none d-sm-block"/>оформлен
 						</div>
-						<div class="col col-lg-4 offset-1 d-none d-lg-block">
-							<div class="order-cont">
-								<div class="order-cont__headline">Состав заказа
-									<svg class="icon icon-chevron-down ">
-										<use xlink:href="img/svg/sprite.svg#chevron-down"></use>
-									</svg>
-								</div>
-								<div class="order-cont__prod-items-cont">
-									<div class="order-cont__prors-item"><span>Товары </span><span>99</span>
-									</div>
-									<div class="order-cont__prors-item"><span>Вес</span><span>30 кг</span>
-									</div>
-									<div class="order-cont__prors-item discount"><span>Скидка</span><span>-11 890 ₽</span>
-									</div>
-									<div class="order-cont__prors-item promo"><span>Промокод</span><span>-11 890 ₽</span>
-									</div>
-									<div class="order-cont__prors-item result"><span>ИТОГО</span><span>33 294  ₽</span>
-									</div>
-								</div>
-							</div>
-							<div class="order-cont">
-								<div class="order-cont__headline opened-block">Состав заказа
-									<svg class="icon icon-chevron-down ">
-										<use xlink:href="img/svg/sprite.svg#chevron-down"></use>
-									</svg>
-								</div>
-								<div class="order-cont__items-list-box">
-									<div class="order-cont__items-list-box-item">
-										<div class="order-cont__item-img-descr"><img src="img/@2x/lawn-mover-small.png"/>
-											<p>Бурильная машина Husqvarna DMS 160 AT  с&#160;наклонной стойкой<span>Артикул: 9670982-01 </span><span>Вес: 15 кг</span></p>
-										</div>
-										<div class="order-cont__price-bl">
-											<div class="old-price">15 990 ₽</div>
-											<div class="new-price">11 490 ₽</div>
-										</div>
-										<div class="order-cont__amount-bl">x 2
-										</div>
-									</div>
-									<div class="order-cont__items-list-box-item">
-										<div class="order-cont__item-img-descr"><img src="img/@2x/lawn-mover-small.png"/>
-											<p>Бурильная машина Husqvarna DMS 160 AT  с&#160;наклонной стойкой<span>Артикул: 9670982-01 </span><span>Вес: 15 кг</span></p>
-										</div>
-										<div class="order-cont__price-bl">
-											<div class="old-price">15 990 ₽</div>
-											<div class="new-price">11 490 ₽</div>
-										</div>
-										<div class="order-cont__amount-bl">x 2
-										</div>
-									</div>
-								</div>
-								<div class="order-cont__prod-items-cont">
-									<div class="order-cont__prors-item"><span>Товары </span><span>99</span>
-									</div>
-									<div class="order-cont__prors-item"><span>Вес</span><span>30 кг</span>
-									</div>
-									<div class="order-cont__prors-item discount"><span>Скидка</span><span>-11 890 ₽</span>
-									</div>
-									<div class="order-cont__prors-item promo"><span>Промокод</span><span>-11 890 ₽</span>
-									</div>
-									<div class="order-cont__prors-item result"><span>ИТОГО</span><span>33 294  ₽</span>
-									</div>
-								</div>
-							</div>
+						<div class="sConfirmPayment__order-info col"><span>Вашего заказа:&#160;<strong>№ 121212</strong></span><span>Итоговая сумма заказа:&#160;<strong>11 333 294 ₽</strong></span>
+							<button class="order-bnt">Перейти к оплате</button>
 						</div>
+						<svg class="icon icon-gray-logo ">
+							<use xlink:href="img/svg/sprite.svg#gray-logo"></use>
+						</svg>
 					</div>
 				</div>
 			</div>
-			<!-- end sOrderingIndividual-->
-			<!--+sBasket()-->
+			<!-- end sConfirmPayment-->
 			<footer class="footer block-with-lazy">
 				<div class="footer__body">
 					<div class="container">

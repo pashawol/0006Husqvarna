@@ -312,26 +312,7 @@
 			}
 		}
 	}
-	.order-bnt, .bill-btn{
-		width: 100%;
-		height: rem(50px);
-		outline: none;
-		margin-bottom: rem(10px);
-	}
-	.order-bnt{
-		color: white;
-		background-color: $primary;
-		border: none;
-		margin-top: rem(15px);
-		&:hover{
-			color: white;
-			background-color: $primary;
-			box-shadow: 0px 0px 12px -3px darken($primary, 10);
-		}
-		&:active{
-			box-shadow: 0px 0px 6px -3px darken($primary, 10), inset 0px 0px 12px -5px black;
-		}
-	}
+	//order-btn in base.scss
 	.bill-btn{
 		border: 1px solid $light;
 		background-color: white;
