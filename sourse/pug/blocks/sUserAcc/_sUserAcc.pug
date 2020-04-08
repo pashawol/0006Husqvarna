@@ -1,0 +1,173 @@
+mixin sUserAcc()
+	// start sUserAcc
+	+b.sUserAcc.section#sUserAcc&attributes(attributes)
+		.container
+			.row
+				.col-12.col-lg-2
+					+e.tab-pills-cont
+						+e.pill-item.active(data-tab-for='profile'  data-tab-pill='user-acc') Профиль
+						+e.pill-item(data-tab-for='orders'  data-tab-pill='user-acc') Заказы
+				.col
+					+b.tab-content.active(data-tab-for='profile' data-tab-content='user-acc')
+						.container
+							.row
+								.col-12.col-lg-5
+									+e.headline Учётная запись
+									+e.personal-data-cont
+										+e.personal-data-item
+											span ФИО
+											span Неретин Николай Игоревич
+										+e.personal-data-item
+											span Телефон
+											span +7 (916) 176-05-12
+										+e.personal-data-item
+											span Почта
+											span nicolomelodini@gmail.com
+										+e.personal-data-item
+											span Пароль
+											span •••••••••••••
+									.change-data-link(data-tab-for='account-data'  data-tab-pill='change-data-forms') Изменить
+									+e.headline Адрес доставки
+									+e.personal-data-cont
+										+e.personal-data-item
+											span Город
+											span Москва
+										+e.personal-data-item
+											span Адрес
+											span 1117463, Паустовского, 4
+									.change-data-link(data-tab-for='address-data'  data-tab-pill='change-data-forms') Изменить
+								.col
+									.form-cont-js(data-tab-for='account-data'  data-tab-content='change-data-forms')
+										+form-wrap()(class='change-account-data')
+											+input('', 'text', 'ФИО', 'user-name')(value="Неретин Николай Игоревич")
+											+input('', 'tel', 'Телефон1', 'phone')(value="+79161760512")
+											+input('', 'email', 'Почта')(value="nicolomelodini@gmail.com")
+											+input('', 'password', 'Пароль')(value="1234567890123")
+											+input('', 'password', 'Потвторить пароль')(value="1234567890123")
+											button.order-bnt.save-btn Сохранить
+									.form-cont-js(data-tab-for='address-data'  data-tab-content='change-data-forms')
+										+form-wrap()(class='change-account-data')
+											+input('', 'text', 'Город', 'city')(value="Москва")
+											+input('', 'text', 'Адрес', 'phone')(value="1117463, Паустовского, 4")
+											button.order-bnt.save-btn Сохранить
+					+b.tab-content(data-tab-for='orders' data-tab-content='user-acc')
+						+e.headline Заказы
+						+e.order-list
+							+e.order-item
+								+e.order-item-headline
+									+e.order-item-number Заказ №121212
+									+e.order-item-date 12.03.2020
+									+e.order-item-price 33 294&#160;
+										strong ₽
+									+e.order-item-status.in-process В работе
+									+e.order-item-icon
+										+icon('chevron-down')
+								+orderItemContent()
+							+e.order-item
+								+e.order-item-headline
+									+e.order-item-number Заказ №121201123213
+									+e.order-item-date 02.03.2020
+									+e.order-item-price 111 333 294&#160;
+										strong ₽
+									+e.order-item-status.success Доставлен
+									+e.order-item-icon
+										+icon('chevron-down')
+								+orderItemContent()
+							+e.order-item
+								+e.order-item-headline
+									+e.order-item-number Заказ №121212
+									+e.order-item-date 12.03.2020
+									+e.order-item-price 33 294&#160;
+										strong ₽
+									+e.order-item-status.fee-expect Ожидает оплаты
+									+e.order-item-icon
+										+icon('chevron-down')
+								+orderItemContent()
+	// end sUserAcc
+
+mixin itemInOrder()
+	.item-in-order
+		img(src='img/@2x/trimer-img.png')
+		.name-block Триммер бензиновый Husqvarna 122C
+		.price-block
+			span 15 990 ₽
+			span 11 490 ₽
+mixin orderItemContent()
+	+b.order-item-content
+		+e.content-wrap
+			.container
+				.row
+					.col-12.col-lg-6
+						+b.info-cols
+							+e.headline Информация о заказе
+							+e.info-item
+								span Статус заказа
+								span На доставке
+							+e.info-item
+								span Способ доставки
+								span Почтой России
+							+e.info-item
+								span Стоимость доставки
+								span 500&#160;
+									strong ₽
+							+e.info-item
+								span Адрес доставки
+								span 1117463, Москва, Паустовского, 4
+							+e.info-item
+								span ФИО получателя
+								span Неретин Николай Игоревич
+							+e.info-item
+								span Телефон
+								span +7 (916) 176-05-12
+							+e.info-item
+								span Почта
+								span nicolomelodini@gmail.com
+					.col-12.col-lg-6
+						+b.info-cols.status-info-col
+							+e.headline Статус доставки
+							+e.info-item
+								span 02.03.2020
+								span Доставлен
+							+e.info-item
+								span 02.03.2020
+								span Ждёт в магазине
+							+e.info-item
+								span 02.03.2020
+								span В пути
+							+e.info-item
+								span 02.03.2020
+								span Отправляем
+							+e.info-item
+								span 02.03.2020
+								span Собираем
+					.col-12
+						+b.info-cols.items-in-order
+							+e.headline Товары в заказе
+							.container
+								.row.text-center
+									.col-12.col-md-4
+										+itemInOrder()
+									.col-12.col-md-4
+										+itemInOrder()
+									.col-12.col-md-4
+										+itemInOrder()
+					.col-12.offset-0.col-lg-5.offset-lg-7.col-xl-4.offset-xl-8
+						+b.order-cont
+							+e.headline Ваш заказ
+							+e.prors-item
+								span Товары 
+								span 99
+							+e.prors-item
+								span Вес
+								span 30 кг
+							+e.prors-item.discount
+								span Скидка
+								span -11 890 ₽
+							+e.prors-item.promo
+								span Промокод
+								span -11 890 ₽
+							+e.prors-item.result
+								span ИТОГО
+								span 33 294  ₽
+							button.order-bnt Оформить
+							//+e.promo-inp-cont

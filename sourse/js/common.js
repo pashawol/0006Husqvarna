@@ -121,7 +121,7 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/07-confirm-payment-1440.png);"></div>')
+	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/09-user-acc-1440.png);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -263,17 +263,17 @@ function eventHandler() {
 			}
 		}
 	}
-	CustomTabs2(['props']);
+	CustomTabs2(['props', 'user-acc', 'change-data-forms']);
 	// dropzone
 	$("#props-dz").dropzone({
 		url: "/file/post",
 		dictDefaultMessage: 'Перенесите сюда файл или выберите на компьютере',
 	});
-	/*$(function() {
-		$("div#myDropZone").dropzone({
-			url : "/file-upload"
-		});
-	});*/
+	//toggle user acc js
+	$('.tab-content__order-item-icon').click(function () {
+		//console.log();
+		$(this).closest('.tab-content__order-item').toggleClass('content-visible');
+	});
 	
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 	if (isIE11) {
