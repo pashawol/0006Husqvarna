@@ -1,11 +1,18 @@
 "use strict";
 
+function _createForOfIteratorHelper(o) { if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (o = _unsupportedIterableToArray(o))) { var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var it, normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+Dropzone.autoDiscover = false;
 var $ = jQuery;
 var JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJAX
@@ -112,7 +119,8 @@ function eventHandler() {
 
 	svg4everybody({});
 	JSCCommon.modalCall();
-	JSCCommon.tabscostume('tabs');
+	JSCCommon.tabscostume('tabs'); //JSCCommon.tabscostume('');
+
 	JSCCommon.mobileMenu();
 	JSCCommon.inputMask(); // JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
@@ -209,7 +217,95 @@ function eventHandler() {
 		freeModeMomentum: true,
 		// spaceBetween: 30,
 		watchOverflow: true
+	}); //my tabs
+
+	function CustomTabs2(selectorsArr) {
+		var _iterator = _createForOfIteratorHelper(selectorsArr),
+				_step;
+
+		try {
+			var _loop = function _loop() {
+				var selector = _step.value;
+				var tabPills = document.querySelectorAll('[data-tab-pill="' + selector + '"]');
+				var tabContent = document.querySelectorAll('[data-tab-content="' + selector + '"]');
+
+				if (tabPills != [] && tabContent != []) {
+					var _iterator2 = _createForOfIteratorHelper(tabPills),
+							_step2;
+
+					try {
+						for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+							var tab = _step2.value;
+							tab.addEventListener('click', function () {
+								var thisTab;
+
+								var _iterator3 = _createForOfIteratorHelper(tabPills),
+										_step3;
+
+								try {
+									for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+										var _tab = _step3.value;
+
+										_tab.classList.remove('active');
+									}
+								} catch (err) {
+									_iterator3.e(err);
+								} finally {
+									_iterator3.f();
+								}
+
+								var _iterator4 = _createForOfIteratorHelper(tabContent),
+										_step4;
+
+								try {
+									for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
+										var contItem = _step4.value;
+										contItem.classList.remove('active');
+
+										if (contItem.getAttribute('data-tab-for') === this.getAttribute('data-tab-for')) {
+											thisTab = contItem;
+										}
+									}
+								} catch (err) {
+									_iterator4.e(err);
+								} finally {
+									_iterator4.f();
+								}
+
+								this.classList.add('active');
+								thisTab.classList.add('active');
+							});
+						}
+					} catch (err) {
+						_iterator2.e(err);
+					} finally {
+						_iterator2.f();
+					}
+				}
+			};
+
+			for (_iterator.s(); !(_step = _iterator.n()).done;) {
+				_loop();
+			}
+		} catch (err) {
+			_iterator.e(err);
+		} finally {
+			_iterator.f();
+		}
+	}
+
+	CustomTabs2(['props']); // dropzone
+
+	$("#props-dz").dropzone({
+		url: "/file/post",
+		dictDefaultMessage: 'Перенесите сюда файл или выберите на компьютере'
 	});
+	/*$(function() {
+		$("div#myDropZone").dropzone({
+			url : "/file-upload"
+		});
+	});*/
+
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 
 	if (isIE11) {

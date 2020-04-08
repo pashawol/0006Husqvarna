@@ -1,3 +1,4 @@
+Dropzone.autoDiscover = false;
 const $ = jQuery;
 const JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJAX
@@ -111,6 +112,8 @@ function eventHandler() {
 	JSCCommon.modalCall();
 
 	JSCCommon.tabscostume('tabs');
+
+	//JSCCommon.tabscostume('');
 
 	JSCCommon.mobileMenu();
 
@@ -235,8 +238,43 @@ function eventHandler() {
 		// spaceBetween: 30,
 		watchOverflow: true,
 	});
-
-
+	//my tabs
+	function CustomTabs2(selectorsArr) {
+		for (let selector of selectorsArr){
+			let tabPills = document.querySelectorAll('[data-tab-pill="'+selector+'"]');
+			let tabContent = document.querySelectorAll('[data-tab-content="'+selector+'"]');
+			if (tabPills != [] && tabContent != []){
+				for (let tab of tabPills){
+					tab.addEventListener('click',function () {
+						let thisTab;
+						for (let tab of tabPills){
+							tab.classList.remove('active');
+						}
+						for (let contItem of tabContent){
+							contItem.classList.remove('active');
+							if (contItem.getAttribute('data-tab-for') === this.getAttribute('data-tab-for')){
+								thisTab = contItem;
+							}
+						}
+						this.classList.add('active');
+						thisTab.classList.add('active');
+					});
+				}
+			}
+		}
+	}
+	CustomTabs2(['props']);
+	// dropzone
+	$("#props-dz").dropzone({
+		url: "/file/post",
+		dictDefaultMessage: 'Перенесите сюда файл или выберите на компьютере',
+	});
+	/*$(function() {
+		$("div#myDropZone").dropzone({
+			url : "/file-upload"
+		});
+	});*/
+	
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 	if (isIE11) {
 		$("body").prepend(`<p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p>`)

@@ -1,5 +1,13 @@
 
-<!-- modal--><!DOCTYPE html>
+<!-- modal
+.tabs
+	.tabs__caption
+		.tabs__btn.active
+		.tabs__btn
+	.tabs__wrap
+		.tabs__content.active
+		.tabs__content
+--><!DOCTYPE html>
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
@@ -21,6 +29,8 @@
 		<!-- Custom Browsers Color-->
 		<meta name="theme-color" content="#273a60">
 		<link rel="stylesheet" href="libs/swiper/css/swiper.min.css"/>
+		<!-- dropzone-->
+		<link rel="stylesheet" href="libs/dropzone/min/dropzone.min.css"/>
 		<link rel="stylesheet" href="libs/@fancyapps/fancybox/jquery.fancybox.min.css"/>
 		<link rel="stylesheet" href="css/main.min.css"/>
 	</head>
@@ -392,33 +402,40 @@
 						</div>
 						<!-- +e.input-wrap-->
 						<div class="form-wrap__props-pills">
-							<div class="form-wrap__props-pills-item active">Заполнить реквизиты
+							<div class="form-wrap__props-pills-item active" data-tab-for="fill-props" data-tab-pill="props">Заполнить реквизиты
 							</div>
-							<div class="form-wrap__props-pills-item">Загрузить реквизиты
+							<div class="form-wrap__props-pills-item" data-tab-for="load-props" data-tab-pill="props">Загрузить реквизиты
 							</div>
 						</div>
-						<div class="form-wrap__headline">Реквизиты
+						<div class="fill-props-cont active" data-tab-for="fill-props" data-tab-content="props">
+							<div class="form-wrap__headline">Реквизиты
+							</div>
+							<div class="form-wrap__input-wrap form-group">
+								<label><span class="form-wrap__title">Корр. счёт</span><input class="form-wrap__input form-control" type="text" placeholder="" name="account-1"/>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+							<div class="form-wrap__input-wrap form-group">
+								<label><span class="form-wrap__title">Расч. счёт</span><input class="form-wrap__input form-control" type="text" placeholder="" name="account-2"/>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+							<div class="form-wrap__input-wrap form-group">
+								<label><span class="form-wrap__title">E-mail*</span><input class="form-wrap__input form-control" type="email" placeholder="" name="email" required="required"/>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
 						</div>
-						<div class="form-wrap__input-wrap form-group">
-							<label><span class="form-wrap__title">Корр. счёт</span><input class="form-wrap__input form-control" type="text" placeholder="" name="account-1"/>
-							</label>
-						</div>
-						<!-- +e.input-wrap-->
-						<div class="form-wrap__input-wrap form-group">
-							<label><span class="form-wrap__title">Расч. счёт</span><input class="form-wrap__input form-control" type="text" placeholder="" name="account-2"/>
-							</label>
-						</div>
-						<!-- +e.input-wrap-->
-						<div class="form-wrap__input-wrap form-group">
-							<label><span class="form-wrap__title">E-mail*</span><input class="form-wrap__input form-control" type="email" placeholder="" name="email" required="required"/>
-							</label>
-						</div>
-						<!-- +e.input-wrap-->
-						<div class="form-wrap__headline file-headline">Прикрепить файл
-						</div>
-						<div class="add-file">
-							<label><input class="add-file__input" name="file" type="file"/><span class="add-file__btn"> </span><span class="add-file__text">Перенесите сюда файл или выберите на компьютере</span>
-							</label><span class="add-file__filename"> </span>
+						<div class="load-props-cont" data-tab-for="load-props" data-tab-content="props">
+							<div class="form-wrap__headline file-headline">Прикрепить файл
+							</div>
+							<div class="dropzone" id="props-dz">
+								<div class="fallback">
+									<input name="file" type="file" multiple=""/>
+								</div>
+							</div>
+							<!--+e.headline.file-headline Прикрепить файл-->
+							<!--+add-file('Перенесите сюда файл или выберите на компьютере')-->
 						</div>
 						<button class="order-bnt send-props-btn">Отправить</button>
 						<p class="private-policy-txt">Нажимая кнопку &laquo;Оформить заказ&raquo;,  вы&nbsp;соглашаетесь с&nbsp;<a href="#">Политикой конфиденциальности.</a></p>
@@ -428,6 +445,8 @@
 		</div>
 		<script src="js/lazy.js"></script>
 		<script src="libs/jquery/jquery.min.js"></script>
+		<!-- dropzone-->
+		<script src="libs/dropzone/min/dropzone.min.js"></script>
 		<!-- полифил для picture-->
 		<script src="libs/picturefill/picturefill.min.js"></script>
 		<!-- полифил для object-fit-->

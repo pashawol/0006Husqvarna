@@ -141,6 +141,7 @@ a {
 }
 
 .modal-order-request{
+	overflow: hidden;
 	width: 100%;
 	min-height: 100%;
 	padding: 0 rem(0px) rem(30px) rem(0px) !important;
@@ -168,7 +169,7 @@ a {
 		&__headline{
 			margin-bottom: rem(30px);
 			&.file-headline{
-				margin-top: rem(50px);
+				//margin-top: rem(50px);
 			}
 		}
 		&__title{
@@ -218,19 +219,37 @@ a {
 			text-transform: uppercase;
 			color: $dark;
 			font-size: rem(16px);
+			cursor: pointer;
+			transition: color .2s ease-in-out;
+			&:last-child{
+				text-align: right;
+			}
+
+			min-width: 50%;
 			@include media-breakpoint-up(sm){
 				margin-right: rem(30px);
-				font-size: rem(16px);
+				//font-size: rem(16px);
+				min-width: 0;
 			}
 			&.active{
 				color: $primary;
 			}
 		}
 	}
-	.add-file{
+	.fill-props-cont, .load-props-cont{
+		min-height: rem(300px);
+		border-bottom: 1px solid $light;
+
+		display: none;
+		&.active{
+			display: block;
+		}
+	}
+	/*.add-file{
 		//background-color: red;
 		label{
-			margin-bottom: rem(60px);
+			//margin-bottom: rem(60px);
+			margin-bottom: 0;
 		}
 		input{
 			display: none;
@@ -243,9 +262,41 @@ a {
 			align-items: center;
 			justify-content: center;
 		}
-		border-bottom: 1px solid $light;
+
+	}*/
+	.dropzone{
+		border: 1px dashed $light;
+		min-height: rem(100px);
+		padding: 0;
+		text-align: center;
 	}
+	.dz-button{
+		color: $body-color;
+		font-size: rem(16px);
+		line-height: rem(19px);
+		font-weight: 300;
+	}
+	/*.dz-preview{
+		//height: rem(80px);
+		//width: rem(120px);
+		//margin: rem(10px);
+		.dz-image{
+			//width: inherit;
+			//height: inherit;
+		}
+		.dz-details{
+			//padding: rem(5px);
+		}
+		.dz-error-mark{
+			//display: none !important;
+		}
+		.dz-success-mark{
+			//display: none !important;
+		}
+	}*/
+
 	.send-props-btn{
+		margin-top: rem(30px);
 		@include media-breakpoint-up(sm){
 			max-width: rem(320px);
 		}
@@ -261,7 +312,14 @@ a {
 		margin-right: auto;
 	}
 	.fancybox-button.fancybox-close-small{
-		display: none;
+		display: block;
+		//background-color: red;
+		width: 100%;
+		height: rem(60px);
+		opacity: 0;
+		@include media-breakpoint-up(md){
+			display: none;
+		}
 	}
 }
 //$body-color
