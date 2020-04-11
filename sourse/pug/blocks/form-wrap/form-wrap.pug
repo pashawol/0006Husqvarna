@@ -35,9 +35,9 @@ mixin select(label,pl,...items)
 						option()= item
 
 //- wrapper for form
-mixin form-wrap()
+mixin form-wrap(act)
 	+b.form-wrap&attributes(attributes)
-		form
+		form(action= act)
 			input(type='hidden',  name='example-input-field')
 			input(type='hidden', class="order", name='order', value=`Заявка  с сайта`) 
 			input(type="hidden" class='utm_source' name='utm_source')
@@ -66,6 +66,7 @@ mixin in-c06(typ="checkbox", text, name= typ )
 		else
 			+e.SPAN.text= text
 
+
 mixin in-r(name='radio-btn-group', checked=false)
 	+b.LABEL.custom-radio&attributes(attributes)
 		if checked
@@ -75,12 +76,12 @@ mixin in-r(name='radio-btn-group', checked=false)
 			+e.INPUT.radio-input(type="radio", name = name)
 			block
 
-mixin add-file(n)
+mixin add-file(spantxt='Прикрепить резюме')
 	+b.add-file
 		label
 			+e.INPUT.input(name='file', type='file')
 			+e.SPAN.btn 
-			+e.SPAN.text   Прикрепить резюме
+			+e.SPAN.text= spantxt
 		+e.SPAN.filename 
 
 

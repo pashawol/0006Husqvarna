@@ -11,35 +11,35 @@ mixin sOrderingIndividual()
 							| Авторизоваться
 					+form-wrap()
 						+e.headline Контактные данные
-						+input('', 'text', 'ФИО*', 'user-name')(require)
-						+input('', 'tel', 'Телефон*', 'phone')(require)
-						+input('', 'email', 'E-mail*')(require)
+						+input('', 'text', 'ФИО*', 'user-name')(required)
+						+input('', 'tel', 'Телефон*', 'phone')(required)
+						+input('', 'email', 'E-mail*')(required)
 						+e.headline Способ получения
-						+input('Введите название', 'text', 'Город*', 'city')(require)
+						+input('Введите название', 'text', 'Город*', 'city')(required)
 						+in-c06("checkbox", 'Моего города нет в списке', 'no-my-city')(class="no-my-city")
 						+e.delivery-type
 							span Варианты доставки
 							.delivery-radio-group
 								+in-r('delivery-type', true)
-									+e.DIV.item
+									+e.SPAN.item
 										+icon('car')
 										+e.delivery-type Курьерская доставка по Москве
 										+e.delivery-price от 200 до 500 ₽
 										+e.delivery-time 1-2 дня
 								+in-r('delivery-type')
-									+e.DIV.item
-										+icon('car')
+									+e.SPAN.item
+										+icon('plane')
 										+e.delivery-type  Доставка по России
 										+e.delivery-price от 500 ₽
 										+e.delivery-time от 1-2 дней
 								+in-r('delivery-type')
-									+e.DIV.item
-										+icon('car')
+									+e.SPAN.item
+										+icon('house')
 										+e.delivery-type  Самовывоз
 										+e.delivery-price от 250 ₽
 										+e.delivery-time
 						+e.adress-inp
-							+input('', 'text', 'Адрес*', 'user-address')(require)
+							+input('', 'text', 'Адрес*', 'user-address')(required)
 						+e.message-inp
 							+input('', 'textarea', 'Ваше сообщение', 'message')(class='textarea-message')
 						+b.way-to-pay
@@ -48,24 +48,24 @@ mixin sOrderingIndividual()
 								.row
 									.col-12.col-sm-4
 										+in-r('payment-type')
-											+e.DIV.item
+											+e.SPAN.item
 												+icon('coins')
 												span Наличный расчет
 									.col-12.col-sm-4
 										+in-r('payment-type', true)
-											+e.DIV.item
+											+e.SPAN.item
 												+icon('card')
 												span Оплата online
 									.col-12.col-sm-4
 										+in-r('payment-type')
-											+e.DIV.item
+											+e.SPAN.item
 												+icon('blank')
 												span Оплата по&nbsp;счёту для&nbsp;юр.&nbsp;лиц
 						+e.sent-btn-cont
 							p Нажимая кнопку &laquo;Оформить заказ&raquo;,  вы&nbsp;соглашаетесь с&nbsp;
 								a(href='#') Политикой конфиденциальности.
-							+input('', 'submit')(value="Отправить")
-				.col.col-lg-4.offset-1.d-none.d-lg-block
+							+input(undefined, 'submit')(value="Отправить")
+				.col.col-lg-4.offset-lg-0.offset-xl-1.d-none.d-lg-block
 					+b.order-cont
 						+e.headline Состав заказа
 							+icon('chevron-down')
@@ -91,7 +91,7 @@ mixin sOrderingIndividual()
 						+e.items-list-box
 							+e.items-list-box-item
 								+e.item-img-descr
-									img(src="img/@2x/lawn-mover-small.png")
+									img(src="img/@2x/lawn-mover-small.png" alt="lawn-mover")
 									p Бурильная машина Husqvarna DMS 160 AT  с&#160;наклонной стойкой
 										span Артикул: 9670982-01 
 										span Вес: 15 кг
@@ -102,7 +102,7 @@ mixin sOrderingIndividual()
 									|x 2
 							+e.items-list-box-item
 								+e.item-img-descr
-									img(src="img/@2x/lawn-mover-small.png")
+									img(src="img/@2x/lawn-mover-small.png" alt="lawn-mover")
 									p Бурильная машина Husqvarna DMS 160 AT  с&#160;наклонной стойкой
 										span Артикул: 9670982-01 
 										span Вес: 15 кг

@@ -1,11 +1,18 @@
 "use strict";
 
+function _createForOfIteratorHelper(o) { if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (o = _unsupportedIterableToArray(o))) { var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var it, normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+Dropzone.autoDiscover = false;
 var $ = jQuery;
 var JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJAX
@@ -100,7 +107,82 @@ var JSCCommon = {
 	inputMask: function inputMask() {
 		// mask for input
 		$('input[type="tel"]').attr("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}").inputmask("+9(999)999-99-99");
-	} // /inputMask
+	},
+	//taken from good planet
+	customRange: function customRange() {
+		$(".range-wrap").each(function () {
+			var _this = $(this);
+
+			var $d3 = _this.find(".slider-js");
+
+			var slider = $d3.ionRangeSlider({
+				skin: "round",
+				type: "double",
+				grid: false,
+				grid_snap: false,
+				hide_min_max: true,
+				hide_from_to: true,
+				onStart: function onStart(data) {
+					_this.find('.minus').val(data.from);
+
+					_this.find('.plus').val(data.to);
+				},
+				onChange: function onChange(data) {
+					_this.find('.minus').val(data.from);
+
+					_this.find('.plus').val(data.to);
+				},
+				onFinish: function onFinish(data) {
+					_this.find('.minus').val(data.from);
+
+					_this.find('.plus').val(data.to);
+				},
+				onUpdate: function onUpdate(data) {
+					_this.find('.minus').val(data.from);
+
+					_this.find('.plus').val(data.to);
+				}
+			});
+			var $d3_instance = slider.data("ionRangeSlider");
+			$(this).on('change  input  cut  copy  paste', '.minus', function () {
+				var th = $(this);
+				var data = th.val();
+				var min = +data; // th.val(data + ' т')
+
+				console.log(1);
+				$d3_instance.update({
+					from: min
+				});
+			});
+			$(this).on('change  input  cut  copy  paste', '.plus', function () {
+				var th = $(this);
+				var data = th.val();
+				var max = +data; //max => new val of max inp
+				//min => value of the min inp
+
+				var min = Number(document.querySelector('.range-result.range-result--minus.minus').value);
+
+				if (min >= max) {
+					min = 0;
+					$d3_instance.update({
+						from: min,
+						to: max
+					});
+				} else {
+					$d3_instance.update({
+						to: max
+					});
+				}
+			}); // $d3.on("change", function () {
+			// 	var $inp = $(this);
+			// 	var from = $inp.prop("value"); // reading input value
+			// 	var from2 = $inp.data("from"); // reading input data-from attribute
+			// 	_this.find('range-result--minus').val(from); // FROM value
+			// 	_this.find('range-result--plus').val(from); // FROM value
+			// });
+		});
+	} //taken from good planet
+	// /inputMask
 
 };
 
@@ -113,11 +195,12 @@ function eventHandler() {
 	svg4everybody({});
 	JSCCommon.modalCall();
 	JSCCommon.tabscostume('tabs');
+	JSCCommon.customRange();
 	JSCCommon.mobileMenu();
 	JSCCommon.inputMask(); // JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
 
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/06-ordering-individual-1440.png);"></div>'); // /добавляет подложку для pixel perfect
+	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/Catalog-List-1440.png);"></div>'); // /добавляет подложку для pixel perfect
 	// const url = document.location.href;
 	// $.each($(".top-nav__nav a "), function() {
 	// 	if (this.href == url) {
@@ -209,7 +292,149 @@ function eventHandler() {
 		freeModeMomentum: true,
 		// spaceBetween: 30,
 		watchOverflow: true
+	}); //my tabs
+
+	function CustomTabs2(selectorsArr) {
+		var _iterator = _createForOfIteratorHelper(selectorsArr),
+				_step;
+
+		try {
+			var _loop = function _loop() {
+				var selector = _step.value;
+				var tabPills = document.querySelectorAll('[data-tab-pill="' + selector + '"]');
+				var tabContent = document.querySelectorAll('[data-tab-content="' + selector + '"]');
+
+				if (tabPills != [] && tabContent != []) {
+					var _iterator2 = _createForOfIteratorHelper(tabPills),
+							_step2;
+
+					try {
+						for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+							var tab = _step2.value;
+							tab.addEventListener('click', function () {
+								var thisTab;
+
+								var _iterator3 = _createForOfIteratorHelper(tabPills),
+										_step3;
+
+								try {
+									for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+										var _tab = _step3.value;
+
+										_tab.classList.remove('active');
+									}
+								} catch (err) {
+									_iterator3.e(err);
+								} finally {
+									_iterator3.f();
+								}
+
+								var _iterator4 = _createForOfIteratorHelper(tabContent),
+										_step4;
+
+								try {
+									for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
+										var contItem = _step4.value;
+										contItem.classList.remove('active');
+
+										if (contItem.getAttribute('data-tab-for') === this.getAttribute('data-tab-for')) {
+											thisTab = contItem;
+										}
+									}
+								} catch (err) {
+									_iterator4.e(err);
+								} finally {
+									_iterator4.f();
+								}
+
+								this.classList.add('active');
+								thisTab.classList.add('active');
+							});
+						}
+					} catch (err) {
+						_iterator2.e(err);
+					} finally {
+						_iterator2.f();
+					}
+				}
+			};
+
+			for (_iterator.s(); !(_step = _iterator.n()).done;) {
+				_loop();
+			}
+		} catch (err) {
+			_iterator.e(err);
+		} finally {
+			_iterator.f();
+		}
+	}
+
+	CustomTabs2(['props', 'user-acc', 'change-data-forms', 'catalog-goods-display']); // dropzone
+
+	$("#props-dz").dropzone({
+		url: "/file/post",
+		dictDefaultMessage: 'Перенесите сюда файл или выберите на компьютере'
+	}); //toggle user acc js
+
+	$('.tab-content__order-item-icon').click(function () {
+		//console.log();
+		$(this).closest('.tab-content__order-item').toggleClass('content-visible');
+	}); //sCatalogPage
+
+	$('.sub-list-headline').click(function () {
+		$(this).closest('.has-sub-list').toggleClass('active');
+	}); //customs select
+
+	$('.sort-price-btn').click(function () {
+		this.classList.toggle('collapsed');
+
+		if (this.classList.contains('collapsed')) {
+			window.setTimeout(function () {
+				document.body.addEventListener('click', closeCustomSelect);
+			}, 100);
+		} else {
+			document.body.removeEventListener('click', closeCustomSelect);
+		}
 	});
+
+	function closeCustomSelect() {
+		document.body.removeEventListener('click', closeCustomSelect);
+		$('.sort-price-btn').removeClass('collapsed');
+	}
+
+	;
+	$('.custom-select li').click(function () {
+		document.querySelector('.hidden-input-custom-select').setAttribute('value', this.innerHTML);
+		document.querySelector('.sort-price-btn span').innerHTML = this.innerHTML;
+	}); //
+
+	$('.toggle-chars-goods-table-js').click(function () {
+		$(this).closest('.table-sample-item').toggleClass('content-visiable');
+	}); //filter custom pop-up
+
+	$('.filter-bar-btns .filter-bar-btns__filter-btn').click(function () {
+		$('body').addClass('stop-scrolling');
+		$('.filter-bl').addClass('filter-visiable');
+	});
+	$('.filter-bl__back-btn').click(function () {
+		closeFilterPopUp();
+	});
+
+	function closeFilterPopUp() {
+		$('body').removeClass('stop-scrolling');
+		$('.filter-bl').removeClass('filter-visiable');
+	}
+
+	function closeFiltersOnResize() {
+		if (window.matchMedia("(min-width: 992px)").matches) {
+			closeFilterPopUp();
+		}
+	}
+
+	window.addEventListener('resize', closeFiltersOnResize, {
+		passive: true
+	}); //
+
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 
 	if (isIE11) {

@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+<!-- modal--><!DOCTYPE html>
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
@@ -20,6 +21,10 @@
 		<!-- Custom Browsers Color-->
 		<meta name="theme-color" content="#273a60">
 		<link rel="stylesheet" href="libs/swiper/css/swiper.min.css"/>
+		<!-- dropzone-->
+		<link rel="stylesheet" href="libs/dropzone/min/dropzone.min.css"/>
+		<!--rangle slider css-->
+		<link rel="stylesheet" href="libs/ion-rangeslider/css/ion.rangeSlider.min.css"/>
 		<link rel="stylesheet" href="libs/@fancyapps/fancybox/jquery.fancybox.min.css"/>
 		<link rel="stylesheet" href="css/main.min.css"/>
 	</head>
@@ -321,7 +326,7 @@
 			</section>
 			<!-- end sCategory-->
 			<!-- start sCatalog-->
-			<section class="sCatalog section pb-0" id="sCatalog">
+			<div class="sCatalog section pb-0" id="sCatalog">
 				<div class="container">
 					<div class="section-title">
 						<div class="row">
@@ -470,7 +475,7 @@
 						</div>
 					</div>
 				</div>
-			</section>
+			</div>
 			<!-- end sCatalog-->
 			<!-- start sCatalog-->
 			<section class="sCatalog sCatalog--new pb-0 section" id="sCatalog">
@@ -787,10 +792,85 @@
 				</form>
 			</div>
 			<!-- #modal-call-->
+			<div class="form-wrap modal-order-request" id="modal-order-request">
+				<form>
+					<input type="hidden" name="example-input-field"/>
+					<input class="order" type="hidden" name="order" value="Заявка  с сайта"/>
+					<input class="utm_source" type="hidden" name="utm_source"/>
+					<input class="utm_term" type="hidden" name="utm_term"/>
+					<input class="utm_medium" type="hidden" name="utm_medium"/>
+					<input class="utm_campaign" type="hidden" name="utm_campaign"/>
+					<div class="form-wrap__close-bl d-block d-md-none"><a href="#modal-order-request">
+							<svg class="icon icon-angle-left ">
+								<use xlink:href="img/svg/sprite.svg#angle-left"></use>
+							</svg><span>назад</span></a>
+					</div>
+					<div class="form-wrap__content">
+						<div class="form-wrap__big-headline">Запрос счёта
+						</div>
+						<div class="form-wrap__headline">Контактные данные
+						</div>
+						<div class="form-wrap__input-wrap form-group">
+							<label><span class="form-wrap__title">ФИО*</span><input class="form-wrap__input form-control" type="text" placeholder="" name="user-name" required="required"/>
+							</label>
+						</div>
+						<!-- +e.input-wrap-->
+						<div class="form-wrap__input-wrap form-group">
+							<label><span class="form-wrap__title">Телефон*</span><input class="form-wrap__input form-control" type="tel" placeholder="" name="phone" required="required"/>
+							</label>
+						</div>
+						<!-- +e.input-wrap-->
+						<div class="form-wrap__input-wrap form-group">
+							<label><span class="form-wrap__title">E-mail*</span><input class="form-wrap__input form-control" type="email" placeholder="" name="email" required="required"/>
+							</label>
+						</div>
+						<!-- +e.input-wrap-->
+						<div class="form-wrap__props-pills">
+							<div class="form-wrap__props-pills-item active" data-tab-for="fill-props" data-tab-pill="props">Заполнить реквизиты
+							</div>
+							<div class="form-wrap__props-pills-item" data-tab-for="load-props" data-tab-pill="props">Загрузить реквизиты
+							</div>
+						</div>
+						<div class="fill-props-cont active" data-tab-for="fill-props" data-tab-content="props">
+							<div class="form-wrap__headline">Реквизиты
+							</div>
+							<div class="form-wrap__input-wrap form-group">
+								<label><span class="form-wrap__title">Корр. счёт</span><input class="form-wrap__input form-control" type="text" placeholder="" name="account-1"/>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+							<div class="form-wrap__input-wrap form-group">
+								<label><span class="form-wrap__title">Расч. счёт</span><input class="form-wrap__input form-control" type="text" placeholder="" name="account-2"/>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+							<div class="form-wrap__input-wrap form-group">
+								<label><span class="form-wrap__title">E-mail*</span><input class="form-wrap__input form-control" type="email" placeholder="" name="email" required="required"/>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+						</div>
+						<div class="load-props-cont" data-tab-for="load-props" data-tab-content="props">
+							<div class="form-wrap__headline file-headline">Прикрепить файл
+							</div>
+							<div class="dropzone" id="props-dz">
+								<div class="fallback">
+									<input name="file" type="file" multiple=""/>
+								</div>
+							</div>
+							<!--+e.headline.file-headline Прикрепить файл-->
+							<!--+add-file('Перенесите сюда файл или выберите на компьютере')-->
+						</div>
+						<button class="order-bnt send-props-btn">Отправить</button>
+						<p class="private-policy-txt">Нажимая кнопку &laquo;Оформить заказ&raquo;,  вы&nbsp;соглашаетесь с&nbsp;<a href="#">Политикой конфиденциальности.</a></p>
+					</div>
+				</form>
+			</div>
 		</div>
-		<!-- modal-->
 		<script src="js/lazy.js"></script>
 		<script src="libs/jquery/jquery.min.js"></script>
+		<!-- dropzone-->
+		<script src="libs/dropzone/min/dropzone.min.js"></script>
 		<!-- полифил для picture-->
 		<script src="libs/picturefill/picturefill.min.js"></script>
 		<!-- полифил для object-fit-->
@@ -805,6 +885,8 @@
 		<script src="libs/svg4everybody/svg4everybody.min.js"></script>
 		<!-- /for svg libs-->
 		<script src="libs/inputmask/jquery.inputmask.min.js"></script>
+		<!--range slider js-->
+		<script src="libs/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
 		<script src="js/common.js"></script>
 	</body>
 </html>

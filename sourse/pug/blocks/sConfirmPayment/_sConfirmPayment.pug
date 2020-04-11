@@ -1,0 +1,19 @@
+mixin sConfirmPayment()
+	// start sConfirmPayment
+	+b.sConfirmPayment.section#sConfirmPayment&attributes(attributes)
+		.container
+			.row
+				+e.order-formed-txt.col-sm-auto
+					|Заказ&#160;
+					br.d-none.d-sm-block
+					|оформлен
+				+e.order-info.col
+					span Номер Вашего заказа:&#160;
+						strong № 121212
+					span Итоговая сумма заказа:&#160;
+						strong 11 333 294 ₽
+					button.order-bnt Перейти к оплате
+				+icon('gray-logo')
+
+
+	// end sConfirmPayment
