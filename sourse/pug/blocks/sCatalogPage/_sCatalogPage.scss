@@ -55,7 +55,7 @@
 					color: $dark;
 					transition: color .3s;
 				}
-				svg{
+				.icon{
 					margin-left: auto;
 					color: transparent;
 					stroke: $dark;
@@ -86,9 +86,9 @@
 					span{
 						color: $primary;
 					}
-					svg{
+					.icon{
 						stroke: $primary;
-						transform: rotate(180deg);
+						transform: rotateX(180deg);
 					}
 				}
 				.sub-list{
@@ -136,15 +136,16 @@ body{
 		display: block;
 		position: fixed;
 		overflow-y: scroll;
-		top: -105vh;
+		top: 0;
 		left: 0;
 		width: 100vw;
 		height: 100vh;
 		background-color: white;
 		z-index: 10000;
-		transition: top .4s ease-in-out;
+		transform: translateX(-100%);
+		@include mt(); // transition: all .4s ease-in-out;
 		&.filter-visiable{
-			top: 0;
+			transform: translateX(0);
 		}
 	}
 	//pop up controll panel
@@ -746,18 +747,21 @@ body{
 		justify-content: space-between;
 	}
 	&__display-filter-icon{
+
 		width: rem(30px);
 		height: rem(30px);
 		border: 1px solid $light;
-		display: flex;
 		cursor: pointer;
+		outline: none !important;
+		background-color: white;
+		padding: 0;
 		svg{
-			//display: none;
-			margin: auto;
+			display: inline-block;
+			line-height: rem(30px);
 			font-size: rem(20px);
 			color: $primary;
 		}
-		&.active{
+		&.active,{
 			background-color: $primary;
 			border: 1px solid $primary;
 			svg{
@@ -813,7 +817,7 @@ body{
 			}
 		}
 		//action, bestseller, new
-		&.bestseller-item, &.new-item, &.action-item{
+		&.white-colored-item{
 			.prod-item{
 				&__mod-txt{
 					color: white;
@@ -850,22 +854,6 @@ body{
 				}
 				&__price--new{
 					color: white !important;
-				}
-			}
-		}
-		&.bestseller-item{
-			background-color: $blue;
-		}
-		&.new-item{
-			background-color: $green;
-		}
-		&.action-item{
-			background-color: $orange;
-			.prod-item__btn{
-				background-color: $green;
-				transition: background-color .3s ease-in-out;
-				&:hover{
-					background-color: darken($green, 1);
 				}
 			}
 		}
@@ -949,6 +937,8 @@ body{
 			.char-block{
 				padding: rem(30px) rem(15px);
 				//position: relative;
+				display: flex;
+				flex-direction: column;
 
 				&__headline{
 					font-weight: 400;
@@ -987,10 +977,22 @@ body{
 				}
 				&__show-more-btn{
 					cursor: pointer;
-					//background-color: red;
-					position: absolute;
-					bottom: rem(30px);
+					display: block;
+					margin-top: auto;
 					left: auto;
+					transition: opacity .2s;
+					&.in-bottom{
+						left: rem(35px);
+						bottom: rem(35px);
+						position: absolute;
+						margin-top: 0;
+						svg{
+							transform: rotate(180deg);
+						}
+					}
+					&.opacity0{
+						opacity: 0;
+					}
 					span{
 						font-size: rem(16px);
 						font-weight: 300;
@@ -1101,20 +1103,17 @@ body{
 						text-decoration: none;
 						text-align: center;
 					}
-					//split
-					background-color: $primary;
-
-					transition: background-color .3s;
+					@include mt();
 					&:hover{
-						background-color: darken($primary, 5);
+						box-shadow: 0 0 15px -5px black;
 					}
 					&:active{
-						background-color: darken($primary, 10);
+						box-shadow: inset 0 0 15px -3px black;
 					}
 				}
 			}
 		}
-		&.bestseller-item, &.new-item, &.action-item{
+		&.white-colored-item{
 			.table-sample-item__header{
 				.img-block{
 					&__img-block-content{
@@ -1176,53 +1175,6 @@ body{
 
 			}
 		}
-		&.bestseller-item{
-			background-color: $blue;
-			.table-sample-item__header{
-				.img-block{
-					&__img-block-content{
-						span{
-							background: rgba($blue, 0.8);
-						}
-					}
-				}
-			}
-		}
-		&.new-item{
-			background-color: $green;
-			.table-sample-item__header{
-				.img-block{
-					&__img-block-content{
-						span{
-							background: rgba($green, 0.8);
-						}
-					}
-				}
-			}
-		}
-		&.action-item{
-			background-color: $orange;
-			.table-sample-item__header{
-				.img-block{
-					&__img-block-content{
-						span{
-							background: rgba($orange, 0.8);
-						}
-					}
-				}
-				.buy-block{
-					&__buy-btn{
-						background-color: $green;
-						&:hover{
-							background-color: darken($green, 2);
-						}
-						&:active{
-							background-color: darken($green, 4);
-						}
-					}
-				}
-			}
-		}
 		//description-part
 		.description-of-table-items{
 			display: none;
@@ -1250,7 +1202,7 @@ body{
 				background-color: $light;
 			}
 		}
-		&.bestseller-item, &.new-item, &.action-item{
+		&.white-colored-item{
 			.description-of-table-items{
 				&__row-item:nth-child(2n + 1){
 					background-color: white;
@@ -1263,12 +1215,15 @@ body{
 		&.content-visiable{
 			.table-sample-item__header{
 				.char-block{
-					&__show-more-btn{
-						left: rem(35px);
-						svg{
-							transform: rotate(180deg);
-						}
-					}
+					//&__show-more-btn{
+					//						left: rem(35px);
+					//						bottom: rem(35px);
+					//						position: absolute;
+					//						margin-top: 0;
+					//						svg{
+					//							transform: rotate(180deg);
+					//						}
+					//					}
 				}
 			}
 			.description-of-table-items{
@@ -1277,6 +1232,7 @@ body{
 		}
 	}
 }
+
 
 //txt after pugin
 .bottom-txt-block{
