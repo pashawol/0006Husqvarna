@@ -107,7 +107,82 @@ var JSCCommon = {
 	inputMask: function inputMask() {
 		// mask for input
 		$('input[type="tel"]').attr("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}").inputmask("+9(999)999-99-99");
-	} // /inputMask
+	},
+	//taken from good planet
+	customRange: function customRange() {
+		$(".range-wrap").each(function () {
+			var _this = $(this);
+
+			var $d3 = _this.find(".slider-js");
+
+			var slider = $d3.ionRangeSlider({
+				skin: "round",
+				type: "double",
+				grid: false,
+				grid_snap: false,
+				hide_min_max: true,
+				hide_from_to: true,
+				onStart: function onStart(data) {
+					_this.find('.minus').val(data.from);
+
+					_this.find('.plus').val(data.to);
+				},
+				onChange: function onChange(data) {
+					_this.find('.minus').val(data.from);
+
+					_this.find('.plus').val(data.to);
+				},
+				onFinish: function onFinish(data) {
+					_this.find('.minus').val(data.from);
+
+					_this.find('.plus').val(data.to);
+				},
+				onUpdate: function onUpdate(data) {
+					_this.find('.minus').val(data.from);
+
+					_this.find('.plus').val(data.to);
+				}
+			});
+			var $d3_instance = slider.data("ionRangeSlider");
+			$(this).on('change  input  cut  copy  paste', '.minus', function () {
+				var th = $(this);
+				var data = th.val();
+				var min = +data; // th.val(data + ' т')
+
+				console.log(1);
+				$d3_instance.update({
+					from: min
+				});
+			});
+			$(this).on('change  input  cut  copy  paste', '.plus', function () {
+				var th = $(this);
+				var data = th.val();
+				var max = +data; //max => new val of max inp
+				//min => value of the min inp
+
+				var min = Number(document.querySelector('.range-result.range-result--minus.minus').value);
+
+				if (min >= max) {
+					min = 0;
+					$d3_instance.update({
+						from: min,
+						to: max
+					});
+				} else {
+					$d3_instance.update({
+						to: max
+					});
+				}
+			}); // $d3.on("change", function () {
+			// 	var $inp = $(this);
+			// 	var from = $inp.prop("value"); // reading input value
+			// 	var from2 = $inp.data("from"); // reading input data-from attribute
+			// 	_this.find('range-result--minus').val(from); // FROM value
+			// 	_this.find('range-result--plus').val(from); // FROM value
+			// });
+		});
+	} //taken from good planet
+	// /inputMask
 
 };
 
@@ -119,13 +194,13 @@ function eventHandler() {
 
 	svg4everybody({});
 	JSCCommon.modalCall();
-	JSCCommon.tabscostume('tabs'); //JSCCommon.tabscostume('');
-
+	JSCCommon.tabscostume('tabs');
+	JSCCommon.customRange();
 	JSCCommon.mobileMenu();
 	JSCCommon.inputMask(); // JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
 
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/09-user-acc-1440.png);"></div>'); // /добавляет подложку для pixel perfect
+	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/Catalog-List-1440.png);"></div>'); // /добавляет подложку для pixel perfect
 	// const url = document.location.href;
 	// $.each($(".top-nav__nav a "), function() {
 	// 	if (this.href == url) {
@@ -294,7 +369,7 @@ function eventHandler() {
 		}
 	}
 
-	CustomTabs2(['props', 'user-acc', 'change-data-forms']); // dropzone
+	CustomTabs2(['props', 'user-acc', 'change-data-forms', 'catalog-goods-display']); // dropzone
 
 	$("#props-dz").dropzone({
 		url: "/file/post",
@@ -304,7 +379,62 @@ function eventHandler() {
 	$('.tab-content__order-item-icon').click(function () {
 		//console.log();
 		$(this).closest('.tab-content__order-item').toggleClass('content-visible');
+	}); //sCatalogPage
+
+	$('.sub-list-headline').click(function () {
+		$(this).closest('.has-sub-list').toggleClass('active');
+	}); //customs select
+
+	$('.sort-price-btn').click(function () {
+		this.classList.toggle('collapsed');
+
+		if (this.classList.contains('collapsed')) {
+			window.setTimeout(function () {
+				document.body.addEventListener('click', closeCustomSelect);
+			}, 100);
+		} else {
+			document.body.removeEventListener('click', closeCustomSelect);
+		}
 	});
+
+	function closeCustomSelect() {
+		document.body.removeEventListener('click', closeCustomSelect);
+		$('.sort-price-btn').removeClass('collapsed');
+	}
+
+	;
+	$('.custom-select li').click(function () {
+		document.querySelector('.hidden-input-custom-select').setAttribute('value', this.innerHTML);
+		document.querySelector('.sort-price-btn span').innerHTML = this.innerHTML;
+	}); //
+
+	$('.toggle-chars-goods-table-js').click(function () {
+		$(this).closest('.table-sample-item').toggleClass('content-visiable');
+	}); //filter custom pop-up
+
+	$('.filter-bar-btns .filter-bar-btns__filter-btn').click(function () {
+		$('body').addClass('stop-scrolling');
+		$('.filter-bl').addClass('filter-visiable');
+	});
+	$('.filter-bl__back-btn').click(function () {
+		closeFilterPopUp();
+	});
+
+	function closeFilterPopUp() {
+		$('body').removeClass('stop-scrolling');
+		$('.filter-bl').removeClass('filter-visiable');
+	}
+
+	function closeFiltersOnResize() {
+		if (window.matchMedia("(min-width: 992px)").matches) {
+			closeFilterPopUp();
+		}
+	}
+
+	window.addEventListener('resize', closeFiltersOnResize, {
+		passive: true
+	}); //
+
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 
 	if (isIE11) {
