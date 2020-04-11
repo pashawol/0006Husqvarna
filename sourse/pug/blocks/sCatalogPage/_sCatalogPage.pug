@@ -106,9 +106,9 @@ mixin sCatalogPage()
 								li Цена по возрастанию3
 							input.hidden-input-custom-select(type="text" value='Цена по возрастанию')
 						+e.display-filter-icons-cont.d-none.d-md-flex
-							+e.display-filter-icon.active(data-tab-for='square-box' data-tab-pill='catalog-goods-display')
+							+e.BUTTON.display-filter-icon.active(data-tab-for='square-box' data-tab-pill='catalog-goods-display')
 								+icon('9-dots-icon')
-							+e.display-filter-icon(data-tab-for='table-box' data-tab-pill='catalog-goods-display')
+							+e.BUTTON.display-filter-icon(data-tab-for='table-box' data-tab-pill='catalog-goods-display')
 								+icon('6-dots-icon')
 					+catalogGoodsSquareItems()
 					+catalogGoodsTableItems()
@@ -131,20 +131,21 @@ mixin filterBtnsBar()
 			+icon('cross')
 mixin catalogGoodsTableItems()
 	+b.table-items-box(data-tab-for='table-box' data-tab-content='catalog-goods-display')
-		+item-prod-table-sample('category-6-png.png')(class="content-visiable")
-		+item-prod-table-sample('category-6-png.png', 'star-bestseller', 'Бестселлер')(class="bestseller-item ")
-		+item-prod-table-sample('category-6-png.png', 'star-new-item', 'Новинка')(class="new-item")
-		+item-prod-table-sample('category-6-png.png', 'action-item','Акция')(class="action-item")
+		+item-prod-table-sample('category-6-png.png')
+		+item-prod-table-sample('category-6-png.png', 'star-bestseller', 'Бестселлер', '#0063da')(class="bestseller-item white-colored-item" style="background-color: #0063da")
+		+item-prod-table-sample('category-6-png.png', 'star-new-item', 'Новинка', '#18B58C')(class="new-item white-colored-item" style="background-color: #18B58C")
+		+item-prod-table-sample('category-6-png.png', 'action-item','Акция', '#F35321', '#18B58C')(class="action-item white-colored-item" style="background-color: #F35321")
+		+item-prod-table-sample('category-6-png.png', 'action-item','Акция', '#e83e8c')(class="action-item white-colored-item" style="background-color: #e83e8c")
+		//#0063da
 
-
-mixin item-prod-table-sample(i, iconSrc, spanTxt)
+mixin item-prod-table-sample(i, iconSrc, spanTxt, spanBackground, btnBackground='#F35321')
 	+b.table-sample-item&attributes(attributes)
 		+e.header
 			if iconSrc
 				+b.img-block
 					+icon(iconSrc)
 					+e.img-block-content
-						span= spanTxt
+						span(style="background:"+spanBackground+";" )= spanTxt
 						img.lazy(src="#" data-src=`img/@2x/${i}`, alt="some-img")
 			else
 				+b.img-block
@@ -177,7 +178,7 @@ mixin item-prod-table-sample(i, iconSrc, spanTxt)
 							+icon("like-alt")
 					+e.old-price 15 990 ₽
 					+e.new-price 11 490 ₽
-					+e.buy-btn
+					+e.buy-btn(style="background:"+btnBackground+";" )
 						a(href="#") Купить
 		+b.description-of-table-items
 			+e.row-item
@@ -201,23 +202,24 @@ mixin item-prod-table-sample(i, iconSrc, spanTxt)
 
 mixin catalogGoodsSquareItems()
 	+b.square-items-box.active(data-tab-for='square-box' data-tab-content='catalog-goods-display')
-		.container
-			.row
-				.col-12.col-sm-6.col-lg-4.item-prod-parent
-					+item-prod-multiBlock('trimer-img.png', false, undefined, 'star-bestseller')(class="catalog-prod-item bestseller-item")
-							+e.SPAN.mod-txt Бестселлер
-				.col-12.col-sm-6.col-lg-4.item-prod-parent
-					+item-prod-multiBlock('category-4.jpg', false)(class="catalog-prod-item")
-				.col-12.col-sm-6.col-lg-4.item-prod-parent
-					+item-prod-multiBlock('trimer-img.png', false, undefined, 'star-new-item')(class="catalog-prod-item new-item")
-						+e.SPAN.mod-txt Новинка
-				.col-12.col-sm-6.col-lg-4.item-prod-parent
-					+item-prod-multiBlock('trimer-img.png', false)(class="catalog-prod-item")
-				.col-12.col-sm-6.col-lg-4.item-prod-parent
-					+item-prod-multiBlock('trimer-img.png', false, undefined, 'action-item' )(class="catalog-prod-item action-item")
-						+e.SPAN.mod-txt Акция
-				.col-12.col-sm-6.col-lg-4.item-prod-parent
-					+item-prod-multiBlock('trimer-img.png', false)(class="catalog-prod-item")
+		//.container
+		.row
+			.col-12.col-sm-6.col-lg-4.item-prod-parent
+				+item-prod-multiBlock('trimer-img.png', false, undefined, 'star-bestseller')(class="catalog-prod-item white-colored-item" style="background-color: #0063da")
+						+e.SPAN.mod-txt Бестселлер
+			.col-12.col-sm-6.col-lg-4.item-prod-parent
+				+item-prod-multiBlock('category-4.jpg', false)(class="catalog-prod-item")
+			.col-12.col-sm-6.col-lg-4.item-prod-parent
+				+item-prod-multiBlock('trimer-img.png', false, undefined, 'star-new-item')(class="catalog-prod-item white-colored-item" style="background-color: #18B58C")
+					+e.SPAN.mod-txt Новинка
+			.col-12.col-sm-6.col-lg-4.item-prod-parent
+				+item-prod-multiBlock('trimer-img.png', false)(class="catalog-prod-item")
+			.col-12.col-sm-6.col-lg-4.item-prod-parent
+				+item-prod-multiBlock('trimer-img.png', false, undefined, 'action-item', '#18B58C' )(class="catalog-prod-item white-colored-item" style="background-color: #F35321")
+					+e.SPAN.mod-txt Акция
+			.col-12.col-sm-6.col-lg-4.item-prod-parent
+				+item-prod-multiBlock('trimer-img.png', false, undefined, 'action-item')(class="catalog-prod-item white-colored-item" style="background-color: pink")
+					+e.SPAN.mod-txt Акция
 mixin catalogSuarePills()
 	.container.catalog-square-pills
 		.row

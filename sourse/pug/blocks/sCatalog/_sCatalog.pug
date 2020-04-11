@@ -23,7 +23,7 @@ mixin item-prod(i, slider ,t="Триммер бензиновый  Husqvarna 122
 		+e.price--new 11 490 ₽
 		+e.btn(href="#") Купить
 
-mixin item-prod-multiBlock(i, slider ,t="Триммер бензиновый  Husqvarna 122C", iconpath)
+mixin item-prod-multiBlock(i, slider ,t="Триммер бензиновый  Husqvarna 122C", iconpath, btnBackground='#F35321')
 	+b.prod-item&attributes(attributes)
 		+icon(iconpath)
 		+e.content
@@ -46,7 +46,7 @@ mixin item-prod-multiBlock(i, slider ,t="Триммер бензиновый  Hu
 				a(href="#")= t
 			+e.price--old 15 990 ₽
 			+e.price--new 11 490 ₽
-			+e.btn(href="#") Купить
+			+e.btn(href="#" style="background:"+btnBackground+";") Купить
 
 mixin sCatalogHit(showTitle='true')
 	// start sCatalog

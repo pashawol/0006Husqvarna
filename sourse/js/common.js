@@ -353,8 +353,13 @@ function eventHandler() {
 	});
 	//sCatalogPage
 	$('.sub-list-headline').click(function () {
-		$(this).closest('.has-sub-list').toggleClass('active');
+		//$(this).closest('.has-sub-list').toggleClass('active');
+		//
+		$(this).next().slideToggle(function () {
+			$(this).parent().toggleClass('active');
+		});
 	});
+
 
 	//customs select
 	$('.sort-price-btn').click(function () {
@@ -378,13 +383,45 @@ function eventHandler() {
 	});
 	//
 	$('.toggle-chars-goods-table-js').click(function () {
-		$(this).closest('.table-sample-item').toggleClass('content-visiable');
+		//$(this).closest('.table-sample-item').toggleClass('content-visiable');
+		let selfJQ = $(this);
+		let parent = this.closest('.table-sample-item');
+		let hiddenBlockChar = parent.querySelector('.description-of-table-items');
+
+		if (parent.classList.contains('content-visiable')){
+			//we are closing
+			//1 gives to selfJQ opacity 0 (addClass('opacity0'))
+			//2 after transtion push selfJQ to the top but reveal it after transition
+			selfJQ.addClass('opacity0');
+			window.setTimeout(function () {
+				selfJQ.removeClass('in-bottom');
+				$(hiddenBlockChar).slideToggle(function () {
+					$(this).closest('.table-sample-item').toggleClass('content-visiable');
+					selfJQ.removeClass('opacity0');
+				});
+			}, 200);
+		}
+		else{
+			//we are opening
+			//1 gives to selfJQ opacity 0 (addClass('opacity0'))
+			//2 after transtion spawn selfJQ in bottom (addClass('in-bottom'))  and fade it in (removeClass('opacity0'))
+			selfJQ.addClass('opacity0');
+			window.setTimeout(function () {
+				$(hiddenBlockChar).slideToggle(function () {
+					$(this).closest('.table-sample-item').toggleClass('content-visiable');
+					selfJQ.addClass('in-bottom');
+					selfJQ.removeClass('opacity0');
+
+					$(parent).hide().show(0); // redraw parent block to prevent height bug
+				});
+			}, 200);
+		}
+		//console.log(hiddenBlockChar);
 	});
 	//filter custom pop-up
 	$('.filter-bar-btns .filter-bar-btns__filter-btn').click(function () {
 		$('body').addClass('stop-scrolling');
 		$('.filter-bl').addClass('filter-visiable');
-
 	});
 	$('.filter-bl__back-btn').click(function () {
 		closeFilterPopUp();
