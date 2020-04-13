@@ -13,4 +13,3 @@
 1. <https://pashawol.github.io/0006Husqvarna/public/02-catalog.html>
 1. <https://pashawol.github.io/0006Husqvarna/public/02-1-subcatalog.html>
 1. <https://pashawol.github.io/0006Husqvarna/public/03-actions.html>
-
