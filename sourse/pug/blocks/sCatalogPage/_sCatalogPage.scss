@@ -25,10 +25,11 @@
 	@include media-breakpoint-down(md) {}
 	@include media-breakpoint-down(sm) {}
 	@include media-breakpoint-down(xs) {}
-	.padding-right-0{
-		padding-right: 0;
-	}
 } // end.sCatalogPage
+
+.padding-right-0{
+	padding-right: 0;
+}
 
 //menu in left col
 .left-menu-col{
@@ -285,10 +286,10 @@ body{
 			}
 			.check-box-cont{
 				display: flex;
-				//background-color: red;
 				margin-bottom: rem(5px);
 				cursor: pointer;
 				.circle{
+					display: block;
 					width: rem(20px);
 					min-width: rem(20px);
 					height: rem(20px);
@@ -563,7 +564,7 @@ body{
 	color: $body-color;
 }
 //square pills
-.catalog-square-pills{
+/*.catalog-square-pills{
 	text-align: center;
 	a{
 		text-decoration: none;
@@ -611,7 +612,7 @@ body{
 			//margin-top: 0;
 		}
 	}
-}
+}*/
 //fiter btns
 .filter-bar-btns{
 	margin-top: rem(45px);
@@ -719,7 +720,8 @@ body{
 			background-color: white;
 			list-style: none;
 			border: 1px solid $primary;
-			li{
+			span{
+				display: block;
 				text-align: left;
 				padding-left: rem(25px);
 				line-height: rem(50px);
@@ -730,9 +732,7 @@ body{
 				}
 			}
 		}
-		.hidden-input-custom-select{
-			display: none;
-		}
+
 		&.collapsed{
 			.custom-select{
 				display: block;

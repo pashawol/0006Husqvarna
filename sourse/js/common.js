@@ -377,7 +377,7 @@ function eventHandler() {
 		document.body.removeEventListener('click', closeCustomSelect);
 		$('.sort-price-btn').removeClass('collapsed');
 	};
-	$('.custom-select li').click(function () {
+	$('.custom-select span').click(function () {
 		document.querySelector('.hidden-input-custom-select').setAttribute('value', this.innerHTML);
 		document.querySelector('.sort-price-btn span').innerHTML = this.innerHTML;
 	});
@@ -440,7 +440,105 @@ function eventHandler() {
 		passive: true,
 	});
 	//
-	
+	//sActionsPage
+	let actionsSlider = new Swiper ('.swiper-actions-container', {
+		// Optional parameters
+		//loop: true,
+
+		slidesPerColumnFill: 'row',
+
+		breakpoints: {
+			1:{
+				spaceBetween: 0,
+				slidesPerView: 1,
+				slidesPerColumn: 1,
+			},
+			575:{
+				slidesPerColumn: 2,
+				slidesPerView: 1,
+				spaceBetween: 30,
+			},
+			768: {
+				slidesPerView: 2,
+				slidesPerColumn: 2,
+				spaceBetween: 30,
+			},
+		},
+		lazy: {
+			loadPrevNext: true
+		},
+		//auto
+		//autoplay: {
+		//	delay: 5000,
+		//},
+		// Navigation arrows
+		navigation: {
+			nextEl: '.slider-action-next',
+			prevEl: '.slider-action-prev',
+		},
+		//pagination
+		pagination: {
+			el: $(this).find('.action-slider-puging'),
+			clickable: true,
+		},
+	});
+	//slide timer
+	function tikTak() {
+		let ActionSlideTimerBlocks = document.querySelectorAll('.timer-block-js');
+		for (let timer of ActionSlideTimerBlocks){
+			let now = new Date();
+
+			let days = getTimeItem(timer, 'data-days', now.getDate());
+			let hours = getTimeItem(timer, 'data-hours', now.getHours());
+			let mins = getTimeItem(timer, 'data-mins', now.getMinutes());
+			let secs = getTimeItem(timer, 'data-secs', now.getSeconds());
+
+			//seleting target date by given Attributes
+			let targetDate = new Date(now.getFullYear(), now.getMonth(), days, hours, mins, secs);
+
+			//find html els to store time items
+			let daysSpan = timer.querySelector('.days-amount .num');
+			let hoursSpan = timer.querySelector('.hours-amount .num');
+			let minsSpan = timer.querySelector('.mins-amount .num');
+			let secsSpan = timer.querySelector('.secs-amount .num');
+
+			tikTakInterValFunc();
+			let tikTakIntervalId = window.setInterval(tikTakInterValFunc, 1000);
+
+			function tikTakInterValFunc() {
+				let now = new Date();
+				let timeLeft = (targetDate - now)/1000;
+
+				if (timeLeft < 1){
+					window.clearInterval(tikTakIntervalId);
+					//to do something after timer ends
+					$(timer).fadeOut();
+				}
+				daysSpan.innerHTML = Math.floor(timeLeft/60/60/24);
+				timeLeft = ((timeLeft/60/60/24) - Math.floor(timeLeft/60/60/24)) * 60 * 60 * 24;
+
+				hoursSpan.innerHTML = Math.floor(timeLeft/60/60);
+				timeLeft = ((timeLeft/60/60) - Math.floor(timeLeft/60/60)) * 60 * 60;
+
+				minsSpan.innerHTML = Math.floor((timeLeft/60));
+				timeLeft = ((timeLeft/60) - Math.floor((timeLeft/60))) * 60;
+
+				secsSpan.innerHTML = Math.floor(timeLeft);
+			}
+		}
+	}
+	tikTak();
+	function getTimeItem(htmlEl, attributeName, currentTimeItem) {
+		let timeItem = Number(htmlEl.getAttribute(attributeName));
+		if (timeItem){
+			timeItem += currentTimeItem;
+		}
+		else{
+			timeItem = currentTimeItem;
+		}
+		return timeItem
+	}
+	//
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 	if (isIE11) {
 		$("body").prepend(`<p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p>`)

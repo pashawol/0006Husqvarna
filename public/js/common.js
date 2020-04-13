@@ -407,7 +407,7 @@ function eventHandler() {
 	}
 
 	;
-	$('.custom-select li').click(function () {
+	$('.custom-select span').click(function () {
 		document.querySelector('.hidden-input-custom-select').setAttribute('value', this.innerHTML);
 		document.querySelector('.sort-price-btn span').innerHTML = this.innerHTML;
 	}); //
@@ -469,6 +469,116 @@ function eventHandler() {
 	window.addEventListener('resize', closeFiltersOnResize, {
 		passive: true
 	}); //
+	//sActionsPage
+
+	var actionsSlider = new Swiper('.swiper-actions-container', {
+		// Optional parameters
+		//loop: true,
+		slidesPerColumnFill: 'row',
+		breakpoints: {
+			1: {
+				spaceBetween: 0,
+				slidesPerView: 1,
+				slidesPerColumn: 1
+			},
+			575: {
+				slidesPerColumn: 2,
+				slidesPerView: 1,
+				spaceBetween: 30
+			},
+			768: {
+				slidesPerView: 2,
+				slidesPerColumn: 2,
+				spaceBetween: 30
+			}
+		},
+		lazy: {
+			loadPrevNext: true
+		},
+		//auto
+		//autoplay: {
+		//	delay: 5000,
+		//},
+		// Navigation arrows
+		navigation: {
+			nextEl: '.slider-action-next',
+			prevEl: '.slider-action-prev'
+		},
+		//pagination
+		pagination: {
+			el: $(this).find('.action-slider-puging'),
+			clickable: true
+		}
+	}); //slide timer
+
+	function tikTak() {
+		var ActionSlideTimerBlocks = document.querySelectorAll('.timer-block-js');
+
+		var _iterator5 = _createForOfIteratorHelper(ActionSlideTimerBlocks),
+				_step5;
+
+		try {
+			var _loop2 = function _loop2() {
+				var timer = _step5.value;
+				var now = new Date();
+				var days = getTimeItem(timer, 'data-days', now.getDate());
+				var hours = getTimeItem(timer, 'data-hours', now.getHours());
+				var mins = getTimeItem(timer, 'data-mins', now.getMinutes());
+				var secs = getTimeItem(timer, 'data-secs', now.getSeconds()); //seleting target date by given Attributes
+
+				var targetDate = new Date(now.getFullYear(), now.getMonth(), days, hours, mins, secs); //find html els to store time items
+
+				var daysSpan = timer.querySelector('.days-amount .num');
+				var hoursSpan = timer.querySelector('.hours-amount .num');
+				var minsSpan = timer.querySelector('.mins-amount .num');
+				var secsSpan = timer.querySelector('.secs-amount .num');
+				tikTakInterValFunc();
+				var tikTakIntervalId = window.setInterval(tikTakInterValFunc, 1000);
+
+				function tikTakInterValFunc() {
+					var now = new Date();
+					var timeLeft = (targetDate - now) / 1000;
+
+					if (timeLeft < 1) {
+						window.clearInterval(tikTakIntervalId); //to do something after timer ends
+
+						$(timer).fadeOut();
+					}
+
+					daysSpan.innerHTML = Math.floor(timeLeft / 60 / 60 / 24);
+					timeLeft = (timeLeft / 60 / 60 / 24 - Math.floor(timeLeft / 60 / 60 / 24)) * 60 * 60 * 24;
+					hoursSpan.innerHTML = Math.floor(timeLeft / 60 / 60);
+					timeLeft = (timeLeft / 60 / 60 - Math.floor(timeLeft / 60 / 60)) * 60 * 60;
+					minsSpan.innerHTML = Math.floor(timeLeft / 60);
+					timeLeft = (timeLeft / 60 - Math.floor(timeLeft / 60)) * 60;
+					secsSpan.innerHTML = Math.floor(timeLeft);
+				}
+			};
+
+			for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
+				_loop2();
+			}
+		} catch (err) {
+			_iterator5.e(err);
+		} finally {
+			_iterator5.f();
+		}
+	}
+
+	tikTak();
+
+	function getTimeItem(htmlEl, attributeName, currentTimeItem) {
+		var timeItem = Number(htmlEl.getAttribute(attributeName));
+
+		if (timeItem) {
+			timeItem += currentTimeItem;
+		} else {
+			timeItem = currentTimeItem;
+		}
+
+		return timeItem;
+	} //
+
 
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 

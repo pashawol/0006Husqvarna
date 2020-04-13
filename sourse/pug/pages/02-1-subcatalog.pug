@@ -7,19 +7,20 @@ include ../blocks/sCategory/_sCategory.pug
 include ../blocks/sCatalog/_sCatalog.pug 
 include ../blocks/sArticals/_sArticals.pug
 
+	//include ../blocks/sSubCatalog/_sSubCatalog.pug
 include ../blocks/sCatalogPage/_sCatalogPage.pug
 
 block variables
 	- let  mainPage= null
 block title
-	- let  title= '02-catalog-table'
+	- let  title= '02-1-subcatalog'
 	title= title
 block pagecontent 
 	+mob-mnu()
 	+header()
 		+topLine()
 		+top-nav()
-	+headline('Каталог техники Husqvarna')
+	+headline('Бензопилы')
 	+sCatalogPage()
-		+sCategory02()
+		+sCategory02-1()
 	+footer()

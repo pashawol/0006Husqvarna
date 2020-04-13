@@ -1,110 +1,28 @@
-mixin sCatalogPage()
+mixin sCatalogPage(baner='true')
 	// start sCatalogPage
 	+b.sCatalogPage.section#sCatalogPage&attributes(attributes)
 		.container
 			.row
 				.col-lg-2.padding-right-0
-					+b.left-menu-col.d-none.d-lg-block
-						+e.headline Трава и газон
-						+e.UL.menu-items-list
-							+hasSubList()
-							+hasSubList()(class="active")
-							li
-								a(href="#") Виброплиты
-							li
-								a(href="#") Бензорезы
-							li
-								a(href="#") Рельсорезы
-							li
-								a(href="#") Виброрейки
-							li
-								a(href="#") Вибраторы
-							li
-								a(href="#") Затирочные машины
-							li
-								a(href="#") Оборудование  для алмазного бурения
-							li
-								a(href="#") Плиткорезы
-							li
-								a(href="#") Камнерезные станки
-							li
-								a(href="#") Нарезчик швов
-							li
-								a(href="#") Шлифовальные машины
-							li
-								a(href="#") Стенорезные машины
-							li
-								a(href="#") Канатные машины
-							li
-								a(href="#") Строительные пылесосы
-							li
-								a(href="#") Принадлежности1
-						+listFrame()
-						+listFrame()
-						+listFrame()
-					+b.filter-bl
-						+e.pop-up-controll-panel.d-flex.d-lg-none
-							+e.back-btn
-								+icon('angle-left')
-								span Назад
-							+e.discard-filters-btn
-								+icon('cross')
-								span сбросить фильтры
-						+form-wrap()
-							.check-box-filter-group
-								+e.headline Фильтр
-								+in-c06("checkbox", 'Самоходные', 'no-my-city')(class="filter-checkbox disabled")
-								+in-c06("checkbox", 'Аккумуляторные', 'no-my-city')(class="filter-checkbox ")
-								+in-c06("checkbox", 'Бензольные', 'no-my-city')(class="filter-checkbox ")
-							.radio-filter-group
-								+e.headline Фильтр
-								+in-r('type-radio-group')(class="filter-radio disabled")
-									.check-box-cont
-										.circle
-										span.txt-cont Самоходные
-								+in-r('type-radio-group')(class="filter-radio")
-									.check-box-cont
-										.circle
-										span.txt-cont Аккумуляторные
-								+in-r('type-radio-group', true)(class="filter-radio")
-									.check-box-cont
-										.circle
-										span.txt-cont Бензольные
-							.price-filter-group
-								+e.headline Цена
-								+range("1", "999999")
-							.check-box-alt-filter-group
-								+e.headline Фильтр
-								+in-c06("checkbox", 'Самоходные', 'no-my-city')(class="filter-checkbox-alt disabled")
-								+in-c06("checkbox", 'Аккумуляторные', 'no-my-city')(class="filter-checkbox-alt ")
-								+in-c06("checkbox", 'Бензольные', 'no-my-city')(class="filter-checkbox-alt ")
-							.accept-filters-btn-cont.d-block.d-lg-none
-								.accept-filters-btn применить фильтры
+					+leftMenu()
+					+FiltersBlock()
 				.col
-					+b.banner
-						img(src="img/@2x/slider.jpg" alt='some-img')
-						+e.title
-							span НАСЛАЖДАЙТЕСЬ
-							br
-							span ИДЕАЛЬНЫМ ГАЗОНОМ
-							br
-							span С HUSQVARNA
-							br
-							span AUTOMOWER®
-						a.headerBlock__btn(href='#') Узнайть больше
+					if baner
+						+Baner()
 					p.banner-desr Предлагаем Вашему вниманию надежные мощные триммеры, подходящие для выполнения множества задач. Это простые в управлении  и гибкие инструменты небольшого веса, снабженные интеллектуальными функциями. Вам не придется больше беспокоить соседей. Триммеры Husqvarna производят минимальное количество шума и идеально подойдут для работы в жилых кварталах.
-					+catalogSuarePills()
+					//+catalogSuarePills()
+					block
 					+filterBtnsBar()
 					+b.display-filter-bar
 						//select?
 						button.btn-more.sort-price-btn
 							span Цена по возрастанию
 							+icon('chevron-down')
-							ul.custom-select
-								li Цена по возрастанию
-								li Цена по возрастанию2
-								li Цена по возрастанию3
-							input.hidden-input-custom-select(type="text" value='Цена по возрастанию')
+							span.custom-select
+								span Цена по возрастанию
+								span Цена по возрастанию2
+								span Цена по возрастанию3
+						input.hidden-input-custom-select.d-none(type="text" value='Цена по возрастанию')
 						+e.display-filter-icons-cont.d-none.d-md-flex
 							+e.BUTTON.display-filter-icon.active(data-tab-for='square-box' data-tab-pill='catalog-goods-display')
 								+icon('9-dots-icon')
@@ -120,7 +38,140 @@ mixin sCatalogPage()
 							|Предлагаем Вашему вниманию надежные мощные триммеры, подходящие для выполнения множества задач. Это простые в&nbsp;управлении  и&nbsp;гибкие инструменты небольшого веса, снабженные интеллектуальными функциями. Вам не&nbsp;придется больше беспокоить соседей. Триммеры Husqvarna производят минимальное количество шума и&nbsp;идеально подойдут для работы в&nbsp;жилых кварталах.
 
 	// end sCatalogPage
+	//left menu mixin
+mixin leftMenu()
+	+b.left-menu-col.d-none.d-lg-block
+		+e.headline Трава и газон
+		+e.UL.menu-items-list
+			+hasSubList()
+			+hasSubList()(class="active")
+			li
+				a(href="#") Виброплиты
+			li
+				a(href="#") Бензорезы
+			li
+				a(href="#") Рельсорезы
+			li
+				a(href="#") Виброрейки
+			li
+				a(href="#") Вибраторы
+			li
+				a(href="#") Затирочные машины
+			li
+				a(href="#") Оборудование  для алмазного бурения
+			li
+				a(href="#") Плиткорезы
+			li
+				a(href="#") Камнерезные станки
+			li
+				a(href="#") Нарезчик швов
+			li
+				a(href="#") Шлифовальные машины
+			li
+				a(href="#") Стенорезные машины
+			li
+				a(href="#") Канатные машины
+			li
+				a(href="#") Строительные пылесосы
+			li
+				a(href="#") Принадлежности1
+		+listFrame()
+		+listFrame()
+		+listFrame()
 
+mixin hasSubList()
+	li.has-sub-list&attributes(attributes)
+		.sub-list-headline
+			span Бензопилы
+			+icon('chevron-down')
+		ul.sub-list
+			li
+				a(href="#") Самоходные
+			li
+				a(href="#") Аккумуляторные
+			li
+				a(href="#") Механические
+			li
+				a(href="#") Электрические
+
+mixin listFrame()
+	+e.headline Трава и газон
+	+e.UL.menu-items-list
+		li
+			a(href="#") Оборудование
+		li
+			a(href="#") Бензопилы
+		li
+			a(href="#") Бензопилы
+		li
+			a(href="#") Бензопилы
+	//end left menu mixins
+	//filters mixins
+mixin FiltersBlock()
+	+b.filter-bl
+		+e.pop-up-controll-panel.d-flex.d-lg-none
+			+e.back-btn
+				+icon('angle-left')
+				span Назад
+			+e.discard-filters-btn
+				+icon('cross')
+				span сбросить фильтры
+		+form-wrap()
+			.check-box-filter-group
+				+e.headline Фильтр
+				+in-c06("checkbox", 'Самоходные', 'no-my-city')(class="filter-checkbox disabled")
+				+in-c06("checkbox", 'Аккумуляторные', 'no-my-city')(class="filter-checkbox ")
+				+in-c06("checkbox", 'Бензольные', 'no-my-city')(class="filter-checkbox ")
+			.radio-filter-group
+				+e.headline Фильтр
+				+in-r('type-radio-group')(class="filter-radio disabled")
+					span.check-box-cont
+						span.circle
+						span.txt-cont Самоходные
+				+in-r('type-radio-group')(class="filter-radio")
+					span.check-box-cont
+						span.circle
+						span.txt-cont Аккумуляторные
+				+in-r('type-radio-group', true)(class="filter-radio")
+					span.check-box-cont
+						span.circle
+						span.txt-cont Бензольные
+			.price-filter-group
+				+e.headline Цена
+				+range("1", "999999")
+			.check-box-alt-filter-group
+				+e.headline Фильтр
+				+in-c06("checkbox", 'Самоходные', 'no-my-city')(class="filter-checkbox-alt disabled")
+				+in-c06("checkbox", 'Аккумуляторные', 'no-my-city')(class="filter-checkbox-alt ")
+				+in-c06("checkbox", 'Бензольные', 'no-my-city')(class="filter-checkbox-alt ")
+			.accept-filters-btn-cont.d-block.d-lg-none
+				.accept-filters-btn применить фильтры
+
+mixin range(c1, c2)
+	.range-wrap.price_slider_amount
+		.label-cont
+			label.left-inp
+				+e.text.SPAN от
+				+b.INPUT.range-result--minus.minus(type="text")
+			.dash-dark -
+			label.right-inp
+				+e.text-right.SPAN до
+				+b.INPUT.range-result--plus.plus(type="text")
+		input.range-slider.slider-js(type='text'  data-min= c1  data-max= c2)
+		// end filters mixins
+
+mixin Baner()
+	+b.banner
+		img(src="img/@2x/slider.jpg" alt='some-img')
+		+e.title
+			span НАСЛАЖДАЙТЕСЬ
+			br
+			span ИДЕАЛЬНЫМ ГАЗОНОМ
+			br
+			span С HUSQVARNA
+			br
+			span AUTOMOWER®
+		a.headerBlock__btn(href='#') Узнайть больше
 mixin filterBtnsBar()
 	+b.filter-bar-btns.d-flex.d-lg-none
 		+e.filter-btn
@@ -129,6 +180,9 @@ mixin filterBtnsBar()
 			.filter-number 3
 		+e.cross-btn.d-none.d-sm-flex
 			+icon('cross')
+
+
+		//table catalog mixins
 mixin catalogGoodsTableItems()
 	+b.table-items-box(data-tab-for='table-box' data-tab-content='catalog-goods-display')
 		+item-prod-table-sample('category-6-png.png')
@@ -200,6 +254,10 @@ mixin item-prod-table-sample(i, iconSrc, spanTxt, spanBackground, btnBackground=
 				span Макс. давление
 				span Макс. давление	4,6 бар
 
+
+	//end table catalog mixins
+	//square catalog mixins
+	//item-prod-multiBlock mixin in sCatalog
 mixin catalogGoodsSquareItems()
 	+b.square-items-box.active(data-tab-for='square-box' data-tab-content='catalog-goods-display')
 		//.container
@@ -220,7 +278,10 @@ mixin catalogGoodsSquareItems()
 			.col-12.col-sm-6.col-lg-4.item-prod-parent
 				+item-prod-multiBlock('trimer-img.png', false, undefined, 'action-item')(class="catalog-prod-item white-colored-item" style="background-color: pink")
 					+e.SPAN.mod-txt Акция
+	//end square catalog mixins
+
 mixin catalogSuarePills()
+	//delete
 	.container.catalog-square-pills
 		.row
 			.col-6.col-md-4.col-lg-auto.catalog-square-pills-item
@@ -273,40 +334,3 @@ mixin catalogSuarePills()
 					.img-box
 						img(src="img/@2x/category-1.jpg")
 					.description Бензопилы
-mixin listFrame()
-	+e.headline Трава и газон
-	+e.UL.menu-items-list
-		li
-			a(href="#") Оборудование
-		li
-			a(href="#") Бензопилы
-		li
-			a(href="#") Бензопилы
-		li
-			a(href="#") Бензопилы
-mixin hasSubList()
-	li.has-sub-list&attributes(attributes)
-		.sub-list-headline
-			span Бензопилы
-			+icon('chevron-down')
-		ul.sub-list
-			li
-				a(href="#") Самоходные
-			li
-				a(href="#") Аккумуляторные
-			li
-				a(href="#") Механические
-			li
-				a(href="#") Электрические
-
-mixin range(c1, c2)
-	.range-wrap.price_slider_amount
-		.label-cont
-			label.left-inp
-				+e.text.SPAN от
-				+b.INPUT.range-result--minus.minus(type="text")
-			.dash-dark -
-			label.right-inp
-				+e.text-right.SPAN до
-				+b.INPUT.range-result--plus.plus(type="text")
-		input.range-slider.slider-js(type='text'  data-min= c1  data-max= c2)

@@ -40,7 +40,43 @@
 		.btn-more{
 			margin-top: rem(5);
 		}
-		 
+		//02
+		.catalog-square-pills-item{
+			@include media-breakpoint-up(lg){
+				width: 20%;
+			}
+
+			padding: 0 rem(5px) rem(20px) rem(5px);
+			@include media-breakpoint-up(sm){
+				padding: 0 rem(15px);
+			}
+		}
+		//02-1
+		.sub-category-item{
+			@include media-breakpoint-down(md){
+				border: 1px solid $light;
+				background-color: white;
+				color: $dark;
+				height: rem(80px);
+				margin: 0;
+				&.active{
+					border: 1px solid $primary;
+					background-color: $primary;
+					color: white;
+				}
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				.sCategory__img-wrap{
+					margin: 0 rem(30px) 0 0;
+					height: rem(75px);
+				}
+				.sCategory__title{
+					margin-right: auto;
+				}
+			}
+		}
+		//
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}
