@@ -8,18 +8,21 @@ include ../blocks/sCatalog/_sCatalog.pug
 include ../blocks/sArticals/_sArticals.pug
 
 include ../blocks/sCatalogPage/_sCatalogPage.pug
+include ../blocks/sActionsPage/_sActionsPage.pug
+
 
 block variables
 	- let  mainPage= null
 block title
-	- let  title= '02-catalog-table'
+	- let  title= '03-actions'
 	title= title
 block pagecontent 
 	+mob-mnu()
 	+header()
 		+topLine()
 		+top-nav()
-	+headline('Каталог техники Husqvarna')
-	+sCatalogPage()
+	+headline('Акции')
+	+sActionsPage()
+	//+sCatalogPage()
 		+sCategory02()
 	+footer()

@@ -1,0 +1,202 @@
+
+	// start .sActionsPage
+	.sActionsPage {
+		padding: rem(22px) 0 rem(20px) 0 !important;
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-up(xs) {}
+	
+	//
+	@include media-breakpoint-between(md, xl) { }
+	
+	
+	//
+	@include media-breakpoint-only(xs) {}
+	@include media-breakpoint-only(sm) {}
+	@include media-breakpoint-only(md) {}
+	@include media-breakpoint-only(lg) {}
+	@include media-breakpoint-only(xl) {}
+	
+	//
+	@include media-breakpoint-down(xl) {}
+	@include media-breakpoint-down(lg) {}
+	@include media-breakpoint-down(md) {}
+	@include media-breakpoint-down(sm) {}
+	@include media-breakpoint-down(xs) {}
+	.actionsSlider{
+		position: relative;
+		margin-bottom: rem(70px);
+		.swiper-actions-container{
+			overflow: hidden;
+		}
+		//pugin
+		.action-slider-puging{
+			position: absolute;
+			text-align: center;
+			bottom: rem(-60px);
+			//
+			left: rem(0px);
+			width: 100%;
+			@include media-breakpoint-up(sm){
+				width: calc(100% - 3.33333rem);
+				left: rem(30px);
+			}
+			span{
+				width: 10px;//rem(15px);
+				height: 10px;//rem(15px);
+				margin: 0 rem(8px);
+				@include media-breakpoint-up(sm){
+					width: 15px;//rem(15px);
+					height: 15px;//rem(15px);
+					margin: 0 rem(15px);
+				}
+
+				background-color: $dark;
+				&:hover{
+					background-color: darken($primary, 5);
+				}
+				&.swiper-pagination-bullet-active{
+					background-color: $primary;
+				}
+			}
+		}
+		//prev and next
+		.slider-action-prev, .slider-action-next{
+			//background-color: red;
+			outline: none !important;
+			cursor: pointer;
+			width: rem(30px);
+			height: rem(30px);
+			position: absolute;
+			bottom: rem(-60px);
+			.icon{
+				color: transparent;
+				stroke: $dark;
+			}
+			@include mt();
+			&:hover{
+				transform: scale(1.2);
+				.icon{
+					stroke: $primary;
+				}
+			}
+		}
+		.slider-action-prev{
+			left: 0;
+		}
+		.slider-action-next{
+			right: 0;
+			text-align: right;
+		}
+		//end prev and next
+		.swiper-wrapper{
+
+		}
+		.swiper-slide{
+			//margin-top redraw slider or resize bug fix
+			@include media-breakpoint-down(xs){
+				margin-top: 0 !important;
+			}
+			//
+			height: 200px;//rem(200px);
+			position: relative;
+			.slide-img, .slide-content{
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+			}
+			.slide-img{
+				object-fit: cover;
+			}
+			.slide-content{
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				text-decoration: none;
+			}
+			.slide-txt{
+				//background-color: blue;
+				padding: rem(15px) 0 0 rem(15px);
+				span{
+					display: inline-block;
+					padding: 0 rem(10px);
+					font-size: rem(18px);
+					line-height: rem(25px);
+					font-weight: bold;
+					text-transform: uppercase;
+					background-color: $dark;
+					color: white;
+					margin-bottom: rem(3px);
+				}
+			}
+			.timer-block{
+				width: rem(250px);
+				height: rem(60px);
+				background-color: $dark;
+				padding: 0 rem(10px) 0 rem(15px);
+
+				display: flex;
+				//justify-content: space-between;
+				align-items: center;
+				.icon{
+					color: rgba(white, .5);
+					font-size: rem(36px);
+					margin-right: rem(15px);
+				}
+				&__time-amount-bl{
+					//background-color: red;
+					span{
+						display: block;
+						color: white;
+						line-height: 1;
+						font-weight: 300;
+					}
+					.num{
+						font-size: rem(24px);
+					}
+					.txt{
+						font-size: rem(16.8px);
+					}
+				}
+				&__two-dots{
+					color: white;
+					//background-color: pink;
+					margin: rem(1.5px) rem(10px) 0 rem(10px);
+					font-size: rem(24px);
+					align-self: flex-start;
+					font-weight: 300;
+				}
+			}
+		}
+	}
+	.tags-box{
+		padding-top: rem(50px);
+		a {
+			display: inline-block;
+			vertical-align: top;
+			min-height: rem(40px);
+			padding: 0 rem(30px);
+			border: 1px solid $light;
+			line-height: rem(40px);
+			text-decoration: none;
+			margin-bottom: rem(15px);
+			margin-right: rem(15px);
+
+			color: $dark;
+			font-weight: 300;
+			font-size: rem(18px);
+			@include mt();
+			&:hover{
+				border: 1px solid $primary;
+			}
+			&.active{
+				border: 1px solid $primary;
+				color: $primary;
+			}
+		}
+	}
+} // end.sActionsPage
