@@ -62,7 +62,7 @@ mixin actionsSlider()
 
 mixin actionSlide(imgName, timer=false, days=0, hours=0, mins=0, secs=10)
 	+e.slide.swiper-slide
-		img.slide-img.swiper-lazy(src="img/@2x/"+imgName+".jpg" data-src="img/@2x/"+imgName+".jpg" alt='some-img')
+		img.slide-img(src="img/@2x/"+imgName+".jpg" alt='some-img')
 		a.slide-content(href="#")
 			.slide-txt
 				span НАСЛАЖДАЙТЕСЬ
