@@ -1,118 +1,142 @@
+// start .sCatalog
+.prod-item {
+	background-color: #ffffff;
+	// background-color: red;
+	height: 100%;
+	padding: rem(20) rem(20) rem(35);
+	box-shadow: 0px 8px 24px rgba(39, 58, 96, 0.08);
+	text-align: center;
+	line-height: (22 / 18);
+	@include mt;
 
-	// start .sCatalog
-	.prod-item {
-		background-color: #ffffff;
-		// background-color: red;
-	 height: 100%;
-	 padding: rem(20) rem(20) rem(35);
-	 box-shadow: 0px 8px 24px rgba(39, 58, 96, 0.08);
-	 text-align: center;
-	 line-height: (22 / 18);
-	 @include mt;
-	 &:hover{
-		 box-shadow: 0px 12px rem(25) rgba(39, 58, 96, 0.15);
-		 transform: translateY(-6px);
-	 }
-	 &__img-wrap{
-		 display: block;
-		 width: rem(223px);
-		 height: rem(202px);
-		 line-height: 100%;
-		 vertical-align: middle;
-		 text-align: center;
-		 position: relative;
-		 img{
+	&:hover {
+		box-shadow: 0px 12px rem(25) rgba(39, 58, 96, 0.15);
+		transform: translateY(-6px);
+	}
+
+	&__img-wrap {
+		display: block;
+		width: rem(223px);
+		height: rem(202px);
+		line-height: 100%;
+		vertical-align: middle;
+		text-align: center;
+		position: relative;
+
+		img {
 			@extend .res-i;
 			max-height: 100%;
-		 }
-	 }
-	 &__title{
-		 a{
-			 @extend .text-dark;
-			}
-			margin-bottom: rem(12);
 		}
-		&__price--old{
-			text-decoration-line: line-through;
-			text-transform: uppercase;
-			
-		 color: #F35321;
-		 font-size: rem(16);
-		}
-		&__price--new{
-			font-size: $h5-font-size;
-			font-weight: 400;
+	}
+
+	&__title {
+		a {
 			@extend .text-dark;
-		 text-transform: uppercase;
-		 margin-bottom: rem(20);
-	 }
+		}
 
-	 &__btn{
-		 @extend .btn;
-		 @extend .btn-primary;
-		 @extend .btn-block;
-		 margin-left: auto;
-		 margin-right: auto;
-		 max-width: rem(183);
-	 }
+		margin-bottom: rem(12);
+	}
 
-	 &__labels{
-		 display: flex;
-		 position: absolute;
-		 right: 0;
-		 top: 0;
-	 }
-	 &__label-link{
-		 @extend .btn;
-		 @extend .btn-outline-light;
-		 padding: 0;
-		 width: rem(30px);
-		 height: rem(30px);
-		 display: flex;
-		 justify-content: center;
-		 margin-left: rem(5);
-		 .icon{
-			 font-size: rem(18);
-			 color: transparent;
-			 stroke: $primary ;
-			 stroke-width: 1px;
-		 }
-		 .icon-like{
-			 font-size: rem(16);
-		 }
-	 }
+	&__price--old {
+		text-decoration-line: line-through;
+		text-transform: uppercase;
 
-	 &__badge{
-		 position: absolute;
-		 left: 0;
-		 top: 0;
-		 padding: rem(7) rem(8);
-		 text-transform: uppercase;
-		 color: #ffffff;
-		 font-size: rem(14);
-	 }
+		color: #F35321;
+		font-size: rem(16);
+	}
+
+	&__price--new {
+		font-size: $h5-font-size;
+		font-weight: 400;
+		@extend .text-dark;
+		text-transform: uppercase;
+		margin-bottom: rem(20);
+	}
+
+	&__btn {
+		@extend .btn;
+		@extend .btn-primary;
+		@extend .btn-block;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: rem(183);
+	}
+
+	&__labels {
+		display: flex;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+
+	&__label-link {
+		@extend .btn;
+		@extend .btn-outline-light;
+		padding: 0;
+		width: rem(30px);
+		height: rem(30px);
+		display: flex;
+		justify-content: center;
+		margin-left: rem(5);
+
+		.icon {
+			font-size: rem(18);
+			color: transparent;
+			stroke: $primary;
+			stroke-width: 1px;
+		}
+
+		.icon-like {
+			font-size: rem(16);
+		}
+	}
+
+	&__badge {
+		position: absolute;
+		left: 0;
+		top: 0;
+		padding: rem(7) rem(8);
+		text-transform: uppercase;
+		color: #ffffff;
+		font-size: rem(14);
+	}
+
 	@include media-breakpoint-up(xl) {}
+
 	@include media-breakpoint-up(lg) {}
+
 	@include media-breakpoint-up(md) {}
+
 	@include media-breakpoint-up(sm) {}
+
 	@include media-breakpoint-up(xs) {}
-	
+
 	//
-	@include media-breakpoint-between(md, xl) { }
-	
-	
+	@include media-breakpoint-between(md, xl) {}
+
+
 	//
 	@include media-breakpoint-only(xs) {}
+
 	@include media-breakpoint-only(sm) {}
+
 	@include media-breakpoint-only(md) {}
+
 	@include media-breakpoint-only(lg) {}
+
 	@include media-breakpoint-only(xl) {}
-	
+
 	//
 	@include media-breakpoint-down(xl) {}
-	@include media-breakpoint-down(lg) {}
-	@include media-breakpoint-down(md) {}
-	@include media-breakpoint-down(sm) {}
-	@include media-breakpoint-down(xs) {} 
 
-} // end.sCatalog
+	@include media-breakpoint-down(lg) {}
+
+	@include media-breakpoint-down(md) {}
+
+	@include media-breakpoint-down(sm) {}
+
+	@include media-breakpoint-down(xs) {}
+
+}
+
+// end.sCatalog
