@@ -1,9 +1,76 @@
 mixin sContact()
-	// start sContact
-	+b.SECTION.sContact.section#sContact&attributes(attributes)
+	// start sContact deleted section!
+	+b.sContact.section#sContact&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sContact
-				
 			.row
+				.col-6.col-md-4.col-lg-3
+					+b.pill
+						+e.head-line Контакты
+						+e.container
+							span Телефон
+							span
+								a(href="tel:+74951208090") +7 (495) 120-80-90
+						+e.container
+							span E-mail
+							span
+								a(href="mailto:info@tehnosadov.ru") info@tehnosadov.ru
+				.col-6.col-md-4.col-lg-3
+					+b.pill
+						+e.head-line Режим работы
+						+e.container
+							span Пн. - пт.
+							span c 9:00 до 20:00 часов
+						+e.container
+							span Пн. - пт.
+							span c 10:00 до 18:00 часов
+				.col
+					+b.pill.address-pill-cont
+						+e.head-line Адрес магазина
+						+e.container г. Москва, Дмитровское&#160;шоссе,&#160;д.62,&#160;с.&#160;5
+			+e.map-wrap
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50470.02846872441!2d-122.47261939463642!3d37.75776267831458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2z0KHQsNC9LdCk0YDQsNC90YbQuNGB0LrQviwg0JrQsNC70LjRhNC-0YDQvdC40Y8sINCh0KjQkA!5e0!3m2!1sru!2sua!4v1586107708546!5m2!1sru!2sua" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+			.row
+				.col-12.col-lg-6
+					+b.props
+						+e.headline Реквизиты
+						+e.item
+							span Название
+							span ООО «Техносадов»
+						+e.item
+							span ОГРН
+							span 1187746800845
+						+e.item
+							span ИНН
+							span 7743273314
+						+e.item
+							span КПП
+							span 771301001
+						+e.item
+							span Расч. счет
+							span 40702810037100000151
+						+e.item
+							span Банка
+							span Филиал № 7701 Банка ВТБ (ПАО) г.Москва
+						+e.item
+							span Корр. счет
+							span 30101810345250000745
+						+e.item
+							span БИК
+							span 044525745
+						+e.item
+							span Юр. адрес:
+							span 127474 г.Москва, ш. Дмитровское, д.62, строение&nbsp;5, этаж&nbsp;1,&nbsp;помещение&nbsp;X,&nbsp;комната&nbsp;1
+						+b.btn-more.btn-get-props(type="button")  Скачать реквизиты
+				.col
+						+form-wrap()
+							+e.headline Обратная связь
+							+input('', 'textarea', 'Ваше сообщение', 'message')
+							+input('', 'text', 'ФИО*', 'user-name')(require)
+							+input('', 'tel', 'Телефон*', 'phone')(require)
+							+input('', 'email', 'E-mail*')(require)
+							.gray-line
+							+e.sent-btn-cont
+								p Нажимая кнопку &laquo;Оформить заказ&raquo;,  вы&nbsp;соглашаетесь с&nbsp;
+									a(href='#') Политикой конфиденциальности.
+								+input('', 'submit')(value="Отправить")
 	// end sContact

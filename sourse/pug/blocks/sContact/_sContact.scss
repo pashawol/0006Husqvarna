@@ -1,7 +1,62 @@
 
 	// start .sContact
 	.sContact {
-		 
+		//padding: 0 !important;
+		@include media-breakpoint-up(xl) {
+			padding: rem(22px) 0 rem(65px) 0 !important;
+		}
+		@include media-breakpoint-up(md) {
+			padding: rem(10px) 0 rem(80px) 0 !important;
+		}
+		padding: 10px 0 35px 0 !important;
+
+		&__map-wrap{
+			position: relative;
+			height: rem(400px);
+			margin-top: rem(25px);
+			iframe{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100% !important;
+				height: 100% !important;
+				max-height: 330px;
+				@include media-breakpoint-up(md){
+					max-height: 1000px;
+				}
+			}
+		}
+		.props{
+			padding-top: rem(60px);
+			font-weight: 300;
+			&__headline{
+				@extend .h5;
+				margin-bottom: rem(15px);
+			}
+			&__item{
+				display: flex;
+				margin-bottom: rem(7px);
+				span:first-child{
+					color: $deep-gray;
+					min-width: rem(100px);
+					font-size: rem(16.8px);
+				}
+				span:last-child{
+
+				}
+			}
+			.btn-get-props{
+				margin-top: rem(30px);
+				width: 100%;
+				margin-left: 0;
+				max-height: 1000px;
+				@include media-breakpoint-up(lg){
+					max-width: rem(260px);
+				}
+			}
+		}
+
+
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}
@@ -27,3 +82,131 @@
 	@include media-breakpoint-down(xs) {} 
 
 } // end.sContact
+
+.pill__head-line{
+	@extend .h5;
+	margin-bottom: rem(17px);
+}
+.pill__container{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	flex-direction: column;
+	font-weight: 300;
+	margin-bottom: rem(6px);
+	@include media-breakpoint-up(lg){
+		max-width: 85%;
+		justify-content: space-between;
+		flex-direction: row;
+	}
+	span:first-child{
+		color: $deep-gray;
+		font-size: rem(16.8px);
+	}
+	span:last-child{
+		@include media-breakpoint-up(xl){
+			margin-left: auto;
+		}
+		color: $body-color;
+		font-size: rem(16.8px);
+		a{
+			color: $body-color;
+		}
+	}
+}
+.address-pill-cont{
+	padding-top: rem(15px);
+	@include media-breakpoint-up(md){
+		padding-top: rem(0px);
+	}
+	.pill-container{
+		max-width: 100%;
+	}
+}
+
+.form-wrap{
+	padding-top: rem(60px);
+	&__headline{
+		@extend .h5;
+		margin-bottom: rem(32px);
+	}
+	&__input-wrap{
+		margin: 0 !important;
+		label{
+			display: block;
+			@include media-breakpoint-up(sm){
+				display: flex;
+			}
+			textarea{
+				min-height: rem(131px);
+			}
+			input[type='text'], input[type='email'], input[type='tel'],  {
+				height: 40px;
+				line-height: 40px;
+			}
+		}
+		margin-top: rem(32px);
+	}
+	&__title{
+		width: rem(120px);
+		font-size: rem(16.8px);
+		padding-top: rem(10px);
+		line-height: rem(22px);
+		color: $deep-gray;
+	}
+	.gray-line{
+		height: 1px;
+		background-color: $light;
+		//background-color: red;
+		width: 100%;
+		margin: rem(30px) 0 rem(30px) 0;
+	}
+	&__sent-btn-cont{
+		display: flex;
+
+		flex-wrap: wrap;
+		@include media-breakpoint-up(lg){
+			flex-wrap: nowrap;
+		}
+		p{
+			font-size: rem(14px);
+			line-height: rem(18px);
+
+			order: 2;
+			width: 100%;
+			max-width: 100%;
+			text-align: center;
+			margin-top: rem(10px);
+			@include media-breakpoint-up(lg){
+				order: 1;
+				max-width: rem(260px);
+				text-align: left;
+				margin-top: rem(0px);
+			}
+			a{
+
+			}
+		}
+		.form-wrap__input-wrap{
+			//
+			order: 1;
+			width: 100%;
+
+			@include media-breakpoint-up(lg){
+				order: 2;
+				max-width: rem(260px);
+			}
+			margin-left: auto !important;
+			.form-wrap__input{
+				background-color: $primary;
+				border: none;
+				outline: none;
+				color: $white;
+				width: 100%;
+				&:hover{
+					box-shadow: 0px 12px rem(25) rgba(39, 58, 96, 0.15);
+				}
+			}
+		}
+	}
+}

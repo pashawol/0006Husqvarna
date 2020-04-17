@@ -1,6 +1,7 @@
 
-mixin item-prod(i, t="Триммер бензиновый  Husqvarna 122C")
-	+b.prod-item
+
+mixin item-prod(i, slider ,t="Триммер бензиновый  Husqvarna 122C")
+	+b.prod-item&attributes(attributes)
 		+e.DIV.img-wrap
 			block
 			+e.labels
@@ -11,42 +12,73 @@ mixin item-prod(i, t="Триммер бензиновый  Husqvarna 122C")
 					+icon("like-alt")
 
 			a(href="#")
-				img.swiper-lazy(src="#" data-src=`img/@2x/${i}`, alt="")
+				if !slider
+					img.lazy(src="#" data-src=`img/@2x/${i}`, alt="")
+					//img.swiper-lazy(src="img/@2x/trimer-img.png", alt="")
+				else
+					img.swiper-lazy(src="#" data-src=`img/@2x/${i}`, alt="")
 		+e.title
 			a(href="#")= t
 		+e.price--old 15 990 ₽
 		+e.price--new 11 490 ₽
 		+e.btn(href="#") Купить
-mixin sCatalogHit()
-	// start sCatalog
-	+b.SECTION.sCatalog.section.pb-0&attributes(attributes)
-		.container
-			+b.section-title
-				.row
-					.col
-						h2 Хиты продаж
-					.col-auto
-						a.text-dark(href="#") Все товары
 
-				
+mixin item-prod-multiBlock(i, slider ,t="Триммер бензиновый  Husqvarna 122C", iconpath, btnBackground='#F35321')
+	+b.prod-item&attributes(attributes)
+		+icon(iconpath)
+		+e.content
+			+e.DIV.img-wrap
+				block
+				+e.labels
+					+e.label-link.active(type="button")
+						+icon("compare")
+
+					+e.label-link(type="button")
+						+icon("like-alt")
+
+				a(href="#")
+					if !slider
+						img.lazy(src="#" data-src=`img/@2x/${i}`, alt="")
+						//img.swiper-lazy(src="img/@2x/trimer-img.png", alt="")
+					else
+						img.swiper-lazy(src="#" data-src=`img/@2x/${i}`, alt="")
+			+e.title
+				a(href="#")= t
+			+e.price--old 15 990 ₽
+			+e.price--new 11 490 ₽
+			+e.btn(href="#" style="background:"+btnBackground+";") Купить
+
+mixin sCatalogHit(showTitle='true')
+	// start sCatalog
+	+b.sCatalog.section#sCatalog.pb-0&attributes(attributes)
+		.container
+			if showTitle
+				+b.section-title
+					.row
+						.col
+							h2 Хиты продаж
+						.col-auto
+							a.text-dark(href="#") Все товары
+
+
 			+e.slider-wrappper
 				+arrow()
 				+e.slider--js.swiper-container
 					.swiper-wrapper
 						+e.slide.swiper-slide
-							+item-prod('category-1.jpg')
+							+item-prod('category-1.jpg', 'slider')
 								+e.badge.bg-blue Бестселлер 
 						+e.slide.swiper-slide
-							+item-prod('category-2.jpg')
+							+item-prod('category-2.jpg', 'slider')
 								+e.badge.bg-blue Бестселлер 
 						+e.slide.swiper-slide
-							+item-prod('category-3.jpg')
+							+item-prod('category-3.jpg', 'slider')
 								+e.badge.bg-blue Бестселлер 
 						+e.slide.swiper-slide
-							+item-prod('category-4.jpg')
+							+item-prod('category-4.jpg', 'slider')
 								+e.badge.bg-blue Бестселлер 
 						+e.slide.swiper-slide
-							+item-prod('category-5.jpg')
+							+item-prod('category-5.jpg', 'slider')
 								+e.badge.bg-blue Бестселлер 
 	// end sCatalog
 
@@ -68,19 +100,18 @@ mixin sCatalogNew()
 				+e.slider--js.swiper-container
 					.swiper-wrapper
 						+e.slide.swiper-slide
-							+item-prod('category-1.jpg')
+							+item-prod('category-1.jpg', 'slider')
 								+e.badge.bg-success Новинка
 						+e.slide.swiper-slide
-							+item-prod('category-2.jpg')
+							+item-prod('category-2.jpg', 'slider')
 								+e.badge.bg-success Новинка
 						+e.slide.swiper-slide
-							+item-prod('category-3.jpg')
+							+item-prod('category-3.jpg', 'slider')
 								+e.badge.bg-success Новинка
 						+e.slide.swiper-slide
-							+item-prod('category-4.jpg')
+							+item-prod('category-4.jpg', 'slider')
 								+e.badge.bg-success Новинка
 						+e.slide.swiper-slide
-							+item-prod('category-5.jpg')
+							+item-prod('category-5.jpg', 'slider')
 								+e.badge.bg-success Новинка
 	// end sCatalog
-

@@ -2,6 +2,12 @@
 	// display: block;
 	width: 100%;
 	position: relative;
+	max-width: rem(480);
+
+	&__title {
+		font-weight: 300;
+		margin-bottom: rem(35);
+	}
 
 	.modal-content {
 		// max-width: 485px;
@@ -125,3 +131,234 @@ a {
 @include media-breakpoint-down(sm) {}
 
 @include media-breakpoint-down(xs) {}
+
+
+//modalOrderRequest
+
+.fancybox-bg {
+	background-color: white;
+	opacity: 1 !important;
+
+	@include media-breakpoint-up(md) {
+		background: rgba($dark, 0.8);
+	}
+}
+
+.fancybox-slide--html {
+	padding: 0;
+}
+
+.modal-order-request {
+	overflow: hidden;
+	width: 100%;
+	min-height: 100%;
+	padding: 0 rem(0px) rem(30px) rem(0px) !important;
+
+	@include media-breakpoint-up(md) {
+		padding: rem(30px) !important;
+	}
+
+
+	@include media-breakpoint-up(md) {
+		max-width: rem(650px);
+		min-height: 0;
+	}
+
+	.form-wrap {
+		&__content {
+			padding: 0 rem(20px);
+
+			@include media-breakpoint-up(md) {
+				padding: 0;
+			}
+		}
+
+		&__big-headline {
+			text-align: center;
+			font-size: rem(36px);
+			color: $body-color;
+			margin-bottom: rem(30px);
+		}
+
+		&__headline {
+			margin-bottom: rem(30px);
+
+			&.file-headline {
+				//margin-top: rem(50px);
+			}
+		}
+
+		&__title {
+			color: $body-color;
+
+			@include media-breakpoint-up(md) {
+				margin-left: rem(20px);
+			}
+		}
+
+		&__close-bl {
+			height: rem(60px);
+			line-height: 60px;
+			border-bottom: 1px solid $light;
+			vertical-align: middle;
+
+			a {
+				width: 100%;
+				height: 100%;
+				display: block;
+				padding: 0 20px;
+				line-height: rem(60px);
+				text-decoration: none;
+
+				svg {
+					stroke: $primary;
+					color: transparent;
+					font-size: rem(17px);
+				}
+
+				span {
+					text-transform: uppercase;
+					margin-left: rem(10px);
+					font-size: rem(16px);
+					position: relative;
+					bottom: rem(-1px);
+					color: $dark;
+				}
+			}
+		}
+
+		&__props-pills {
+			display: flex;
+			border-bottom: 1px solid $light;
+			margin: rem(30px) 0;
+			justify-content: space-between;
+
+			@include media-breakpoint-up(sm) {
+				justify-content: flex-start;
+			}
+		}
+
+		&__props-pills-item {
+			line-height: rem(50px);
+			text-transform: uppercase;
+			color: $dark;
+			font-size: rem(16px);
+			cursor: pointer;
+			transition: color .2s ease-in-out;
+
+			&:last-child {
+				text-align: right;
+			}
+
+			min-width: 50%;
+
+			@include media-breakpoint-up(sm) {
+				margin-right: rem(30px);
+				//font-size: rem(16px);
+				min-width: 0;
+			}
+
+			&.active {
+				color: $primary;
+			}
+		}
+	}
+
+	.fill-props-cont,
+	.load-props-cont {
+		min-height: rem(300px);
+		border-bottom: 1px solid $light;
+
+		display: none;
+
+		&.active {
+			display: block;
+		}
+	}
+
+	/*.add-file{
+		//background-color: red;
+		label{
+			//margin-bottom: rem(60px);
+			margin-bottom: 0;
+		}
+		input{
+			display: none;
+		}
+		&__text{
+			text-align: center;
+			border: 1px dashed $light;
+			display: flex;
+			height: rem(100px);
+			align-items: center;
+			justify-content: center;
+		}
+
+	}*/
+	.dropzone {
+		border: 1px dashed $light;
+		min-height: rem(100px);
+		padding: 0;
+		text-align: center;
+	}
+
+	.dz-button {
+		color: $body-color;
+		font-size: rem(16px);
+		line-height: rem(19px);
+		font-weight: 300;
+	}
+
+	/*.dz-preview{
+		//height: rem(80px);
+		//width: rem(120px);
+		//margin: rem(10px);
+		.dz-image{
+			//width: inherit;
+			//height: inherit;
+		}
+		.dz-details{
+			//padding: rem(5px);
+		}
+		.dz-error-mark{
+			//display: none !important;
+		}
+		.dz-success-mark{
+			//display: none !important;
+		}
+	}*/
+
+	.send-props-btn {
+		margin-top: rem(30px);
+
+		@include media-breakpoint-up(sm) {
+			max-width: rem(320px);
+		}
+
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+	}
+
+	.private-policy-txt {
+		max-width: rem(320px);
+		font-size: rem(14px);
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.fancybox-button.fancybox-close-small {
+		display: block;
+		//background-color: red;
+		width: 100%;
+		height: rem(60px);
+		opacity: 0;
+
+		@include media-breakpoint-up(md) {
+			display: none;
+		}
+	}
+}
+
+//$body-color

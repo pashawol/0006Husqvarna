@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+<!-- modal--><!DOCTYPE html>
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
@@ -20,6 +21,10 @@
 		<!-- Custom Browsers Color-->
 		<meta name="theme-color" content="#273a60">
 		<link rel="stylesheet" href="libs/swiper/css/swiper.min.css"/>
+		<!-- dropzone-->
+		<link rel="stylesheet" href="libs/dropzone/min/dropzone.min.css"/>
+		<!--rangle slider css-->
+		<link rel="stylesheet" href="libs/ion-rangeslider/css/ion.rangeSlider.min.css"/>
 		<link rel="stylesheet" href="libs/@fancyapps/fancybox/jquery.fancybox.min.css"/>
 		<link rel="stylesheet" href="css/main.min.css"/>
 	</head>
@@ -30,21 +35,108 @@
 				</div>
 				<div class="menu-mobile__inner">
 					<ul class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-						<li class="menu__item menu__item--has-children" itemprop="item"><a class="menu__link" href="#" itemprop="url"><span></span> Продукция</a>
-							<ul class="sub-menu">
-								<li class="sub-menu__item" itemprop="item"><a class="sub-menu__link" href="#" itemprop="url"> акции</a>
-								</li>
-								<li class="sub-menu__item" itemprop="item"><a class="sub-menu__link" href="#" itemprop="url">сервис</a>
-								</li>
-								<li class="sub-menu__item" itemprop="item"><a class="sub-menu__link" href="#" itemprop="url">доставка</a>
-								</li>
-								<li class="sub-menu__item" itemprop="item"><a class="sub-menu__link" href="#" itemprop="url">оплата</a>
-								</li>
-								<li class="sub-menu__item" itemprop="item"><a class="sub-menu__link" href="#" itemprop="url">о нас</a>
-								</li>
-								<li class="sub-menu__item" itemprop="item"><a class="sub-menu__link" href="#" itemprop="url">контакты</a>
-								</li>
-							</ul>
+						<li class="menu__item menu__item--has-children" itemprop="item"><a class="menu__link" href="#" itemprop="url">
+							 <span></span> Продукция</a>
+							<div class="sub-menu">
+								<ul class="container"> 
+									<li><a class="sub-menu__title" href="#">Трава и газон</a>
+										<ul>
+											<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+											</li>
+											<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+											</li>
+											<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+											</li>
+											<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+											</li>
+										</ul>
+									</li>
+									<li><a class="sub-menu__title" href="#">Трава и газон</a>
+										<ul>
+											<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+											</li>
+											<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+											</li>
+											<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+											</li>
+											<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+											</li>
+										</ul>
+									</li>
+									<li><a class="sub-menu__title" href="#">Трава и газон</a>
+										<ul>
+											<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+											</li>
+											<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+											</li>
+											<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+											</li>
+											<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+											</li>
+										</ul>
+									</li>
+									<li><a class="sub-menu__title" href="#">Трава и газон</a>
+										<ul>
+											<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+											</li>
+											<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+											</li>
+											<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+											</li>
+											<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+											</li>
+										</ul>
+									</li>
+									<li><a class="sub-menu__title" href="#">Трава и газон</a>
+										<ul>
+											<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+											</li>
+											<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+											</li>
+											<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+											</li>
+											<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+											</li>
+										</ul>
+									</li>
+									<li><a class="sub-menu__title" href="#">Трава и газон</a>
+										<ul>
+											<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+											</li>
+											<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+											</li>
+											<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+											</li>
+											<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+											</li>
+										</ul>
+									</li>
+									<li><a class="sub-menu__title" href="#">Трава и газон</a>
+										<ul>
+											<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+											</li>
+											<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+											</li>
+											<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+											</li>
+											<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+											</li>
+										</ul>
+									</li>
+									<li><a class="sub-menu__title" href="#">Трава и газон</a>
+										<ul>
+											<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+											</li>
+											<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+											</li>
+											<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+											</li>
+											<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
 						</li>
 						<li class="menu__item" itemprop="item"><a class="menu__link" href="#" itemprop="url"> акции</a>
 						</li>
@@ -69,18 +161,244 @@
 				<div class="topLine d-none d-md-block">
 					<div class="container">
 						<div class="topLine__row row">
-							<div class="col-lg-auto col">
+							<div class="topLine__col col-lg-auto col">
 								<div class="dropdown dropdown--place dropdown--js">
 									<div class="dropdown__toggle">
 										<svg class="icon icon-mark ">
 											<use xlink:href="img/svg/sprite.svg#mark"></use>
 										</svg><span class="text-primary ttu">Москва</span>
-										<div class="dropdown__toggle-arrow dropdown__toggle-arrow--js"> 
+										<div class="dropdown__toggle-arrow dropdown__toggle-arrow--js">
+										</div>
+									</div>
+									<div class="dropdown-city dropdown-block">
+										<div class="dropdown-city__head">
+											<label class="dropdown-city__title" for="city">Выбирете свой город
+											</label>
+											<input class="form-control" type="text" id="city"/>
+											<button class="dropdown-city__btn" type="button">Искать
+											</button>
+										</div>
+										<div class="dropdown-city__body">
+											<ul>
+												<li><a class="dropdown-city__link text-primary" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link text-dark" href="#">Санкт-Петербург</a>
+												</li>
+												<li><a class="dropdown-city__link text-dark" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link text-dark" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link text-dark" href="#">Нижний Новгород</a>
+												</li>
+											</ul>
+											<ul>
+												<li><a class="text-primary" href="#">Москва </a></li>
+												<li><a class="dropdown-city__link" href="#">Санкт-Петербург</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Санкт-Петербург</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Санкт-Петербург</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Санкт-Петербург</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Санкт-Петербург</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Санкт-Петербург</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Санкт-Петербург</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Санкт-Петербург</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Санкт-Петербург</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Санкт-Петербург</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Санкт-Петербург</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Санкт-Петербург</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Санкт-Петербург</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Санкт-Петербург</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Санкт-Петербург</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Санкт-Петербург</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Санкт-Петербург</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Санкт-Петербург</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Санкт-Петербург</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Санкт-Петербург</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Нижний Новгород</a>
+												</li>
+												<li><a class="dropdown-city__link" href="#">Москва </a>
+												</li>
+											</ul>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="col-lg-auto col">
+							<div class="topLine__col col-lg-auto col">
 								<div class="dropdown dropdown--phone dropdown--js">
 									<div class="dropdown__toggle"><a class="dropdown__link dropdown__link--tel" href="tel:8495215-50-63"> 
 										<svg class="icon icon-tel ">
@@ -89,9 +407,13 @@
 										<div class="dropdown__toggle-arrow dropdown__toggle-arrow--js"> 
 										</div>
 									</div>
+									<div class="dropdown-phone dropdown-block">
+										<div class="dropdown-phone__body"><a class="dropdown-phone__link" href="tel:8800333-18-92">8 800 333-18-92</a><a class="dropdown-phone__link" href="tel:8800333-18-92"><img src="img/svg/whatsapp.svg" alt=""/>8 800 333-18-92</a><a class="dropdown-phone__btn link-modal" href="#modal-call">Заказать звонок</a>
+										</div>
+									</div>
 								</div>
 							</div>
-							<div class="col d-none d-lg-block">
+							<div class="topLine__col col d-none d-lg-block">
 								<div class="topLine__time">
 									<svg class="icon icon-clock ">
 										<use xlink:href="img/svg/sprite.svg#clock"></use>
@@ -115,6 +437,13 @@
 											<use xlink:href="img/svg/sprite.svg#user"></use>
 										</svg>Николай
 									</div>
+									<div class="dropdown-block dropdown-block--user">
+										<div class="dropdown-block__body"><a class="dropdown-block__link" href="#">Мои заказы</a><a class="dropdown-block__link" href="#">Избранное</a><a class="dropdown-block__link" href="#">Профиль </a><a class="dropdown-block__link" href="#"> 
+											<svg class="icon icon-exit ">
+												<use xlink:href="img/svg/sprite.svg#exit"></use>
+											</svg>Выйти</a>
+										</div>
+									</div>
 								</div>
 							</div>
 							<div class="col-auto">
@@ -123,6 +452,66 @@
 										<svg class="icon icon-basket ">
 											<use xlink:href="img/svg/sprite.svg#basket"></use>
 										</svg><span class="dropdown__count">99 </span></span>236 990 ₽
+									</div>
+									<div class="dropdown-block dropdown-block--basket">
+										<div class="dropdown-block__body">
+											<div class="goods">
+												<div class="goods__item">
+													<div class="goods__item-img-descr"><img src="img/@2x/lawn-mover-small.png" alt="lawn-mover"/>
+														<div>Триммер бензиновый  Husqvarna 122C
+															<div class="goods__price-bl">
+																<div class="old-price">15 990 ₽</div>
+																<div class="new-price">11 490 ₽ </div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="goods__item">
+													<div class="goods__item-img-descr"><img src="img/@2x/lawn-mover-small.png" alt="lawn-mover"/>
+														<div>Триммер бензиновый  Husqvarna 122C
+															<div class="goods__price-bl">
+																<div class="old-price">15 990 ₽</div>
+																<div class="new-price">11 490 ₽ </div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="goods__item">
+													<div class="goods__item-img-descr"><img src="img/@2x/lawn-mover-small.png" alt="lawn-mover"/>
+														<div>Триммер бензиновый  Husqvarna 122C
+															<div class="goods__price-bl">
+																<div class="old-price">15 990 ₽</div>
+																<div class="new-price">11 490 ₽ </div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="goods__item">
+													<div class="goods__item-img-descr"><img src="img/@2x/lawn-mover-small.png" alt="lawn-mover"/>
+														<div>Триммер бензиновый  Husqvarna 122C
+															<div class="goods__price-bl">
+																<div class="old-price">15 990 ₽</div>
+																<div class="new-price">11 490 ₽ </div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="dropdown-block__footer">
+											<div class="row">
+												<div class="col"> Товары </div>
+												<div class="col-auto">99 </div>
+											</div>
+											<div class="row text-primary">
+												<div class="col">Скидка</div>
+												<div class="col-auto">-11 890 ₽</div>
+											</div>
+											<div class="row h5 fw-300 pt-2">
+												<div class="col">ИТОГО </div>
+												<div class="col-auto">33 294  ₽</div>
+											</div><a class="btn btn-primary btn-block" href="#">Просмотр корзины</a>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -133,30 +522,117 @@
 				<!-- start top-nav-->
 				<div class="top-nav block-with-lazy">
 					<div class="container">
-						<div class="row">
+						<div class="top-nav__row row">
 							<div class="col-auto d-lg-none">
 								<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
 								</div>
 							</div>
 							<div class="col-lg-auto col text-md-center"><a class="top-nav__logo" href="/"><img src="img/svg/logo.svg" alt=""/></a>
 							</div>
-							<div class="col d-none d-lg-block">
+							<div class="col d-none d-lg-block position-static">
 								<ul class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-									<li class="menu__item menu__item--has-children" itemprop="item"><a class="menu__link" href="#" itemprop="url"><span></span> Продукция</a>
-										<ul class="sub-menu">
-											<li class="sub-menu__item" itemprop="item"><a class="sub-menu__link" href="#" itemprop="url"> акции</a>
-											</li>
-											<li class="sub-menu__item" itemprop="item"><a class="sub-menu__link" href="#" itemprop="url">сервис</a>
-											</li>
-											<li class="sub-menu__item" itemprop="item"><a class="sub-menu__link" href="#" itemprop="url">доставка</a>
-											</li>
-											<li class="sub-menu__item" itemprop="item"><a class="sub-menu__link" href="#" itemprop="url">оплата</a>
-											</li>
-											<li class="sub-menu__item" itemprop="item"><a class="sub-menu__link" href="#" itemprop="url">о нас</a>
-											</li>
-											<li class="sub-menu__item" itemprop="item"><a class="sub-menu__link" href="#" itemprop="url">контакты</a>
-											</li>
-										</ul>
+									<li class="menu__item menu__item--has-children" itemprop="item"><a class="menu__link" href="#" itemprop="url">
+										 <span></span> Продукция</a>
+										<div class="sub-menu">
+											<ul class="container"> 
+												<li><a class="sub-menu__title" href="#">Трава и газон</a>
+													<ul>
+														<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+														</li>
+														<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+														</li>
+														<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+														</li>
+														<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+														</li>
+													</ul>
+												</li>
+												<li><a class="sub-menu__title" href="#">Трава и газон</a>
+													<ul>
+														<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+														</li>
+														<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+														</li>
+														<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+														</li>
+														<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+														</li>
+													</ul>
+												</li>
+												<li><a class="sub-menu__title" href="#">Трава и газон</a>
+													<ul>
+														<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+														</li>
+														<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+														</li>
+														<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+														</li>
+														<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+														</li>
+													</ul>
+												</li>
+												<li><a class="sub-menu__title" href="#">Трава и газон</a>
+													<ul>
+														<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+														</li>
+														<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+														</li>
+														<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+														</li>
+														<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+														</li>
+													</ul>
+												</li>
+												<li><a class="sub-menu__title" href="#">Трава и газон</a>
+													<ul>
+														<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+														</li>
+														<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+														</li>
+														<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+														</li>
+														<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+														</li>
+													</ul>
+												</li>
+												<li><a class="sub-menu__title" href="#">Трава и газон</a>
+													<ul>
+														<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+														</li>
+														<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+														</li>
+														<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+														</li>
+														<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+														</li>
+													</ul>
+												</li>
+												<li><a class="sub-menu__title" href="#">Трава и газон</a>
+													<ul>
+														<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+														</li>
+														<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+														</li>
+														<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+														</li>
+														<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+														</li>
+													</ul>
+												</li>
+												<li><a class="sub-menu__title" href="#">Трава и газон</a>
+													<ul>
+														<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+														</li>
+														<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+														</li>
+														<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+														</li>
+														<li><a class="sub-menu__link" href="#"><span class="sub-menu__img-wrap"><img src="img/@2x/category-1.jpg" alt=""/></span>Бензопилы </a>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</div>
 									</li>
 									<li class="menu__item" itemprop="item"><a class="menu__link" href="#" itemprop="url"> акции</a>
 									</li>
@@ -172,11 +648,108 @@
 									</li>
 								</ul>
 							</div>
-							<div class="col-auto">
-								<div class="search-toggle search-toggle--js"> 
-									<svg class="icon icon-zoom ">
-										<use xlink:href="img/svg/sprite.svg#zoom"></use>
-									</svg><span class="d-none d-lg-inline">Поиск</span>
+							<div class="col-auto position-static">
+								<div class="dropdown dropdown--search dropdown--js position-static">
+									<div class="search-toggle search-toggle--js text-white"> 
+										<svg class="icon icon-zoom ">
+											<use xlink:href="img/svg/sprite.svg#zoom"></use>
+										</svg><span class="d-none d-lg-inline">Поиск</span>
+									</div>
+									<div class="dropdown-block dropdown-block--search">
+										<div class="search-block">
+											<div class="container">
+												<div class="row">
+													<div class="col">
+														<div class="search-line">
+															<div class="row">
+																<div class="col-auto position-static">
+																	<div class="dropdown dropdown--var dropdown--js">
+																		<div class="dropdown__toggle dropdown__toggle--var">Искать везде 
+																			<div class="dropdown__toggle-arrow dropdown__toggle-arrow--js">
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<div class="col">
+																	<div class="search-line__input-wrap form-group"><input class="search-line__input form-control" type="text" placeholder="Поиск" name="text"/>
+																	</div>
+																	<!-- +e.input-wrap-->
+																	<div class="search-line__delete">
+																		<svg class="icon icon-cross ">
+																			<use xlink:href="img/svg/sprite.svg#cross"></use>
+																		</svg>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="search-result"><a class="search-result__item" href="#"><span class="search-result__lg"> ТРИММЕРА</span></a><a class="search-result__item" href="#"><span class="search-result__lg"> расходники для ТРИММЕРА</span></a><a class="search-result__item" href="#">
+															<div class="goods">
+																<div class="goods__item">
+																	<div class="row">
+																		<div class="col-auto">
+																			<div class="goods__img-wrap"><img src="img/@2x/lawn-mover-small.png" alt="lawn-mover"/>
+																			</div>
+																		</div>
+																		<div class="col-auto">
+																			<p>Триммер бензиновый Husqvarna 122C</p>
+																		</div>
+																		<div class="col-auto">
+																			<div class="goods__price-bl text-center m-0 p-0">
+																				<div class="old-price">15 990 ₽</div>
+																				<div class="new-price">11 490 ₽</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div></a><a class="search-result__item" href="#">
+															<div class="goods">
+																<div class="goods__item">
+																	<div class="row">
+																		<div class="col-auto">
+																			<div class="goods__img-wrap"><img src="img/@2x/lawn-mover-small.png" alt="lawn-mover"/>
+																			</div>
+																		</div>
+																		<div class="col-auto">
+																			<p>Триммер бензиновый Husqvarna 122C</p>
+																		</div>
+																		<div class="col-auto">
+																			<div class="goods__price-bl text-center m-0 p-0">
+																				<div class="old-price">15 990 ₽</div>
+																				<div class="new-price">11 490 ₽</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div></a><a class="search-result__item" href="#">
+															<div class="goods">
+																<div class="goods__item">
+																	<div class="row">
+																		<div class="col-auto">
+																			<div class="goods__img-wrap"><img src="img/@2x/lawn-mover-small.png" alt="lawn-mover"/>
+																			</div>
+																		</div>
+																		<div class="col-auto">
+																			<p>Триммер бензиновый Husqvarna 122C</p>
+																		</div>
+																		<div class="col-auto">
+																			<div class="goods__price-bl text-center m-0 p-0">
+																				<div class="old-price">15 990 ₽</div>
+																				<div class="new-price">11 490 ₽</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div></a>
+														</div>
+													</div>
+													<div class="col-auto">
+														<button class="search-block__btn btn btn-primary" type="submit"> ИСКАТЬ
+														</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 							<div class="col-auto d-md-none"><a class="top-nav__link" href="#">
@@ -184,10 +757,111 @@
 									<use xlink:href="img/svg/sprite.svg#user"></use>
 								</svg></a>
 							</div>
-							<div class="col-auto d-md-none"><a class="top-nav__link" href="#">
-								<svg class="icon icon-basket ">
-									<use xlink:href="img/svg/sprite.svg#basket"></use>
-								</svg></a>
+							<div class="col-auto d-md-none position-relative">
+								<div class="dropdown dropdown--search dropdown--js">
+									<div class="dropdown__toggle">
+										<div class="top-nav__link">
+											<svg class="icon icon-basket ">
+												<use xlink:href="img/svg/sprite.svg#basket"></use>
+											</svg>
+										</div>
+									</div>
+									<div class="dropdown-block dropdown-block--search">
+										<div class="search-block">
+											<div class="container">
+												<div class="row">
+													<div class="col">
+														<div class="search-line">
+															<div class="row">
+																<div class="col-auto position-static">
+																	<div class="dropdown dropdown--var dropdown--js">
+																		<div class="dropdown__toggle dropdown__toggle--var">Искать везде 
+																			<div class="dropdown__toggle-arrow dropdown__toggle-arrow--js">
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<div class="col">
+																	<div class="search-line__input-wrap form-group"><input class="search-line__input form-control" type="text" placeholder="Поиск" name="text"/>
+																	</div>
+																	<!-- +e.input-wrap-->
+																	<div class="search-line__delete">
+																		<svg class="icon icon-cross ">
+																			<use xlink:href="img/svg/sprite.svg#cross"></use>
+																		</svg>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="search-result"><a class="search-result__item" href="#"><span class="search-result__lg"> ТРИММЕРА</span></a><a class="search-result__item" href="#"><span class="search-result__lg"> расходники для ТРИММЕРА</span></a><a class="search-result__item" href="#">
+															<div class="goods">
+																<div class="goods__item">
+																	<div class="row">
+																		<div class="col-auto">
+																			<div class="goods__img-wrap"><img src="img/@2x/lawn-mover-small.png" alt="lawn-mover"/>
+																			</div>
+																		</div>
+																		<div class="col-auto">
+																			<p>Триммер бензиновый Husqvarna 122C</p>
+																		</div>
+																		<div class="col-auto">
+																			<div class="goods__price-bl text-center m-0 p-0">
+																				<div class="old-price">15 990 ₽</div>
+																				<div class="new-price">11 490 ₽</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div></a><a class="search-result__item" href="#">
+															<div class="goods">
+																<div class="goods__item">
+																	<div class="row">
+																		<div class="col-auto">
+																			<div class="goods__img-wrap"><img src="img/@2x/lawn-mover-small.png" alt="lawn-mover"/>
+																			</div>
+																		</div>
+																		<div class="col-auto">
+																			<p>Триммер бензиновый Husqvarna 122C</p>
+																		</div>
+																		<div class="col-auto">
+																			<div class="goods__price-bl text-center m-0 p-0">
+																				<div class="old-price">15 990 ₽</div>
+																				<div class="new-price">11 490 ₽</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div></a><a class="search-result__item" href="#">
+															<div class="goods">
+																<div class="goods__item">
+																	<div class="row">
+																		<div class="col-auto">
+																			<div class="goods__img-wrap"><img src="img/@2x/lawn-mover-small.png" alt="lawn-mover"/>
+																			</div>
+																		</div>
+																		<div class="col-auto">
+																			<p>Триммер бензиновый Husqvarna 122C</p>
+																		</div>
+																		<div class="col-auto">
+																			<div class="goods__price-bl text-center m-0 p-0">
+																				<div class="old-price">15 990 ₽</div>
+																				<div class="new-price">11 490 ₽</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div></a>
+														</div>
+													</div>
+													<div class="col-auto">
+														<button class="search-block__btn btn btn-primary" type="submit"> ИСКАТЬ
+														</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -312,7 +986,7 @@
 								<div class="sCategory__title">Газонокосилки
 								</div></a>
 					</div>
-					<button class="btn-more" type="button"> Показать ещё 
+					<button class="btn-more" type="button"> Показать ещё
 						<svg class="icon icon-chevron-down ">
 							<use xlink:href="img/svg/sprite.svg#chevron-down"></use>
 						</svg>
@@ -321,7 +995,7 @@
 			</section>
 			<!-- end sCategory-->
 			<!-- start sCatalog-->
-			<section class="sCatalog section pb-0">
+			<div class="sCatalog section pb-0" id="sCatalog">
 				<div class="container">
 					<div class="section-title">
 						<div class="row">
@@ -470,7 +1144,7 @@
 						</div>
 					</div>
 				</div>
-			</section>
+			</div>
 			<!-- end sCatalog-->
 			<!-- start sCatalog-->
 			<section class="sCatalog sCatalog--new pb-0 section">
@@ -625,7 +1299,7 @@
 			</section>
 			<!-- end sCatalog-->
 			<!-- start sArticals-->
-			<section class="sArticals section" id="sArticals">
+			<section class="sArticals sArticals--main-page section" id="sArticals">
 				<div class="container">
 					<div class="section-title">
 						<div class="row">
@@ -636,36 +1310,36 @@
 						</div>
 					</div>
 					<div class="row">
-								<div class="sArticals__col col-lg-4 col-sm-6"><a class="sArticals__img-wrap bg-wrap" href="#"><img class="object-fit-js img-bg lazy" src="#" data-src="img/@2x/artical-1.jpg" alt=""/></a>
-									<div class="sArticals__label">лес
-									</div>
-									<div class="sArticals__title"><a href="#">Позаботьтесь о тепле и безопасности с принадлежностями для работы  с цепной пилой</a>
-									</div>
-									<p>В разных странах действуют различные правила и нормативы касательно защитной одежды и оборудования. Но дело даже не в соблюдении стандартов и норм. Ради собственной безопасности при работе с цепной пилой не забывайте о следующих средствах защиты.</p><a class="sArticals__link" href="#">Читать
-									<svg class="icon icon-chevron-right ">
-										<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
-									</svg></a>
-								</div>
-								<div class="sArticals__col col-lg-4 col-sm-6"><a class="sArticals__img-wrap bg-wrap" href="#"><img class="object-fit-js img-bg lazy" src="#" data-src="img/@2x/artical-2.jpg" alt=""/></a>
-									<div class="sArticals__label">безопасность
-									</div>
-									<div class="sArticals__title"><a href="#">Позаботьтесь о тепле и безопасности с принадлежностями для работы  с цепной пилой</a>
-									</div>
-									<p>В разных странах действуют различные правила и нормативы касательно защитной одежды и оборудования. Но дело даже не в соблюдении стандартов и норм. Ради собственной безопасности при работе с цепной пилой не забывайте о следующих средствах защиты.</p><a class="sArticals__link" href="#">Читать
-									<svg class="icon icon-chevron-right ">
-										<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
-									</svg></a>
-								</div>
-								<div class="sArticals__col col-lg-4 col-sm-6"><a class="sArticals__img-wrap bg-wrap" href="#"><img class="object-fit-js img-bg lazy" src="#" data-src="img/@2x/artical-3.jpg" alt=""/></a>
-									<div class="sArticals__label">мероприятия
-									</div>
-									<div class="sArticals__title"><a href="#">Позаботьтесь о тепле и безопасности с принадлежностями для работы  с цепной пилой</a>
-									</div>
-									<p>В разных странах действуют различные правила и нормативы касательно защитной одежды и оборудования. Но дело даже не в соблюдении стандартов и норм. Ради собственной безопасности при работе с цепной пилой не забывайте о следующих средствах защиты.</p><a class="sArticals__link" href="#">Читать
-									<svg class="icon icon-chevron-right ">
-										<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
-									</svg></a>
-								</div>
+						<div class="sArticals__col col-lg-4 col-sm-6"><a class="sArticals__img-wrap bg-wrap" href="#"><img class="object-fit-js img-bg lazy" src="#" data-src="img/@2x/artical-1.jpg" alt=""/></a>
+							<div class="sArticals__label">лес
+							</div>
+							<div class="sArticals__title"><a href="#">Позаботьтесь о тепле и безопасности с принадлежностями для работы  с цепной пилой</a>
+							</div>
+							<p>В разных странах действуют различные правила и нормативы касательно защитной одежды и оборудования. Но дело даже не в соблюдении стандартов и норм. Ради собственной безопасности при работе с цепной пилой не забывайте о следующих средствах защиты.</p><a class="sArticals__link" href="#">Читать
+							<svg class="icon icon-chevron-right ">
+								<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+							</svg></a>
+						</div>
+						<div class="sArticals__col col-lg-4 col-sm-6"><a class="sArticals__img-wrap bg-wrap" href="#"><img class="object-fit-js img-bg lazy" src="#" data-src="img/@2x/artical-2.jpg" alt=""/></a>
+							<div class="sArticals__label">безопасность
+							</div>
+							<div class="sArticals__title"><a href="#">Позаботьтесь о тепле и безопасности с принадлежностями для работы  с цепной пилой</a>
+							</div>
+							<p>В разных странах действуют различные правила и нормативы касательно защитной одежды и оборудования. Но дело даже не в соблюдении стандартов и норм. Ради собственной безопасности при работе с цепной пилой не забывайте о следующих средствах защиты.</p><a class="sArticals__link" href="#">Читать
+							<svg class="icon icon-chevron-right ">
+								<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+							</svg></a>
+						</div>
+						<div class="sArticals__col col-lg-4 col-sm-6"><a class="sArticals__img-wrap bg-wrap" href="#"><img class="object-fit-js img-bg lazy" src="#" data-src="img/@2x/artical-3.jpg" alt=""/></a>
+							<div class="sArticals__label">мероприятия
+							</div>
+							<div class="sArticals__title"><a href="#">Позаботьтесь о тепле и безопасности с принадлежностями для работы  с цепной пилой</a>
+							</div>
+							<p>В разных странах действуют различные правила и нормативы касательно защитной одежды и оборудования. Но дело даже не в соблюдении стандартов и норм. Ради собственной безопасности при работе с цепной пилой не забывайте о следующих средствах защиты.</p><a class="sArticals__link" href="#">Читать
+							<svg class="icon icon-chevron-right ">
+								<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+							</svg></a>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -759,8 +1433,122 @@
 					</div>
 				</div>
 			</footer>
-		</div>
+		</div><a class="btn btn-primary link-modal m-1" href="#modal-city">Ваш город Москва?</a><a class="btn btn-primary link-modal m-1" href="#modal-call">Заказ звонка</a><a class="btn btn-primary link-modal m-1" href="#modal-inner">Авторизация</a><a class="btn btn-primary link-modal m-1" href="#modal-reg">Регистрация</a><a class="btn btn-primary link-modal m-1" href="#modal-prod-add">Товар добавлен в корзину</a>
 		<div class="d-none">
+			<div class="modal-win" id="modal-city">
+				<div class="text-center">
+					<div class="modal-win__title h2">Ваш город Москва?
+					</div>
+					<div class="row">
+						<div class="col-6">
+							<button class="btn btn-primary btn-block" type="button">Да
+							</button>
+						</div>
+						<div class="col-6">
+							<button class="btn btn-outline-primary btn-block" type="button">Нет
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- #modal-city-->
+			<div class="modal-win" id="modal-prod-add">
+				<div class="text-center">
+					<div class="modal-win__title h2">Товар добавлен в корзину
+					</div>
+					<div class="row">
+						<div class="col-6">
+							<button class="btn btn-primary btn-block" type="button">Оформить
+							</button>
+						</div>
+						<div class="col-6">
+							<button class="btn btn-outline-primary btn-block" type="button">Продолжить
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- #modal-prod-add-->
+			<div class="form-wrap modal-win modal-form" id="modal-call">
+				<form>
+					<input type="hidden" name="example-input-field"/>
+					<input class="order" type="hidden" name="order" value="Заявка  с сайта"/>
+					<input class="utm_source" type="hidden" name="utm_source"/>
+					<input class="utm_term" type="hidden" name="utm_term"/>
+					<input class="utm_medium" type="hidden" name="utm_medium"/>
+					<input class="utm_campaign" type="hidden" name="utm_campaign"/>
+					<div class="text-center">
+						<div class="modal-win__title h2">Заказ звонка</div>
+					</div>
+					<div class="form-wrap__input-wrap form-group">
+						<label><span class="form-wrap__title">Телефон</span><input class="form-wrap__input form-control" type="tel" placeholder="" name="tel" required="required"/>
+						</label>
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group">
+						<label><span class="form-wrap__title">Ваше Имя</span><input class="form-wrap__input form-control" type="text" placeholder="" name="text" required="required"/> 
+						</label> 
+					</div>
+					<!-- +e.input-wrap--><input class="form-wrap__btn btn-primary disabled" type="submit" value="Перезвоните мне"/>
+					<div class="form-wrap__polite small text-center">Нажимая на&nbsp;кнопку, вы&nbsp;подтверждаете своё совершеннолетие, соглашаетесь на&nbsp;обработку персональных данных в&nbsp;соответствии с&nbsp;<a href="#">Условиями</a>, а&nbsp;также с&nbsp;<a href="#">Условиями продажи</a>
+					</div>
+				</form>
+			</div>
+			<!-- #modal-call-->
+			<div class="form-wrap modal-win modal-form" id="modal-inner">
+				<form>
+					<input type="hidden" name="example-input-field"/>
+					<input class="order" type="hidden" name="order" value="Заявка  с сайта"/>
+					<input class="utm_source" type="hidden" name="utm_source"/>
+					<input class="utm_term" type="hidden" name="utm_term"/>
+					<input class="utm_medium" type="hidden" name="utm_medium"/>
+					<input class="utm_campaign" type="hidden" name="utm_campaign"/>
+					<div class="text-center">
+						<div class="modal-win__title h2">Авторизация</div>
+					</div>
+					<div class="form-wrap__input-wrap form-group">
+						<label><span class="form-wrap__title">Эл. почта</span><input class="form-wrap__input form-control" type="email" placeholder="" name="email" required="required"/>
+						</label>
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group">
+						<label><span class="form-wrap__title">Пароль</span><input class="form-wrap__input form-control" type="text" placeholder="" name="text" required="required"/> 
+						</label> 
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="text-center mx-2"><a class="text-body small" href="#">Забыли пароль?</a></div><input class="form-wrap__btn btn-primary disabled" type="submit" value="Войти"/><input class="form-wrap__btn btn-outline-secondary" type="submit" value="Регистрация"/>
+				</form>
+			</div>
+			<!-- #modal-inner-->
+			<div class="form-wrap modal-win modal-form" id="modal-reg">
+				<form>
+					<input type="hidden" name="example-input-field"/>
+					<input class="order" type="hidden" name="order" value="Заявка  с сайта"/>
+					<input class="utm_source" type="hidden" name="utm_source"/>
+					<input class="utm_term" type="hidden" name="utm_term"/>
+					<input class="utm_medium" type="hidden" name="utm_medium"/>
+					<input class="utm_campaign" type="hidden" name="utm_campaign"/>
+					<div class="text-center">
+						<div class="modal-win__title h2">Регистрация</div>
+					</div>
+					<div class="form-wrap__input-wrap form-group">
+						<label><span class="form-wrap__title">Эл. почта</span><input class="form-wrap__input form-control" type="email" placeholder="" name="email" required="required"/>
+						</label>
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group">
+						<label><span class="form-wrap__title">Пароль</span><input class="form-wrap__input form-control" type="text" placeholder="" name="text" required="required"/> 
+						</label> 
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group">
+						<label><span class="form-wrap__title">Повторить пароль</span><input class="form-wrap__input form-control" type="text" placeholder="" name="text" required="required"/> 
+						</label> 
+					</div>
+					<!-- +e.input-wrap--><input class="form-wrap__btn btn-primary disabled" type="submit" value="Зарегистрироваться"/>
+				</form>
+			</div>
+			<!-- #modal-reg-->
 			<div class="form-wrap modal-win modal-form" id="modal-call">
 				<form>
 					<input type="hidden" name="example-input-field"/>
@@ -780,17 +1568,90 @@
 					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="tel" placeholder="Ваш телефон" name="tel" required="required"/>
 					</div>
 					<!-- +e.input-wrap--><input class="form-wrap__btn" type="submit" value="Рассчитать"/>
-					<div class="form-wrap__polite">
-						<label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox" checked="checked"/><span class="custom-input__lab"></span><small class="custom-input__text text-secondary">Согласен на обработку и хранение моих персональных данных в соответствии с условиями</small>
-						</label>
+					<div class="form-wrap__polite small text-center">Нажимая на&nbsp;кнопку, вы&nbsp;подтверждаете своё совершеннолетие, соглашаетесь на&nbsp;обработку персональных данных в&nbsp;соответствии с&nbsp;<a href="#">Условиями</a>, а&nbsp;также с&nbsp;<a href="#">Условиями продажи</a>
 					</div>
 				</form>
 			</div>
 			<!-- #modal-call-->
+			<div class="form-wrap modal-order-request" id="modal-order-request">
+				<form>
+					<input type="hidden" name="example-input-field"/>
+					<input class="order" type="hidden" name="order" value="Заявка  с сайта"/>
+					<input class="utm_source" type="hidden" name="utm_source"/>
+					<input class="utm_term" type="hidden" name="utm_term"/>
+					<input class="utm_medium" type="hidden" name="utm_medium"/>
+					<input class="utm_campaign" type="hidden" name="utm_campaign"/>
+					<div class="form-wrap__close-bl d-block d-md-none"><a href="#modal-order-request">
+							<svg class="icon icon-angle-left ">
+								<use xlink:href="img/svg/sprite.svg#angle-left"></use>
+							</svg><span>назад</span></a>
+					</div>
+					<div class="form-wrap__content">
+						<div class="form-wrap__big-headline">Запрос счёта
+						</div>
+						<div class="form-wrap__headline">Контактные данные
+						</div>
+						<div class="form-wrap__input-wrap form-group">
+							<label><span class="form-wrap__title">ФИО*</span><input class="form-wrap__input form-control" type="text" placeholder="" name="user-name" required="required"/>
+							</label>
+						</div>
+						<!-- +e.input-wrap-->
+						<div class="form-wrap__input-wrap form-group">
+							<label><span class="form-wrap__title">Телефон*</span><input class="form-wrap__input form-control" type="tel" placeholder="" name="phone" required="required"/>
+							</label>
+						</div>
+						<!-- +e.input-wrap-->
+						<div class="form-wrap__input-wrap form-group">
+							<label><span class="form-wrap__title">E-mail*</span><input class="form-wrap__input form-control" type="email" placeholder="" name="email" required="required"/>
+							</label>
+						</div>
+						<!-- +e.input-wrap-->
+						<div class="form-wrap__props-pills">
+							<div class="form-wrap__props-pills-item active" data-tab-for="fill-props" data-tab-pill="props">Заполнить реквизиты
+							</div>
+							<div class="form-wrap__props-pills-item" data-tab-for="load-props" data-tab-pill="props">Загрузить реквизиты
+							</div>
+						</div>
+						<div class="fill-props-cont active" data-tab-for="fill-props" data-tab-content="props">
+							<div class="form-wrap__headline">Реквизиты
+							</div>
+							<div class="form-wrap__input-wrap form-group">
+								<label><span class="form-wrap__title">Корр. счёт</span><input class="form-wrap__input form-control" type="text" placeholder="" name="account-1"/>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+							<div class="form-wrap__input-wrap form-group">
+								<label><span class="form-wrap__title">Расч. счёт</span><input class="form-wrap__input form-control" type="text" placeholder="" name="account-2"/>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+							<div class="form-wrap__input-wrap form-group">
+								<label><span class="form-wrap__title">E-mail*</span><input class="form-wrap__input form-control" type="email" placeholder="" name="email" required="required"/>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+						</div>
+						<div class="load-props-cont" data-tab-for="load-props" data-tab-content="props">
+							<div class="form-wrap__headline file-headline">Прикрепить файл
+							</div>
+							<div class="dropzone" id="props-dz">
+								<div class="fallback">
+									<input name="file" type="file" multiple=""/>
+								</div>
+							</div>
+							<!--+e.headline.file-headline Прикрепить файл-->
+							<!--+add-file('Перенесите сюда файл или выберите на компьютере')-->
+						</div>
+						<button class="order-bnt send-props-btn">Отправить</button>
+						<p class="private-policy-txt">Нажимая кнопку &laquo;Оформить заказ&raquo;,  вы&nbsp;соглашаетесь с&nbsp;<a href="#">Политикой конфиденциальности.</a></p>
+					</div>
+				</form>
+			</div>
 		</div>
-		<!-- modal-->
 		<script src="js/lazy.js"></script>
 		<script src="libs/jquery/jquery.min.js"></script>
+		<!-- dropzone-->
+		<script src="libs/dropzone/min/dropzone.min.js"></script>
 		<!-- полифил для picture-->
 		<script src="libs/picturefill/picturefill.min.js"></script>
 		<!-- полифил для object-fit-->
@@ -805,6 +1666,8 @@
 		<script src="libs/svg4everybody/svg4everybody.min.js"></script>
 		<!-- /for svg libs-->
 		<script src="libs/inputmask/jquery.inputmask.min.js"></script>
+		<!--range slider js-->
+		<script src="libs/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
 		<script src="js/common.js"></script>
 	</body>
 </html>

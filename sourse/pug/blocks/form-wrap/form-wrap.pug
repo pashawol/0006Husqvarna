@@ -35,9 +35,9 @@ mixin select(label,pl,...items)
 						option()= item
 
 //- wrapper for form
-mixin form-wrap()
+mixin form-wrap(act)
 	+b.form-wrap&attributes(attributes)
-		form
+		form(action= act)
 			input(type='hidden',  name='example-input-field')
 			input(type='hidden', class="order", name='order', value=`Заявка  с сайта`) 
 			input(type="hidden" class='utm_source' name='utm_source')
@@ -56,17 +56,34 @@ mixin in-c(typ="checkbox", text, name= typ )
 			block 
 		else
 			+e.SPAN.text= text
- 
-mixin add-file(n)
+
+mixin in-c06(typ="checkbox", text, name= typ )
+	+b.LABEL.custom-input&attributes(attributes)
+		+e.INPUT.input(type= typ , name= name)
+		+e.SPAN.lab
+		if block
+			block
+		else
+			+e.SPAN.text= text
+
+
+mixin in-r(name='radio-btn-group', checked=false)
+	+b.LABEL.custom-radio&attributes(attributes)
+		if checked
+			+e.INPUT.radio-input(type="radio", name = name, checked)
+			block
+		else
+			+e.INPUT.radio-input(type="radio", name = name)
+			block
+
+mixin add-file(spantxt='Прикрепить резюме')
 	+b.add-file
 		label
 			+e.INPUT.input(name='file', type='file')
 			+e.SPAN.btn 
-			+e.SPAN.text   Прикрепить резюме
+			+e.SPAN.text= spantxt
 		+e.SPAN.filename 
 
 
 mixin polite()
-	+e.polite
-		+in-c()(checked)
-			+e.SMALL.text.text-secondary Согласен на обработку и хранение моих персональных данных в соответствии с условиями
+	+e.polite.small.text-center Нажимая на&nbsp;кнопку, вы&nbsp;подтверждаете своё совершеннолетие, соглашаетесь на&nbsp;обработку персональных данных в&nbsp;соответствии с&nbsp;#[a(href="#") Условиями], а&nbsp;также с&nbsp;#[a(href="#") Условиями продажи]

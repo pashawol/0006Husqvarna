@@ -17,6 +17,44 @@ mixin sCategory()
 					+item("4","Садовые тракторы")
 					+item("5","Генераторы")
 					+item("6","Газонокосилки")
-			+b.btn-more(type="button")  Показать ещё 
+			+b.btn-more(type="button")  Показать ещё
 				+icon("chevron-down")
+	// end sCategory
+
+mixin sCategory02()
+	// start sCategory
+	+b.sCategory.section#sCategory&attributes(attributes)
+		.container
+			.row
+				mixin item(i,t)
+					+e.col.col-6.col-md-4.col-lg-auto.catalog-square-pills-item(href="#")
+						+e.DIV.img-wrap
+							img.res-i.lazy(src="#" data-src=`img/@2x/category-${i}.jpg`, alt="")
+						+e.DIV.title= t
+				+item("1","Бензопилы")
+				+item("2","Воздуходувы")
+				+item("3","Травокосилки")
+				+item("4","Садовые тракторы")
+				+item("5","Генераторы")
+				+item("1","Бензопилы")
+				+item("2","Воздуходувы")
+				+item("3","Травокосилки")
+				+item("4","Садовые тракторы")
+				+item("5","Генераторы")
+	// end sCategory
+
+mixin sCategory02-1()
+	// start sCategory
+	+b.sCategory.section#sCategory&attributes(attributes)
+		.container
+			.row
+				mixin item(i,t)
+					+e.col.col-12.col-md-6.col-lg-3.sub-category-item(href="#")&attributes(attributes)
+						+e.DIV.img-wrap
+							img.res-i.lazy(src="#" data-src=`img/@2x/transparent-chainsaw.png`, alt="")
+						+e.DIV.title= t
+				+item("1","Электрические пилы")
+				+item("1","Аккумуляторные пилы")(class="active")
+				+item("1","Бытовые бензопилы")
+				+item("1","Универсальные бензопилы")
 	// end sCategory

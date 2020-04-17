@@ -1,36 +1,104 @@
- 
-	  
-.soc{
-	margin: 0 rem(-5px);
-	display: flex;
-	&__item{
-		text-decoration: none !important;
-		margin: 0 rem(5px);
-		vertical-align: middle;
-		@include mt;
-		display: block;
-		&:hover{
-		 	// box-shadow: 0 0 33px 0px rgba(255, 83, 0, 0.16);
-			opacity: .6 ;
-		}
-		
-	}
-	.icon{
-	font-size: rem(30);
-	}
-	 
+ .soc {
+ 	margin: 0 rem(-5px);
+ 	display: flex;
 
-}
- 
+ 	&__item {
+ 		text-decoration: none !important;
+ 		margin: 0 rem(5px);
+ 		vertical-align: middle;
+ 		@include mt;
+ 		display: block;
 
-.counter{
-	counter-reset: num;
-	&__item {
-		position: relative; 
-		&::before {
-			content: counter(num);
-			counter-increment: num;
-		}
-	}
-}
+ 		&:hover {
+ 			// box-shadow: 0 0 33px 0px rgba(255, 83, 0, 0.16);
+ 			opacity: .6;
+ 		}
 
+ 	}
+
+ 	.icon {
+ 		font-size: rem(30);
+ 	}
+
+
+ }
+
+
+ .counter {
+ 	counter-reset: num;
+
+ 	&__item {
+ 		position: relative;
+
+ 		&::before {
+ 			content: counter(num);
+ 			counter-increment: num;
+ 		}
+ 	}
+ }
+
+ //my custom code
+
+ .headline {
+ 	color: $dark;
+ 	//font-size: rem(58px);
+ 	font-weight: 500;
+ 	line-height: 120%;
+
+ 	@include media-breakpoint-up(lg) {
+ 		//font-size: rem(58px);
+ 		margin-left: 0px;
+ 	}
+
+ 	@include media-breakpoint-up(md) {
+ 		//font-size: rem(53px);
+ 		margin-left: -10px;
+ 		padding-top: rem(58px);
+ 	}
+
+ 	//font-size: 30px;
+ 	padding-top: 33px;
+ }
+
+ //mixin amountInpBlock
+ .amount-inp {
+ 	display: flex;
+ 	align-items: center;
+
+ 	// align-self: flex-start;
+ 	button {
+ 		width: rem(40px);
+ 		height: rem(40px);
+ 		border: 1px solid $light;
+ 		background-color: transparent;
+ 		outline: none;
+ 		transition: border .3s ease-in-out, box-shadow .05s ease-in-out;
+
+ 		&:hover {
+ 			border: 1px solid $primary;
+ 		}
+
+ 		&:active {
+ 			box-shadow: inset 0px 0px 10px -5px darken($primary, 50);
+ 		}
+ 	}
+
+ 	input {
+ 		height: rem(40px);
+ 		width: rem(90px);
+ 		border: 1px solid $light;
+ 		background-color: white;
+ 		text-align: center;
+ 		outline: none;
+ 		transition: transform .25s ease-in-out, border .25s ease-in-out;
+
+ 		&:hover,
+ 		&:focus {
+ 			border: 1px solid $primary;
+ 		}
+
+ 		&:focus {
+ 			transform: scale(1.1);
+ 		}
+ 	}
+ }

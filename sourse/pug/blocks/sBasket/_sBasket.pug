@@ -1,0 +1,95 @@
+mixin sBasket()
+	// start sBasket
+	+b.sBasket.section#sBasket&attributes(attributes)
+		.container
+			.row
+				.col-lg-8
+					+b.goods
+						+e.item
+							+e.item-img-descr
+								a(href="#")
+									img(src="img/@2x/lawn-mover-small.png" alt='lawn-mover')
+								p
+									a(href="#") Бурильная машина Husqvarna DMS 160 AT с&#160;наклонной стойкой
+									span Артикул: 9670982-01
+									span Вес: 15 кг
+							+amountInpBlock("2")
+							//+e.amount-inp
+								button -
+								input(type="text" value="2")
+								button +
+							+e.price-bl
+								.old-price 15 990 ₽
+								.new-price 11 490 ₽
+							+e.BUTTON.cross-bl
+								+icon('cross')
+						+e.item
+							+e.item-img-descr
+								a(href="#")
+									img(src="img/@2x/lawn-mover-small.png" alt='lawn-mover')
+								p
+									a(href="#") Бурильная машина Husqvarna DMS 160 AT   с&#160;наклонной стойкой 
+									span Артикул: 9670982-01
+									span Вес: 15 кг
+							+amountInpBlock("2")
+							+e.price-bl
+								.old-price 15 990 ₽
+								.new-price 1 111 490 ₽
+							+e.BUTTON.cross-bl
+								+icon('cross')
+				.col
+					+b.order-cont
+						+e.headline Ваш заказ
+						+e.prors-item
+							span Товары 
+							span 99
+						+e.prors-item
+							span Вес
+							span 30 кг
+						+e.prors-item.discount
+							span Скидка
+							span -11 890 ₽
+						+e.prors-item.result
+							span ИТОГО
+							span 33 294  ₽
+						//+e.promo-inp-cont
+						+form-wrap()
+							+input('Промокод', 'text', undefined, 'promocode')
+								button.send-promo-btn
+									span Применить
+									+icon('arrow-top-left')
+						button.order-bnt Оформить
+						+b.link-modal.btn-more.bill-btn(href="#modal-order-request")  Запросить счёт
+						p.lower-txt Доступные способы и время доставки можно выбрать при оформлении заказа
+					+b.order-cont
+						+e.headline Ваш заказ
+						+e.prors-item
+							span Товары 
+							span 99
+						+e.prors-item
+							span Вес
+							span 30 кг
+						+e.prors-item.discount
+							span Скидка
+							span -11 890 ₽
+						+e.prors-item.promo
+							span Промокод
+							span -11 890 ₽
+						+e.prors-item.result
+							span ИТОГО
+							span 33 294  ₽
+						//+e.promo-inp-cont
+						+form-wrap()
+							+input('Промокод', 'text', undefined, 'promocode')(value="Freetrimer2020")
+								button.send-promo-btn.success-btn
+									span Готово
+									+icon('check-common')
+						button.order-bnt Оформить
+						+b.link-modal.btn-more.bill-btn(href="#modal-order-request")  Запросить счёт
+						p.lower-txt Доступные способы и время доставки можно выбрать при оформлении заказа
+
+
+
+
+	// end sBasket
+

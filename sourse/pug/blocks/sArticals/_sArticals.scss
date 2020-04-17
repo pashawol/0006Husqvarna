@@ -43,7 +43,7 @@
 		}
 		@include media-breakpoint-down(md) {
 
-			&__col{
+			&--main-page &__col{
 				&:nth-child(3){
 					display: none;
 				}

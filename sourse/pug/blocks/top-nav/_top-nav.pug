@@ -17,27 +17,71 @@ mixin mob-mnu()
 			+mnu()
 			.text-right
 	//  мобильное меню
+
+mixin search()
+	+b.dropdown-block--search
+		+b.search-block
+			.container
+				.row
+					.col
+						+b.search-line
+							.row
+								.col-auto.position-static
+									+b.dropdown--var.--js
+										+e.toggle--var Искать везде 
+											+e.toggle-arrow--js
+										//- +city()
+								.col
+									+input("Поиск")
+									+e.delete
+										+icon('cross')
+						+b.search-result
+							+e.item(href="#"): +e.lg  ТРИММЕРА
+							+e.item(href="#"): +e.lg  расходники для ТРИММЕРА
+							- for (var x = 0; x < 3; x++)
+								+e.item(href="#")
+									+b.DIV.goods
+										+e.DIV.item
+											.row
+												.col-auto
+													+e.img-wrap
+														img(src="img/@2x/lawn-mover-small.png" alt='lawn-mover')
+												.col-auto
+													p Триммер бензиновый Husqvarna 122C
+												.col-auto
+													+e.price-bl.text-center.m-0.p-0
+														.old-price 15 990 ₽
+														.new-price 11 490 ₽
+										 
+
+					.col-auto
+						+e.btn.btn.btn-primary(type="submit")  ИСКАТЬ
 mixin top-nav() 
 	// start top-nav
 	+b.top-nav.block-with-lazy
 		.container
-			.row
+			+e.row.row
 				.col-auto.d-lg-none
 					+b.toggle-menu-mobile--js
 						span
 				.col-lg-auto.col.text-md-center
 					+e.logo(href="/")
 						img(src="img/svg/logo.svg", alt="")
-				.col.d-none.d-lg-block
+				.col.d-none.d-lg-block.position-static
 					+mnu()
-				.col-auto
-					+b.search-toggle--js 
-						+icon("zoom")
-						span.d-none.d-lg-inline Поиск
+				.col-auto.position-static
+					+b.dropdown--search.--js.position-static
+						+b.search-toggle--js.text-white 
+							+icon("zoom")
+							span.d-none.d-lg-inline Поиск
+						+search()
 				.col-auto.d-md-none
 					+e.link(href="#")
 						+icon("user")
-				.col-auto.d-md-none
-					+e.link(href="#")
-						+icon("basket")
+				.col-auto.d-md-none.position-relative
+					+b.dropdown--search.--js
+						+e.toggle
+							.top-nav__link
+								+icon("basket")
+						+search()
 	// end top-nav

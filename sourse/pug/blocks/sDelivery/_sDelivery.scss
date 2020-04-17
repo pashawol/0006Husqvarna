@@ -1,0 +1,79 @@
+
+	// start .sDelivery
+	.sDelivery {
+		font-size: $delivery-text-font-size;
+		font-weight: 300;
+		line-height: $delivery-text-line-height;
+		color: $delivery-txt-color;
+		@include media-breakpoint-up(xl) {
+			padding: rem(22px) 0 rem(95px) 0 !important;
+		}
+		@include media-breakpoint-up(md) {
+			padding: rem(10px) 0 rem(80px) 0 !important;
+		}
+		padding: 10px 0 35px 0 !important;
+		.item-txt-container{
+			max-width: 760px;
+		}
+		.dear-customers-txt{
+			padding-bottom: 24px;
+		}
+		.delivery-info-txt{
+			margin: 0;
+			padding-bottom: 25px;
+		}
+		.item-txt-container-headline{
+			font-size: 22.8px;
+			font-weight: 500;
+			margin-bottom: 10px;
+			@include media-breakpoint-up(md) {
+				padding: 30px 0 15px 0;
+			}
+			padding: 20px 0 15px 0;
+		}
+		.delivery-price{
+			.lower-txt-block{
+				padding-top: 24px;
+			}
+		}
+		.delivery-price-outside{
+			.lower-txt-block{
+				padding-top: 24px;
+			}
+		}
+		.delivery-region{
+			padding-top: 3px;
+			.lower-txt-block{
+				padding-top: 24px;
+				max-width: 97%;
+				@include media-breakpoint-up(md) {
+					max-width: 100%;
+				}
+			}
+		}
+
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-up(xs) {}
+	
+	//
+	@include media-breakpoint-between(md, xl) { }
+	
+	
+	//
+	@include media-breakpoint-only(xs) {}
+	@include media-breakpoint-only(sm) {}
+	@include media-breakpoint-only(md) {}
+	@include media-breakpoint-only(lg) {}
+	@include media-breakpoint-only(xl) {}
+	
+	//
+	@include media-breakpoint-down(xl) {}
+	@include media-breakpoint-down(lg) {}
+	@include media-breakpoint-down(md) {}
+	@include media-breakpoint-down(sm) {}
+	@include media-breakpoint-down(xs) {} 
+
+} // end.sDelivery

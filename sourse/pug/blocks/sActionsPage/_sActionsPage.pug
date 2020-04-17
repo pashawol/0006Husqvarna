@@ -1,0 +1,114 @@
+mixin sActionsPage()
+	// start sActionsPage
+	+b.sActionsPage.section#sActionsPage&attributes(attributes)
+		.container
+			.row
+				.col-lg-2.padding-right-0
+					+leftMenu03()
+					+FiltersBlock()
+				.col-lg-10
+					+actionsSlider()
+					+tagsBox()
+					+filterBtnsBar()
+					+b.display-filter-bar
+						//select?
+						button.btn-more.sort-price-btn
+							span Цена по возрастанию
+							+icon('chevron-down')
+							span.custom-select
+								span Цена по возрастанию
+								span Цена по возрастанию2
+								span Цена по возрастанию3
+						input.hidden-input-custom-select.d-none(type="text" value='Цена по возрастанию')
+						+e.display-filter-icons-cont.d-none.d-md-flex
+							+e.BUTTON.display-filter-icon.active(data-tab-for='square-box' data-tab-pill='catalog-goods-display')
+								+icon('9-dots-icon')
+							+e.BUTTON.display-filter-icon(data-tab-for='table-box' data-tab-pill='catalog-goods-display')
+								+icon('6-dots-icon')
+					+catalogGoodsSquareItems()
+					+catalogGoodsTableItems()
+					+pugin()
+					+b.bottom-txt-block
+						span Предлагаем Вашему вниманию
+						p
+							| Предлагаем Вашему вниманию надежные мощные триммеры, подходящие для выполнения множества задач. Это простые в&nbsp;управлении  и&nbsp;гибкие инструменты небольшого веса, снабженные интеллектуальными функциями. Вам не&nbsp;придется больше беспокоить соседей. Триммеры Husqvarna производят минимальное количество шума и&nbsp;идеально подойдут для работы в&nbsp;жилых кварталах.
+							| Предлагаем Вашему вниманию надежные мощные триммеры, подходящие для выполнения множества задач. Это простые в&nbsp;управлении  и&nbsp;гибкие инструменты небольшого веса, снабженные интеллектуальными функциями. Вам не&nbsp;придется больше беспокоить соседей. Триммеры Husqvarna производят минимальное количество шума и&nbsp;идеально подойдут для работы в&nbsp;жилых кварталах.
+	// end sActionsPage
+
+mixin leftMenu03()
+	+b.left-menu-col.d-none.d-lg-block
+		+listFrame()
+		+listFrame()
+		+listFrame()
+
+mixin actionsSlider()
+	+b.actionsSlider
+		.slider-action-prev.d-none.d-sm-block
+			+icon('angle-left')
+		.slider-action-next.d-none.d-sm-block
+			+icon('chevron-right')
+		.action-slider-puging
+		+e.slider.swiper-actions-container
+			.swiper-wrapper
+				+actionSlide('artical-5',true, 1)
+				+actionSlide('artical-6',true)
+				+actionSlide('artical-5',true, 1)
+				+actionSlide('artical-6',true)
+				+actionSlide('artical-4',true, 0,0,10,0)
+				+actionSlide('artical-3')
+				+actionSlide('artical-4',true, 0,0,10,0)
+				+actionSlide('artical-3')
+
+
+mixin actionSlide(imgName, timer=false, days=0, hours=0, mins=0, secs=10)
+	+e.slide.swiper-slide
+		img.slide-img(src="img/@2x/"+imgName+".jpg" alt='some-img')
+		a.slide-content(href="#")
+			.slide-txt
+				span НАСЛАЖДАЙТЕСЬ
+				br
+				span ИДЕАЛЬНЫМ ГАЗОНОМ
+				br
+				span С HUSQVARNA
+				br
+				span AUTOMOWER®
+			if timer
+				// it will work if at list one attribute granted
+				+b.timer-block.timer-block-js(data-days=days data-hours=hours data-mins=mins data-secs=secs)
+					+icon('sand-clock')
+					+e.time-amount-bl.days-amount
+						span.num=days
+						span.txt дня
+					+e.two-dots :
+					+e.time-amount-bl.hours-amount
+						span.num=hours
+						span.txt часов
+					+e.two-dots :
+					+e.time-amount-bl.mins-amount
+						span.num=mins
+						span.txt мин
+					+e.two-dots :
+					+e.time-amount-bl.secs-amount
+						span.num=secs
+						span.txt сек
+
+mixin tagsBox()
+	+b.tags-box
+		a(href="#") Строительные пылесосы
+		a(href="#") Шлифовальные машины
+		a(href="#") Плиткорезы
+		a(href="#") Затирочные машины
+		a(href="#").active Оборудование для алмазного бурения
+		a(href="#") Бензорезы
+		a(href="#") Вибраторы
+		a(href="#") Нарезчик швов
+		a(href="#") Виброплиты
+		a(href="#") Стенорезные машины
+		a(href="#") Бензорезы
+		a(href="#") Канатные машины
+		a(href="#") Оборудование для алмазного бурения
+		a(href="#") Бензорезы
+		a(href="#") Бензорезы
+		a(href="#") Камнерезные станки
+		a(href="#") Камнерезные станки
+		a(href="#") Виброплиты

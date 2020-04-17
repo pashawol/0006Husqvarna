@@ -1,15 +1,81 @@
+mixin city()
+	+b.dropdown-city.dropdown-block
+		+e.head
+			+e.LABEL.title(for="city") Выбирете свой город
+			input.form-control(type="text" id='city')
+			+e.btn(type="button") Искать
+		+e.body
+			ul
+				li: +e.link(href="#").text-primary Москва 
+				li: +e.link(href="#").text-dark Санкт-Петербург
+				li: +e.link(href="#").text-dark Нижний Новгород
+				li: +e.link(href="#").text-dark Москва 
+				li: +e.link(href="#").text-dark Нижний Новгород
+			ul
+				li: a(href="#").text-primary Москва 
+				- for (var x = 0; x < 20; x++)
+					li: +e.link(href="#") Санкт-Петербург
+					li: +e.link(href="#") Нижний Новгород
+					li: +e.link(href="#") Москва 
+					li: +e.link(href="#") Нижний Новгород
+					li: +e.link(href="#") Москва 
+mixin phone()
+	+b.dropdown-phone.dropdown-block
+		+e.body
+			+e.link(href="tel:8800333-18-92") 8 800 333-18-92
+			+e.link(href="tel:8800333-18-92")
+				img(src="img/svg/whatsapp.svg", alt="")
+				| 8 800 333-18-92
+			+e.btn.link-modal(href="#modal-call") Заказать звонок
+mixin user()
+	+b.dropdown-block--user
+		+e.body
+			+e.link(href="#") Мои заказы
+			+e.link(href="#") Избранное
+			+e.link(href="#") Профиль 
+			+e.link(href="#") 
+				+icon("exit")
+				| Выйти
+mixin basket()
+	+b.dropdown-block--basket
+		+e.body
+			+b.goods
+				- for (var x = 0; x < 4; x++)
+					+e.item
+						+e.item-img-descr
+							img(src="img/@2x/lawn-mover-small.png" alt='lawn-mover')
+							div
+								| Триммер бензиновый  Husqvarna 122C
+								+e.price-bl
+									.old-price 15 990 ₽
+									.new-price 11 490 ₽ 
+		+e.footer
+			.row
+				.col  Товары 
+
+				.col-auto 99 
+
+			.row.text-primary
+				.col Скидка
+				.col-auto -11 890 ₽
+			.row.h5.fw-300.pt-2
+				.col ИТОГО 
+				.col-auto 33 294  ₽
+			a.btn.btn-primary.btn-block(href="#") Просмотр корзины
+
 mixin topLine()
 	// start topLine
 	+b.topLine.d-none.d-md-block&attributes(attributes)
 		.container
 			+e.row.row
-				.col-lg-auto.col
+				+e.col.col-lg-auto.col
 					+b.dropdown--place.--js
 						+e.toggle
 							+icon("mark")
 							span.text-primary.ttu Москва
-							+e.toggle-arrow--js 
-				.col-lg-auto.col
+							+e.toggle-arrow--js
+						+city()
+				+e.col.col-lg-auto.col
 					+b.dropdown--phone.--js
 						+e.toggle
 							+e.link--tel(href="tel:8495215-50-63") 
@@ -17,7 +83,8 @@ mixin topLine()
 								| 8 495 215-50-63
 							
 							+e.toggle-arrow--js 
-				.col.d-none.d-lg-block
+						+phone()
+				+e.col.col.d-none.d-lg-block
 					+e.time
 						+icon('clock')
 						span пн. &mdash;&nbsp;пт.&nbsp;09:00&nbsp;&mdash; 20:00 | 
@@ -34,7 +101,7 @@ mixin topLine()
 						+e.toggle
 							+icon("user")
 							| Николай
- 
+						+user()
 				.col-auto
 					+b.dropdown--basket.--js
 						+e.toggle
@@ -42,5 +109,5 @@ mixin topLine()
 								+icon("basket")
 								+e.SPAN.count 99 
 							| 236 990 ₽
- 
+						+basket()
 	// end topLine

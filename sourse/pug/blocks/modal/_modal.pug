@@ -1,37 +1,64 @@
 
 mixin modal() 
  
-	//- #modal-win.modal.fade(tabindex='-1', role='dialog', aria-labelledby='modal-win', aria-hidden='true')
-		
-	//- 	div( class="   modal-dialog  modal-dialog-centered  " role='document') 
-	//- 		+form-wrap()(class=" modal-content modal-win ")
-	//- 			button.close.mfp-close(type='button', data-dismiss='modal', aria-label='Close')  ×
-	//- 			+input("tel","Введите ваш телефон")(name="tel" required) 
-				
-	//- 			+e.BUTTON.btn.btn.btn-accent.btn-block Отправить
-	//- 			+b.wrap-polite
-	//- 				+b.custom-input.polite
-	//- 					+b.LABEL.custom-input.polite
-	//- 						+e.INPUT.input.__input-radio(type="checkbox" checked name="polite" required value="")
-	//- 						+e.SPAN.lab
-	//- 						| Даю 
-	//- 						| 
-	//- 						span.link( data-toggle='modal', data-target='#exampleModal2') согласие 
-
-	//- 						| на хранение и обработку   персональных данных
-	
- 
-
-	//- #thanks.modal.fade(tabindex='-1', role='dialog', aria-labelledby='thanks', aria-hidden='true')
-	//- 	div( class=" ttext-center  modal-dialog  modal-dialog-centered  " role='document') 
-	//- 		+form-wrap()(class=" modal-content modal-win ")
-	//- 			button.close.mfp-close(type='button', data-dismiss='modal', aria-label='Close')  ×
-	//- 			br
-	//- 			.h2 Заявка принята
-	//- 			br
-	//- 			.h3 Скоро с Вами свяжутся
-	//- 			br 
+	a.btn.btn-primary.link-modal.m-1(href="#modal-city") Ваш город Москва?
+	a.btn.btn-primary.link-modal.m-1(href="#modal-call") Заказ звонка
+	a.btn.btn-primary.link-modal.m-1(href="#modal-inner") Авторизация
+	a.btn.btn-primary.link-modal.m-1(href="#modal-reg") Регистрация
+	a.btn.btn-primary.link-modal.m-1(href="#modal-prod-add") Товар добавлен в корзину
 	.d-none
+		+b.modal-win(id="modal-city" class=" " )
+			.text-center
+				+e.title.h2 Ваш город Москва?
+				.row
+					.col-6
+						+b.btn.btn-primary.btn-block(type="button") Да
+					.col-6
+						+b.btn.btn-outline-primary.btn-block(type="button") Нет
+		// #modal-city
+		
+		+b.modal-win(id="modal-prod-add" class=" " )
+			.text-center
+				+e.title.h2 Товар добавлен в корзину
+				.row
+					.col-6
+						+b.btn.btn-primary.btn-block(type="button") Оформить
+					.col-6
+						+b.btn.btn-outline-primary.btn-block(type="button") Продолжить
+		// #modal-prod-add
+		
+		+form-wrap()(id="modal-call" class="  modal-win modal-form" )
+			.text-center
+				.modal-win__title.h2 Заказ звонка
+			+input("","tel",'Телефон')(required)
+			+input("","text",'Ваше Имя')(required) 
+			//- +input("email","Ваше email")(required)
+			//- +text( "Комментарий")
+			+e.INPUT.btn.btn-primary.disabled(type="submit" value="Перезвоните мне") 
+			+polite()
+		// #modal-call
+		+form-wrap()(id="modal-inner" class="  modal-win modal-form" )
+			.text-center
+				.modal-win__title.h2 Авторизация
+			+input("","email",'Эл. почта')(required)
+			+input("","text",'Пароль')(required) 
+			//- +input("email","Ваше email")(required)
+			//- +text( "Комментарий")
+			.text-center.mx-2
+				a.text-body.small(href="#") Забыли пароль?
+			+e.INPUT.btn.btn-primary.disabled(type="submit" value="Войти") 
+			+e.INPUT.btn.btn-outline-secondary(type="submit" value="Регистрация")  
+		// #modal-inner
+		+form-wrap()(id="modal-reg" class="  modal-win modal-form" )
+			.text-center
+				.modal-win__title.h2 Регистрация
+			+input("","email",'Эл. почта')(required)
+			+input("","text",'Пароль')(required) 
+			+input("","text",'Повторить пароль')(required) 
+		 
+			+e.INPUT.btn.btn-primary.disabled(type="submit" value="Зарегистрироваться")  
+		// #modal-reg
+
 		+form-wrap()(id="modal-call" class="  modal-win modal-form" )
 			.text-center
 				+e.title.h3.ttu Обратный звонок
@@ -43,4 +70,33 @@ mixin modal()
 			+e.INPUT.btn(type="submit" value="Рассчитать") 
 			+polite()
 		// #modal-call
-	// modal
+		+form-wrap()(id="modal-order-request" class="modal-order-request" )
+			+e.close-bl.d-block.d-md-none
+				a(href='#modal-order-request')
+					+icon('angle-left')
+					span назад
+			+e.content
+				+e.big-headline Запрос счёта
+				+e.headline Контактные данные
+				+input('', 'text', 'ФИО*', 'user-name')(required)
+				+input('', 'tel', 'Телефон*', 'phone')(required)
+				+input('', 'email', 'E-mail*')(required)
+				+e.props-pills
+					+e.props-pills-item.active(data-tab-for='fill-props'  data-tab-pill='props') Заполнить реквизиты
+					+e.props-pills-item(data-tab-for='load-props'  data-tab-pill='props') Загрузить реквизиты
+				.fill-props-cont.active(data-tab-for='fill-props' data-tab-content='props')
+					+e.headline Реквизиты
+					+input('', 'text', 'Корр. счёт', 'account-1')
+					+input('', 'text', 'Расч. счёт', 'account-2')
+					+input('', 'email', 'E-mail*')(required)
+				.load-props-cont(data-tab-for='load-props' data-tab-content='props')
+					+e.headline.file-headline Прикрепить файл
+					#props-dz.dropzone()
+						.fallback
+							input(name='file', type='file', multiple='')
+					//+e.headline.file-headline Прикрепить файл
+					//+add-file('Перенесите сюда файл или выберите на компьютере')
+				button.order-bnt.send-props-btn Отправить
+				p.private-policy-txt Нажимая кнопку &laquo;Оформить заказ&raquo;,  вы&nbsp;соглашаетесь с&nbsp;
+					a(href='#') Политикой конфиденциальности.
+// modal

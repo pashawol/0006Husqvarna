@@ -13,13 +13,13 @@ mixin icon(name,mod)
 
 //- breadcrumb
 mixin breadcrumb(...items)
-	nav(aria-label="breadcrumb" )
-		ol.breadcrumb(itemscope itemtype="http://schema.org/BreadcrumbList")
-			-for (var i = 0; i < items.length; i++)
-				li.breadcrumb-item( class=(i == items.length - 1 ? "active" : '')   itemprop="itemListElement" itemscope  itemtype="http://schema.org/ListItem")
-					a(href=(i == 0 ? "/" : '#') itemprop="item" )
-						span( itemprop="name")= items[i]
-						meta(itemprop="position" content= (i + 1) )
+		nav(aria-label="breadcrumb" ).breadcrumb-slider-js.swiper-container
+			ol.breadcrumb.swiper-wrapper(itemscope itemtype="http://schema.org/BreadcrumbList")
+				-for (var i = 0; i < items.length; i++)
+					li.breadcrumb-item.swiper-slide( class=(i == 0 ? "active" : '')   itemprop="itemListElement" itemscope  itemtype="http://schema.org/ListItem")
+						a(href=(i == 0 ? "/" : '#') itemprop="item" )
+							span( itemprop="name")= items[i]
+							meta(itemprop="position" content= (i + 1) )
 
 
 		
@@ -51,28 +51,31 @@ mixin pugin()
 	//- 				i(class="fas fa-chevron-right")
 	.pagination-wrapper
 		ul.page-numbers
-			mixin li(n)
-				li
-					if n
-						a.page-numbers(href='#')= n 
-					else
-						block
-			+li()
-				span.prev.page-numbers( )
-					img(src="img/svg/prev.svg", alt="")
-			+li()
-				span.prev.page-numbers( )
-					img(src="img/svg/prev-double.svg", alt="")
+			mixin li(n, className)
+				if className
+					li(class=className)
+						if n
+							a.page-numbers(href='#')= n
+						else
+							block
+				else
+					li
+						if n
+							a.page-numbers(href='#')= n
+						else
+							block
+			+li(undefined, 'prev-arr')
+				a.next.page-numbers(href='#')
+					//img(src="img/svg/chevron-right.svg", alt="")
+					+icon('angle-left')
 			+li()
 				span.page-numbers.current  1
-			- for (var x = 1; x < 5; x++)
+			- for (var x = 2; x < 4; x++)
 				+li(x)
-			+li()
+			+li(undefined, 'next-arr')
 				a.next.page-numbers(href='#')
-					img(src="img/svg/next.svg", alt="")
-			+li()
-				a.next.page-numbers(href='#')
-					img(src="img/svg/next-double.svg", alt="")
+					//img(src="img/svg/chevron-right.svg", alt="")
+					+icon('chevron-right')
 //- +pugin()
 //- /pugination
 //- h2.yel(class="  wow fadeInUp animated " data-wow-offset="120" data-wow-duration="1.2s")  
@@ -112,18 +115,19 @@ mixin mnu()
 			}
 	+b.UL.menu(itemscope itemtype="http://schema.org/SiteNavigationElement")
 		+e.LI.item--has-children(itemprop="item" )
-			+e.link(href="#" itemprop="url") #[span] Продукция
-			+b.UL.sub-menu
-				-
-					var subnav= { 
-						"Строительство загородных домов":"#",
-						"Отделка загородных домов":"#",
-						"Покраска деревянных домов":"#",
-						"Штукатурные фасады загородных домов":"#" ,
-						}
-				each sublinkPatch, sublinkName in nav
-					+e.LI.item(itemprop="item" )
-						+e.link(href= sublinkPatch itemprop="url")= sublinkName
+			+e.link(href="#" itemprop="url") 
+				| #[span] Продукция
+			+b.sub-menu
+				ul.container 
+					- for (var y = 0; y < 8; y++)
+						li
+							+e.title(href="#") Трава и газон
+							ul
+								- for (var x = 0; x < 4; x++)
+									li: +e.link(href="#")
+										+e.img-wrap
+											img(src="img/@2x/category-1.jpg", alt="")
+										| Бензопилы 
 		each linkPatch, linkName in nav
 			+e.LI.item(itemprop="item" )
 				+e.link(href= linkPatch itemprop="url")= linkName
@@ -228,7 +232,7 @@ mixin pic2({i, bg, lazy="lazy", media='576px'})
 //- 		sizes="(max-width: 576px) 0, 100%"
 //- 		data-srcset=(media != 0 ? (data1 + " " + '0, '+ data2 + " 100% " ) : null))&attributes(attributes)
 		//- "img/@1x/real.jpg 1x, img/@2x/real.jpg 2x"
-	//- if media !== 0  
+	//- if media !== 0
 	//- 	each val2 in [smpath2,smpath1] 
 	//- 	+src(i,exp,val2,lazy)(data-srcset=(val2 == smpath2 ? "(min-width:"+ media+")" : null))
 	//- else 
@@ -258,3 +262,15 @@ mixin ie11()
 	//- modernizer and for ie11
 	 
 	<!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
+
+mixin headline(hlCont)
+	+b.headline
+		.container
+			h1= hlCont
+			block
+
+mixin amountInpBlock(value="1")
+	+b.amount-inp&attributes(attributes)
+		button -
+		input(type="text" value=value)
+		button +

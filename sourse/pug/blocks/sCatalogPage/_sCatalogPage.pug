@@ -1,0 +1,336 @@
+mixin sCatalogPage(baner='true')
+	// start sCatalogPage
+	+b.sCatalogPage.section#sCatalogPage&attributes(attributes)
+		.container
+			.row
+				.col-lg-2.padding-right-0
+					+leftMenu()
+					+FiltersBlock()
+				.col
+					if baner
+						+Baner()
+					p.banner-desr Предлагаем Вашему вниманию надежные мощные триммеры, подходящие для выполнения множества задач. Это простые в управлении  и гибкие инструменты небольшого веса, снабженные интеллектуальными функциями. Вам не придется больше беспокоить соседей. Триммеры Husqvarna производят минимальное количество шума и идеально подойдут для работы в жилых кварталах.
+					//+catalogSuarePills()
+					block
+					+filterBtnsBar()
+					+b.display-filter-bar
+						//select?
+						button.btn-more.sort-price-btn
+							span Цена по возрастанию
+							+icon('chevron-down')
+							span.custom-select
+								span Цена по возрастанию
+								span Цена по возрастанию2
+								span Цена по возрастанию3
+						input.hidden-input-custom-select.d-none(type="text" value='Цена по возрастанию')
+						+e.display-filter-icons-cont.d-none.d-md-flex
+							+e.BUTTON.display-filter-icon.active(data-tab-for='square-box' data-tab-pill='catalog-goods-display')
+								+icon('9-dots-icon')
+							+e.BUTTON.display-filter-icon(data-tab-for='table-box' data-tab-pill='catalog-goods-display')
+								+icon('6-dots-icon')
+					+catalogGoodsSquareItems()
+					+catalogGoodsTableItems()
+					+pugin()
+					+b.bottom-txt-block
+						span Предлагаем Вашему вниманию
+						p
+							|Предлагаем Вашему вниманию надежные мощные триммеры, подходящие для выполнения множества задач. Это простые в&nbsp;управлении  и&nbsp;гибкие инструменты небольшого веса, снабженные интеллектуальными функциями. Вам не&nbsp;придется больше беспокоить соседей. Триммеры Husqvarna производят минимальное количество шума и&nbsp;идеально подойдут для работы в&nbsp;жилых кварталах.
+							|Предлагаем Вашему вниманию надежные мощные триммеры, подходящие для выполнения множества задач. Это простые в&nbsp;управлении  и&nbsp;гибкие инструменты небольшого веса, снабженные интеллектуальными функциями. Вам не&nbsp;придется больше беспокоить соседей. Триммеры Husqvarna производят минимальное количество шума и&nbsp;идеально подойдут для работы в&nbsp;жилых кварталах.
+
+	// end sCatalogPage
+	//left menu mixin
+mixin leftMenu()
+	+b.left-menu-col.d-none.d-lg-block
+		+e.headline Трава и газон
+		+e.UL.menu-items-list
+			+hasSubList()
+			+hasSubList()(class="active")
+			li
+				a(href="#") Виброплиты
+			li
+				a(href="#") Бензорезы
+			li
+				a(href="#") Рельсорезы
+			li
+				a(href="#") Виброрейки
+			li
+				a(href="#") Вибраторы
+			li
+				a(href="#") Затирочные машины
+			li
+				a(href="#") Оборудование  для алмазного бурения
+			li
+				a(href="#") Плиткорезы
+			li
+				a(href="#") Камнерезные станки
+			li
+				a(href="#") Нарезчик швов
+			li
+				a(href="#") Шлифовальные машины
+			li
+				a(href="#") Стенорезные машины
+			li
+				a(href="#") Канатные машины
+			li
+				a(href="#") Строительные пылесосы
+			li
+				a(href="#") Принадлежности1
+		+listFrame()
+		+listFrame()
+		+listFrame()
+
+mixin hasSubList()
+	li.has-sub-list&attributes(attributes)
+		.sub-list-headline
+			span Бензопилы
+			+icon('chevron-down')
+		ul.sub-list
+			li
+				a(href="#") Самоходные
+			li
+				a(href="#") Аккумуляторные
+			li
+				a(href="#") Механические
+			li
+				a(href="#") Электрические
+
+mixin listFrame()
+	+e.headline Трава и газон
+	+e.UL.menu-items-list
+		li
+			a(href="#") Оборудование
+		li
+			a(href="#") Бензопилы
+		li
+			a(href="#") Бензопилы
+		li
+			a(href="#") Бензопилы
+	//end left menu mixins
+	//filters mixins
+mixin FiltersBlock()
+	+b.filter-bl
+		+e.pop-up-controll-panel.d-flex.d-lg-none
+			+e.back-btn
+				+icon('angle-left')
+				span Назад
+			+e.discard-filters-btn
+				+icon('cross')
+				span сбросить фильтры
+		+form-wrap()
+			.check-box-filter-group
+				+e.headline Фильтр
+				+in-c06("checkbox", 'Самоходные', 'no-my-city')(class="filter-checkbox disabled")
+				+in-c06("checkbox", 'Аккумуляторные', 'no-my-city')(class="filter-checkbox ")
+				+in-c06("checkbox", 'Бензольные', 'no-my-city')(class="filter-checkbox ")
+			.radio-filter-group
+				+e.headline Фильтр
+				+in-r('type-radio-group')(class="filter-radio disabled")
+					span.check-box-cont
+						span.circle
+						span.txt-cont Самоходные
+				+in-r('type-radio-group')(class="filter-radio")
+					span.check-box-cont
+						span.circle
+						span.txt-cont Аккумуляторные
+				+in-r('type-radio-group', true)(class="filter-radio")
+					span.check-box-cont
+						span.circle
+						span.txt-cont Бензольные
+			.price-filter-group
+				+e.headline Цена
+				+range("1", "999999")
+			.check-box-alt-filter-group
+				+e.headline Фильтр
+				+in-c06("checkbox", 'Самоходные', 'no-my-city')(class="filter-checkbox-alt disabled")
+				+in-c06("checkbox", 'Аккумуляторные', 'no-my-city')(class="filter-checkbox-alt ")
+				+in-c06("checkbox", 'Бензольные', 'no-my-city')(class="filter-checkbox-alt ")
+			.accept-filters-btn-cont.d-block.d-lg-none
+				.accept-filters-btn применить фильтры
+
+mixin range(c1, c2)
+	.range-wrap.price_slider_amount
+		.label-cont
+			label.left-inp
+				+e.text.SPAN от
+				+b.INPUT.range-result--minus.minus(type="text")
+			.dash-dark -
+			label.right-inp
+				+e.text-right.SPAN до
+				+b.INPUT.range-result--plus.plus(type="text")
+		input.range-slider.slider-js(type='text'  data-min= c1  data-max= c2)
+		// end filters mixins
+
+mixin Baner()
+	+b.banner
+		img(src="img/@2x/slider.jpg" alt='some-img')
+		+e.title
+			span НАСЛАЖДАЙТЕСЬ
+			br
+			span ИДЕАЛЬНЫМ ГАЗОНОМ
+			br
+			span С HUSQVARNA
+			br
+			span AUTOMOWER®
+		a.headerBlock__btn(href='#') Узнайть больше
+mixin filterBtnsBar()
+	+b.filter-bar-btns.d-flex.d-lg-none
+		+e.filter-btn
+			+icon('filter-bar-icon')
+			span ФИЛЬТР парамтеров
+			.filter-number 3
+		+e.cross-btn.d-none.d-sm-flex
+			+icon('cross')
+
+
+		//table catalog mixins
+mixin catalogGoodsTableItems()
+	+b.table-items-box(data-tab-for='table-box' data-tab-content='catalog-goods-display')
+		+item-prod-table-sample('category-6-png.png')
+		+item-prod-table-sample('category-6-png.png', 'star-bestseller', 'Бестселлер', '#0063da')(class="bestseller-item white-colored-item" style="background-color: #0063da")
+		+item-prod-table-sample('category-6-png.png', 'star-new-item', 'Новинка', '#18B58C')(class="new-item white-colored-item" style="background-color: #18B58C")
+		+item-prod-table-sample('category-6-png.png', 'action-item','Акция', '#F35321', '#18B58C')(class="action-item white-colored-item" style="background-color: #F35321")
+		+item-prod-table-sample('category-6-png.png', 'action-item','Акция', '#e83e8c')(class="action-item white-colored-item" style="background-color: #e83e8c")
+		//#0063da
+
+mixin item-prod-table-sample(i, iconSrc, spanTxt, spanBackground, btnBackground='#F35321')
+	+b.table-sample-item&attributes(attributes)
+		+e.header
+			if iconSrc
+				+b.img-block
+					+icon(iconSrc)
+					+e.img-block-content
+						span(style="background:"+spanBackground+";" )= spanTxt
+						img.lazy(src="#" data-src=`img/@2x/${i}`, alt="some-img")
+			else
+				+b.img-block
+					+e.img-block-content
+						img.lazy(src="#" data-src=`img/@2x/${i}`, alt="some-img")
+			+b.char-block
+				+e.headline Триммер бензиновый Husqvarna 122C
+				+e.char-list.d-none.d-xl-block
+					+e.char-item
+						span HUS Usage
+						span Occasional use
+					+e.char-item
+						span Рабочий объем двигателя
+						span 21.7 см³
+					+e.char-item
+						span Рабочий объем цилиндра
+						span 1.3 куб. дюйм
+					+e.char-item
+						span Номинальная мощность
+						span 0.6 кВт
+				+e.show-more-btn.toggle-chars-goods-table-js
+					span Характеристики
+					+icon('chevron-down')
+			+b.buy-block
+				+e.content
+					+e.labels
+						+e.label-link.active(type="button")
+							+icon("compare")
+						+e.label-link(type="button")
+							+icon("like-alt")
+					+e.old-price 15 990 ₽
+					+e.new-price 11 490 ₽
+					+e.buy-btn(style="background:"+btnBackground+";" )
+						a(href="#") Купить
+		+b.description-of-table-items
+			+e.row-item
+				span Номинальная потребляемая мощность
+				span 1100 Вт
+			+e.row-item
+				span Напряжение сети
+				span 220 - 240 В
+			+e.row-item
+				span Макс. производительность
+				span 4000 л/ч
+			+e.row-item
+				span Максимальная высота всасывания
+				span Максимальная высота всасывания	8 м
+			+e.row-item
+				span Макс. высота подачи
+				span Макс. высота подачи	46 м
+			+e.row-item
+				span Макс. давление
+				span Макс. давление	4,6 бар
+
+
+	//end table catalog mixins
+	//square catalog mixins
+	//item-prod-multiBlock mixin in sCatalog
+mixin catalogGoodsSquareItems()
+	+b.square-items-box.active(data-tab-for='square-box' data-tab-content='catalog-goods-display')
+		//.container
+		.row
+			.col-12.col-sm-6.col-lg-4.item-prod-parent
+				+item-prod-multiBlock('trimer-img.png', false, undefined, 'star-bestseller')(class="catalog-prod-item white-colored-item" style="background-color: #0063da")
+						+e.SPAN.mod-txt Бестселлер
+			.col-12.col-sm-6.col-lg-4.item-prod-parent
+				+item-prod-multiBlock('category-4.jpg', false)(class="catalog-prod-item")
+			.col-12.col-sm-6.col-lg-4.item-prod-parent
+				+item-prod-multiBlock('trimer-img.png', false, undefined, 'star-new-item')(class="catalog-prod-item white-colored-item" style="background-color: #18B58C")
+					+e.SPAN.mod-txt Новинка
+			.col-12.col-sm-6.col-lg-4.item-prod-parent
+				+item-prod-multiBlock('trimer-img.png', false)(class="catalog-prod-item")
+			.col-12.col-sm-6.col-lg-4.item-prod-parent
+				+item-prod-multiBlock('trimer-img.png', false, undefined, 'action-item', '#18B58C' )(class="catalog-prod-item white-colored-item" style="background-color: #F35321")
+					+e.SPAN.mod-txt Акция
+			.col-12.col-sm-6.col-lg-4.item-prod-parent
+				+item-prod-multiBlock('trimer-img.png', false, undefined, 'action-item')(class="catalog-prod-item white-colored-item" style="background-color: pink")
+					+e.SPAN.mod-txt Акция
+	//end square catalog mixins
+
+mixin catalogSuarePills()
+	//delete
+	.container.catalog-square-pills
+		.row
+			.col-6.col-md-4.col-lg-auto.catalog-square-pills-item
+				a(href="#")
+					.img-box
+						img(src="img/@2x/category-3.jpg")
+					.description Травокосилки
+			.col-6.col-md-4.col-lg-auto.catalog-square-pills-item
+				a(href="#")
+					.img-box
+						img(src="img/@2x/category-4.jpg")
+					.description Садовые тракторы
+			.col-6.col-md-4.col-lg-auto.catalog-square-pills-item
+				a(href="#")
+					.img-box
+						img(src="img/@2x/category-5.jpg")
+					.description Генераторы
+			.col-6.col-md-4.col-lg-auto.catalog-square-pills-item
+				a(href="#")
+					.img-box
+						img(src="img/@2x/category-6.jpg")
+					.description Газонокосилки
+			.col-6.col-md-4.col-lg-auto.catalog-square-pills-item
+				a(href="#")
+					.img-box
+						img(src="img/@2x/category-1.jpg")
+					.description Бензопилы
+			.col-6.col-md-4.col-lg-auto.catalog-square-pills-item
+				a(href="#")
+					.img-box
+						img(src="img/@2x/category-3.jpg")
+					.description Травокосилки
+			.col-6.col-md-4.col-lg-auto.catalog-square-pills-item.d-none.d-md-block
+				a(href="#")
+					.img-box
+						img(src="img/@2x/category-4.jpg")
+					.description Садовые тракторы
+			.col-6.col-md-4.col-lg-auto.catalog-square-pills-item.d-none.d-md-block
+				a(href="#")
+					.img-box
+						img(src="img/@2x/category-5.jpg")
+					.description Генераторы
+			.col-6.col-md-4.col-lg-auto.catalog-square-pills-item.d-none.d-md-block
+				a(href="#")
+					.img-box
+						img(src="img/@2x/category-6.jpg")
+					.description Газонокосилки
+			.col-6.col-md-4.col-lg-auto.catalog-square-pills-item.d-none.d-lg-block
+				a(href="#")
+					.img-box
+						img(src="img/@2x/category-1.jpg")
+					.description Бензопилы
