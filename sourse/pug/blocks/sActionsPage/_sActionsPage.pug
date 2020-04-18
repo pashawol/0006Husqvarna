@@ -48,7 +48,7 @@ mixin actionsSlider()
 		.slider-action-next.d-none.d-sm-block
 			+icon('chevron-right')
 		.action-slider-puging
-		+e.slider.swiper-actions-container
+		+e.slider.swiper-actions-container(class='actions-slider03')
 			.swiper-wrapper
 				+actionSlide('artical-5',true, 1)
 				+actionSlide('artical-6',true)
@@ -58,6 +58,20 @@ mixin actionsSlider()
 				+actionSlide('artical-3')
 				+actionSlide('artical-4',true, 0,0,10,0)
 				+actionSlide('artical-3')
+
+mixin actionsSlider04()
+	+b.actionsSlider&attributes(attributes)
+		.action-slider-puging
+		+e.slider.swiper-actions-container(class='actions-slider04')
+			.swiper-wrapper
+				+actionSlide('artical-5',true, 1)
+				+actionSlide('artical-6',true)
+				+actionSlide('artical-5',true, 1)
+				//+actionSlide('artical-6',true)
+					+actionSlide('artical-4',true, 0,0,10,0)
+					+actionSlide('artical-3')
+					+actionSlide('artical-4',true, 0,0,10,0)
+					+actionSlide('artical-3')
 
 
 mixin actionSlide(imgName, timer=false, days=0, hours=0, mins=0, secs=10)
