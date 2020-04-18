@@ -65,9 +65,9 @@ mixin sContact()
 						+form-wrap()
 							+e.headline Обратная связь
 							+input('', 'textarea', 'Ваше сообщение', 'message')
-							+input('', 'text', 'ФИО*', 'user-name')(require)
-							+input('', 'tel', 'Телефон*', 'phone')(require)
-							+input('', 'email', 'E-mail*')(require)
+							+input('', 'text', 'ФИО*', 'user-name')(required)
+							+input('', 'tel', 'Телефон*', 'phone')(required)
+							+input('', 'email', 'E-mail*')(required)
 							.gray-line
 							+e.sent-btn-cont
 								p Нажимая кнопку &laquo;Оформить заказ&raquo;,  вы&nbsp;соглашаетесь с&nbsp;
