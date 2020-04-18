@@ -25,7 +25,36 @@
 	@include media-breakpoint-down(md) {}
 	@include media-breakpoint-down(sm) {}
 	@include media-breakpoint-down(xs) {}
-	.actionsSlider{
+
+	.tags-box{
+		padding-top: rem(50px);
+		a {
+			display: inline-block;
+			vertical-align: top;
+			min-height: rem(40px);
+			padding: 0 rem(30px);
+			border: 1px solid $light;
+			line-height: rem(40px);
+			text-decoration: none;
+			margin-bottom: rem(15px);
+			margin-right: rem(15px);
+
+			color: $dark;
+			font-weight: 300;
+			font-size: rem(18px);
+			@include mt();
+			&:hover{
+				border: 1px solid $primary;
+			}
+			&.active{
+				border: 1px solid $primary;
+				color: $primary;
+			}
+		}
+	}
+} // end.sActionsPage
+
+.actionsSlider{
 		position: relative;
 		margin-bottom: rem(70px);
 		.swiper-actions-container{
@@ -173,30 +202,3 @@
 			}
 		}
 	}
-	.tags-box{
-		padding-top: rem(50px);
-		a {
-			display: inline-block;
-			vertical-align: top;
-			min-height: rem(40px);
-			padding: 0 rem(30px);
-			border: 1px solid $light;
-			line-height: rem(40px);
-			text-decoration: none;
-			margin-bottom: rem(15px);
-			margin-right: rem(15px);
-
-			color: $dark;
-			font-weight: 300;
-			font-size: rem(18px);
-			@include mt();
-			&:hover{
-				border: 1px solid $primary;
-			}
-			&.active{
-				border: 1px solid $primary;
-				color: $primary;
-			}
-		}
-	}
-} // end.sActionsPage

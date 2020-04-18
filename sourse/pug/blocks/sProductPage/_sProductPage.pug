@@ -1,0 +1,361 @@
+mixin sProductPage()
+	// start sProductPage
+	+b.sProductPage.section#sProductPage&attributes(attributes)
+		.container
+			.row
+				.col-lg-8
+					+productHeader()(class="d-block d-lg-none")
+					+fotoGalery()(class="")
+					+buyBlock04()(class="d-block d-lg-none")
+					+productInfo()(class="d-block d-lg-none")
+					+actionsSlider04()(class="d-block d-lg-none")
+					+productDesription()(class="")
+				.col-lg-4.d-none.d-lg-block
+					+productHeader()(class="")(class="")
+					+productInfo()(class="")
+					+buyBlock04()(class="")
+					+actionsSlider04()(class="")
+		.you-may-like-slider-cont
+			+headline('ПОХОЖИЕ ТОВАРЫ')
+			+sCatalogHit(false)
+	// end sProductPage
+
+mixin fotoGalery()
+	+b.foto-galery-container&attributes(attributes)
+		+e.image-pills-bl
+			.swiper-wrapper
+				.swiper-slide
+					+e.image-pill.active(data-tab-for='1img' data-tab-pill='foto-gallery')
+						img.small-product-img(src='img/@2x/category-6.jpg' alt='')
+				.swiper-slide
+					+e.image-pill(data-tab-for='2img' data-tab-pill='foto-gallery')
+						img.small-product-img(src='img/@2x/category-2.jpg' alt='')
+				.swiper-slide
+					+e.image-pill(data-tab-for='3img' data-tab-pill='foto-gallery')
+						img.small-product-img(src='img/@2x/category-4.jpg' alt='')
+				.swiper-slide
+					+e.image-pill(data-tab-for='4img' data-tab-pill='foto-gallery')
+						img.small-product-img(src='img/@2x/category-5.jpg' alt='')
+				.swiper-slide
+					+e.image-pill(data-tab-for='5img' data-tab-pill='foto-gallery')
+						img.small-product-img(src='img/@2x/category-7.jpg' alt='')
+
+		+e.current-image.active(data-tab-for='1img' data-tab-content='foto-gallery')
+			a(href="img/@2x/slider.jpg" data-fancybox="prodImgGroup")
+				img.huge-product-img(src="img/@2x/slider.jpg" alt="")
+
+		+e.current-image(data-tab-for='2img' data-tab-content='foto-gallery')
+			a(href="img/@2x/category-2.jpg" data-fancybox="prodImgGroup")
+				img.huge-product-img(src="img/@2x/category-2.jpg" alt="")
+
+		+e.current-image(data-tab-for='3img' data-tab-content='foto-gallery')
+			a(href="img/@2x/category-4.jpg" data-fancybox="prodImgGroup")
+				img.huge-product-img(src="img/@2x/category-4.jpg" alt="")
+
+		+e.current-image(data-tab-for='4img' data-tab-content='foto-gallery')
+			a(href="img/@2x/category-5.jpg" data-fancybox="prodImgGroup")
+				img.huge-product-img(src="img/@2x/category-5.jpg" alt="")
+
+		+e.current-image(data-tab-for='5img' data-tab-content='foto-gallery')
+			a(href="img/@2x/category-7.jpg" data-fancybox="prodImgGroup")
+				img.huge-product-img(src="img/@2x/category-7.jpg" alt="")
+
+mixin productDesription()
+	+b.product-description-pills&attributes(attributes)
+		+e.tabs-cont
+			.swiper-wrapper
+				.swiper-slide.active(data-tab-for='descriptions' data-tab-pill='prod-descr-tabs') Описание
+				.swiper-slide(data-tab-for='characteristics' data-tab-pill='prod-descr-tabs') Характеристики
+				.swiper-slide(data-tab-for='equipment' data-tab-pill='prod-descr-tabs') комплектация
+				.swiper-slide(data-tab-for='documentation' data-tab-pill='prod-descr-tabs') ДОКУМЕНТАЦИЯ
+				.swiper-slide(data-tab-for='spareParts' data-tab-pill='prod-descr-tabs') запасные части
+				.swiper-slide(data-tab-for='feedbacks' data-tab-pill='prod-descr-tabs') Отзывы
+					span 13
+		+e.content-block.active(data-tab-for='descriptions' data-tab-content='prod-descr-tabs')
+			+product-Description-cont04()
+		+e.content-block(data-tab-for='characteristics' data-tab-content='prod-descr-tabs')
+			+product-Characteristics-cont04()
+		+e.content-block(data-tab-for='equipment' data-tab-content='prod-descr-tabs')
+			+product-Equipment-cont04()
+		+e.content-block(data-tab-for='documentation' data-tab-content='prod-descr-tabs')
+			+product-Documentation-cont04()
+		+e.content-block(data-tab-for='spareParts' data-tab-content='prod-descr-tabs')
+			+product-SpareParts-cont04()
+		+e.content-block(data-tab-for='feedbacks' data-tab-content='prod-descr-tabs')
+			+product-Feedbacks-cont04()
+
+mixin product-Description-cont04()
+	+b.content-of-prod-pill-description
+		p Газонокосилка бензиновая Husqvarna LC140 9676367-01 используется для кошения травы. Имеет вместительный контейнер. Бензиновый двигатель Briggs&Stratton 450 series обеспечивает длительный срок службы машины. Колеса на шарикоподшипниках отличаются высокой плавностью хода. Складная рукоятка обеспечивает удобство хранения и транспортировки косилки. Центральная регулировка высоты скашивания варьируется от 25 до 75 мм
+		+e.img-andtxt-container
+			+e.inner-img
+				img(src="img/@2x/artical-4.jpg" alt="")
+			+e.P.img-descr На модели Husqvarna LC 140 установлен мощный двигатель Briggs & Stratton  Series 450e с праймером для подкачки топлива в карбюратор.
+		+e.img-andtxt-container
+			+e.inner-img
+				img(src="img/@2x/category-8.jpg" alt="")
+			+e.P.img-descr При наличии только одного рычага, высота стрижки газонокосилки Husqvarna LC 140 может быстро и просто регулироваться.
+mixin product-Characteristics-cont04()
+	+b.content-of-prod-pill-characteristics
+		table
+			tr
+				td Номинальная потребляемая мощность
+				td 1100 Вт
+			tr
+				td Напряжение сети
+				td 220 - 240 В
+			tr
+				td Макс. производительность
+				td 4000 л/ч
+			tr
+				td Максимальная высота всасывания
+				td 8 м
+			tr
+				td Макс. высота подачи
+				td 46 м
+			tr
+				td Макс. давление
+				td 4,6 бар
+mixin product-Equipment-cont04()
+	| descriptions3
+mixin product-Documentation-cont04()
+	+b.content-of-prod-pill-documentation
+		+e.container
+			+e.descr-conatiner
+				+e.pdf PDF
+				+e.doc-name Инструкция по эксплуатации: Husqvarna LC 140/ LC 140S 
+			+e.A.green-btn(href="#") Скачать
+mixin product-SpareParts-cont04()
+	+b.table-items-box.active
+		+item-prod-table-sample-Charless('' , 'category-6-png.png')(class='spare-part char-less')
+		+item-prod-table-sample('d-xl-none d-block' , 'category-6-png.png')(class='spare-part')
+		+item-prod-table-sample('','category-6-png.png')(class='spare-part')
+	+b.square-items-box.active.d-block.d-md-none(data-tab-for='square-box' data-tab-content='catalog-goods-display')
+		.container
+			.row
+				.col-12.col-sm-6.col-lg-4.item-prod-parent
+					+item-prod-multiBlock('category-4.jpg', false)(class="catalog-prod-item")
+				.col-12.col-sm-6.col-lg-4.item-prod-parent
+					+item-prod-multiBlock('trimer-img.png', false)(class="catalog-prod-item")
+mixin product-Feedbacks-cont04()
+	+b.content-of-prod-pill-feedbacks
+		+e.feedback-frame
+			+e.main-headline Отзывы с Яндекс.Маркета
+			+e.all-feedback-link(href='#') Все отзывы на Яндекс.Маркете
+			//feedback
+			+e.name-and-date-cont
+				span.name Сошников Андрей
+				span.date 28.10.2014
+				span.time 15:47
+			+e.user-mark
+				span Оценка пользователя:
+				+icon('small-star')
+				+icon('small-star')
+				+icon('small-star')
+				+icon('small-star')
+				+icon('small-star')
+			+e.P.feedback-txt Отзыв: Искал генератор мощностью ~6 кВт для строительства дачи и далее для установки как резервная станция. На поиски было пол года, так что в вопрос углубился конкретно. Первым делом рассматривал Hunday, так как фирма на слуху и постоянно видел в работе у строителей. Но пообщавшись с владельцами и потрогав руками в магазине вариант отпал сразу. Отвратительная сборка, провода висят как лапша, ломаются постоянно. Про фирму Fubag раньше вообще не слышал, но продукция заинтересовала. Начал копать и т.д. долго рассказывать, но выбор в данной категории единственный верный. Работает как часы. Для автозапуска требуется приобретение не дешового блока, но оно того стоит.
+			+e.advantages-cont
+				+e.advantages-item
+					span Достоинства:
+					span Цена и качество сборки
+				+e.advantages-item
+					span Недостатки:
+					span Пока нет
+			//another feedback
+			+e.name-and-date-cont
+				span.name Сошников Андрей2
+				span.date 28.10.2014
+				span.time 15:47
+			+e.user-mark
+				span Оценка пользователя:
+				+icon('small-star')
+				+icon('small-star')
+				+icon('small-star')
+				+icon('small-star')
+				+icon('small-star')
+			+e.P.feedback-txt Отзыв: Искал генератор мощностью ~6 кВт для строительства дачи и далее для установки как резервная станция. На поиски было пол года, так что в вопрос углубился конкретно. Первым делом рассматривал Hunday, так как фирма на слуху и постоянно видел в работе у строителей. Но пообщавшись с владельцами и потрогав руками в магазине вариант отпал сразу. Отвратительная сборка, провода висят как лапша, ломаются постоянно. Про фирму Fubag раньше вообще не слышал, но продукция заинтересовала. Начал копать и т.д. долго рассказывать, но выбор в данной категории единственный верный. Работает как часы. Для автозапуска требуется приобретение не дешового блока, но оно того стоит.
+			+e.advantages-cont
+				+e.advantages-item
+					span Достоинства:
+					span Цена и качество сборки
+				+e.advantages-item
+					span Недостатки:
+					span Пока нет
+		+e.feedback-frame
+			+e.main-headline Отзывы пользователей Техносадов.ру
+			//+e.all-feedback-link(href='#') Все отзывы на Яндекс.Маркете
+			//
+			+e.name-and-date-cont
+				span.name Евгений
+				span.date 28.10.2014
+				span.time 15:47
+			+e.user-mark
+				span Оценка пользователя:
+				+icon('small-star')
+				+icon('small-star')
+				+icon('small-star')
+				+icon('small-star-empty')
+				+icon('small-star-empty')
+			+e.P.feedback-txt Какие 6 квт? Максимум 4,96квт, смотрите инструксию. Врете вместе с фирмой производителя...
+			+e.master-reply-bl
+				+e.master-reply-headline
+					+e.img-txt-block
+						+e.company-logo-small
+							+icon('small-blue-logo')
+						+e.replier-name Nesterov — представитель Husqvarna
+					+e.name-and-date-cont
+						span.date 28.10.2014
+						span.time 15:47
+				+e.to-respont-txt в ответ Евгений
+				+e.reply-txt-bl
+					p Евгений, рекомендуем ознакомиться со статьей об максимальной и номинальной мощности двигателя.  Все встанет на свои места.
+					a(href='#') https://gardengear.ru/articles/traktora/maximum_and_rated_power_of_the_engines/
+				//+e.advantages-cont
+					+e.advantages-item
+						span Достоинства:
+						span Цена и качество сборки
+					+e.advantages-item
+						span Недостатки:
+						span Пока нет
+			//
+			+e.name-and-date-cont
+				span.name Евгений
+				span.date 28.10.2014
+				span.time 15:47
+			+e.user-mark
+				span Оценка пользователя:
+				+icon('small-star')
+				+icon('small-star')
+				+icon('small-star')
+				+icon('small-star-empty')
+				+icon('small-star-empty')
+			+e.P.feedback-txt Какие 6 квт? Максимум 4,96квт, смотрите инструксию. Врете вместе с фирмой производителя...
+		+e.gray-line
+		+e.show-more-link(href='#') Показать ещё
+		+form-wrap()
+			+e.headline Обратная связь
+			.mark-item-container
+				input.mark-holder-js.d-none(type="text" value='1')
+				span.mark-item-txt Моя оценка
+				.mark-stars-container
+					.mark-stars-item.no-empty-star
+						+icon('small-star')
+						+icon('small-star-empty')
+					.mark-stars-item.empty-star
+						+icon('small-star')
+						+icon('small-star-empty')
+					.mark-stars-item.empty-star
+						+icon('small-star')
+						+icon('small-star-empty')
+					.mark-stars-item.empty-star
+						+icon('small-star')
+						+icon('small-star-empty')
+					.mark-stars-item.empty-star
+						+icon('small-star')
+						+icon('small-star-empty')
+			+input('', 'textarea', 'Ваше сообщение', 'message')
+			+input('', 'text', 'ФИО*', 'user-name')(required)
+			+input('', 'tel', 'Телефон*', 'phone')(required)
+			+input('', 'email', 'E-mail*')(required)
+			button.order-bnt.send-feed-back-btn Отправить отзыв
+
+mixin productHeader()
+	+b.product-header&attributes(attributes)
+		+e.icons-cont
+			+e.SPAN.icon-action акция
+			.prod-item__labels
+				.prod-item__label-link.active(type="button")
+					+icon("compare")
+				.prod-item__label-link(type="button")
+					+icon("like-alt")
+		+e.prod-name Триммер Husqvarna 122C
+
+mixin productInfo()
+	+b.product-info-lc&attributes(attributes)
+		+e.TABLE.char-table
+			tbody
+				tr
+					td Производитель:
+					td Husqvarna
+				tr
+					td Страна производства:
+					td Швеция
+				tr
+					td Артикул:
+					td 9670982-01
+				tr
+					td Модель:
+					td 120i
+				tr
+					td Гарантия:
+					td 2 года
+				tr
+					td Габариты в упаковке:
+					td 305мм x 520мм x 610мм
+				tr
+					td Вес:
+					td 19.2кг
+			tbody.detailed-chars-js
+				tr
+					td Производитель1:
+					td Husqvarna1
+				tr
+					td Страна производства2:
+					td Швеция2
+				tr
+					td Артикул3:
+					td 9670982-01-3
+		+e.in-detail-btn(href="#") Подробнее
+			+icon('chevron-down')
+		+e.local-headline Наличие
+		+e.presense-item.d-none.d-lg-flex
+			span.location Магазин Дмитровка:
+			span.status.present В наличии
+		+e.presense-item.last-item
+			span.location Магазин Дмитровка:
+			span.status.for-order Под заказ
+		+e.local-headline Варинаты доставки
+		+e.delivery-items-cont
+			//
+			+e.delivery-item.row
+				+e.icon-col.col-auto
+					+e.icon-cont
+						+icon('car')
+				+e.txt-col.col-auto
+					span Курьерская доставка по Москве
+					span от 200 до 500 руб.
+				+e.time-col.col 1-2 дня
+			//
+			+e.delivery-item.row
+				+e.icon-col.col-auto
+					+e.icon-cont
+						+icon('plane')
+				+e.txt-col.col-auto
+					span Доставка по России
+					span от 500 руб.
+				+e.time-col.col от 1-2 дня
+			//
+			+e.delivery-item.row
+				+e.icon-col.col-auto
+					+e.icon-cont
+						+icon('house')
+				+e.txt-col.col-auto
+					span Самовывоз
+					span от 250 руб.
+				+e.time-col.col
+		+e.small-info-txt
+			| При заказе от 5 000 руб. доставка&#160;
+			a(href="#") бесплатная.
+			|&#160;Точную стоимость доставки уточняйте у менеджера.
+
+mixin buyBlock04()
+	+b.buy-block-04&attributes(attributes)
+		+e.price-and-inp-bl
+			+e.price-block
+				.old-price 15 990 ₽
+				.new-price 999 490 ₽
+			+amountInpBlock("2")
+		+e.btns-block
+			button.order-bnt Купить
+			a.link-modal.btn-more.bill-btn(href="#modal-order-request") Запросить счёт

@@ -369,7 +369,7 @@ function eventHandler() {
 		}
 	}
 
-	CustomTabs2(['props', 'user-acc', 'change-data-forms', 'catalog-goods-display']); // dropzone
+	CustomTabs2(['props', 'user-acc', 'change-data-forms', 'catalog-goods-display', 'foto-gallery', 'prod-descr-tabs']); // dropzone
 
 	$("#props-dz").dropzone({
 		url: "/file/post",
@@ -471,7 +471,7 @@ function eventHandler() {
 	}); //
 	//sActionsPage
 
-	var actionsSlider = new Swiper('.swiper-actions-container', {
+	var actionsSlider = new Swiper('.actions-slider03', {
 		// Optional parameters
 		//loop: true,
 		slidesPerColumnFill: 'row',
@@ -496,9 +496,9 @@ function eventHandler() {
 			loadPrevNext: true
 		},
 		//auto
-		//autoplay: {
-		//	delay: 5000,
-		//},
+		autoplay: {
+			delay: 5000
+		},
 		// Navigation arrows
 		navigation: {
 			nextEl: '.slider-action-next',
@@ -577,9 +577,122 @@ function eventHandler() {
 		}
 
 		return timeItem;
-	} //
+	} //product card js
 
 
+	var photoGalery = new Swiper('.foto-galery-container__image-pills-bl', {
+		breakpoints: {
+			1: {
+				slidesPerView: 'auto',
+				direction: 'horizontal',
+				spaceBetween: 10
+			},
+			576: {
+				slidesPerView: 'auto',
+				direction: 'vertical',
+				spaceBetween: 10
+			}
+		},
+		on: {
+			click: function click() {
+				photoGalery.slideTo(photoGalery.clickedIndex - 1, 700, false);
+			}
+		}
+	});
+	var ProdTabsSwiper = new Swiper('.product-description-pills__tabs-cont', {
+		slidesPerView: 'auto',
+		freeMode: true,
+		freeModeMomentum: true,
+		watchOverflow: true
+	}); //star mark
+
+	$('.mark-stars-item').click(function () {
+		var thisIndex = $('.mark-stars-item').index(this);
+		var allThis = this.parentElement.children;
+
+		for (var i = 0; i <= thisIndex; i++) {
+			allThis[i].classList.add('no-empty-star');
+			allThis[i].classList.remove('empty-star');
+		}
+
+		for (var _i = thisIndex + 1; _i <= allThis.length - 1; _i++) {
+			allThis[_i].classList.remove('no-empty-star');
+
+			allThis[_i].classList.add('empty-star');
+		}
+
+		document.querySelector('.mark-holder-js').setAttribute('value', thisIndex + 1);
+	});
+	$('.mark-stars-item').mouseover(function () {
+		var thisIndex = $('.mark-stars-item').index(this);
+		var allThis = this.parentElement.children;
+
+		for (var i = 0; i <= thisIndex; i++) {
+			allThis[i].classList.add('hover-paint-js');
+		}
+
+		for (var _i2 = thisIndex + 1; _i2 <= allThis.length - 1; _i2++) {
+			allThis[_i2].classList.remove('hover-paint-js');
+		}
+	});
+	$('.mark-stars-item').mouseout(function () {
+		var allThis = this.parentElement.children;
+
+		var _iterator6 = _createForOfIteratorHelper(allThis),
+				_step6;
+
+		try {
+			for (_iterator6.s(); !(_step6 = _iterator6.n()).done;) {
+				var star = _step6.value;
+				star.classList.remove('hover-paint-js');
+			}
+		} catch (err) {
+			_iterator6.e(err);
+		} finally {
+			_iterator6.f();
+		}
+	}); //show more btn for prod descr table in left col
+
+	$('.product-info-lc__in-detail-btn').click(function () {
+		event.preventDefault();
+		this.classList.toggle('collapsed-js');
+		$('.product-info-lc__char-table .detailed-chars-js').fadeToggle(function () {
+			this.classList.toggle('active');
+		});
+	}); //smal actions slider04
+
+	var actionsSlider04 = new Swiper('.actions-slider04', {
+		autoplay: {
+			delay: 5000
+		},
+		//pagination
+		pagination: {
+			el: $(this).find('.action-slider-puging'),
+			clickable: true
+		}
+	}); //fixed position to buy block
+
+	var page03 = document.querySelector('.product-card-page');
+	console.log(page03);
+
+	if (page03) {
+		window.addEventListener('scroll', function () {
+			if (window.matchMedia("(max-width: 992px)")) {
+				console.log(1);
+			}
+		}, {
+			passive: true
+		});
+	} //06 ordering individual
+
+
+	$('.order-cont__headline').click(function () {
+		var headline = this;
+		this.classList.toggle('opened-block');
+		$(this).closest('.order-cont').find('.order-cont__items-list-box').slideToggle(function () {
+			this.classList.toggle('active');
+		});
+	});
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 
 	if (isIE11) {
