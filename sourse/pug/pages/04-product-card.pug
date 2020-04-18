@@ -7,18 +7,22 @@ include ../blocks/sCategory/_sCategory.pug
 include ../blocks/sCatalog/_sCatalog.pug 
 include ../blocks/sArticals/_sArticals.pug
 
-include ../blocks/sUserAcc/_sUserAcc.pug
+include ../blocks/sCatalogPage/_sCatalogPage.pug
+include ../blocks/sActionsPage/_sActionsPage.pug
+include ../blocks/sProductPage/_sProductPage.pug
 
 block variables
-	- let  mainPage= null
+	- let  mainPage= 'product-card-page'
 block title
-	- let  title= '09-user-account'
+	- let  title= '04-product-card'
 	title= title
 block pagecontent 
 	+mob-mnu()
 	+header()
 		+topLine()
 		+top-nav()
-	+headline('Личный кабинет')
-	+sUserAcc()
+	+sProductPage()
+	//+headline('Каталог техники Husqvarna')
+	//+sCatalogPage()
+		+sCategory02()
 	+footer()
