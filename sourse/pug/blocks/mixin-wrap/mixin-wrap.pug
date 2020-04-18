@@ -114,9 +114,12 @@ mixin mnu()
 			"контакты":"#",
 			}
 	+b.UL.menu(itemscope itemtype="http://schema.org/SiteNavigationElement")
-		+e.LI.item--has-children(itemprop="item" )
-			+e.link(href="#" itemprop="url") 
-				| #[span] Продукция
+		if block
+			block
+		else
+			+e.LI.item--has-children(itemprop="item" )
+				+e.link(href="#" itemprop="url") 
+					| #[span] Продукция
 			+b.sub-menu
 				ul.container 
 					- for (var y = 0; y < 8; y++)

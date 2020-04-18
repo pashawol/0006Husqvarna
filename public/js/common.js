@@ -79,22 +79,6 @@ var JSCCommon = {
 		var _this = this;
 
 		_this.toggleMenu();
-
-		_this.menuMobileLink.forEach(function (element) {
-			element.addEventListener('click', function (e) {
-				console.log(element);
-
-				_this.closeMenu();
-			});
-		});
-
-		document.addEventListener('mouseup', function (event) {
-			var container = event.target.closest(".menu-mobile--js.active"); // (1)
-
-			if (!container) {
-				_this.closeMenu();
-			}
-		});
 	},
 	// /mobileMenu
 	// табы  . 
@@ -589,6 +573,16 @@ function eventHandler() {
 	// 	})
 
 
+	$("[data-dropdown]").click(function () {
+		$($(this).data("dropdown")).toggleClass('active');
+	});
+	$(".mobile-dropdown-toggle").click(function (e) {
+		e.preventDefault();
+		$(this).next().addClass('active');
+	});
+	$(".mobile-dropdown-block__head").click(function () {
+		$(this).parents(".mobile-dropdown-block").removeClass('active');
+	});
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 
 	if (isIE11) {

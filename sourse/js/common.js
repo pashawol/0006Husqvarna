@@ -65,20 +65,8 @@ const JSCCommon = {
 		let _this = this;
 
 		_this.toggleMenu();
-		_this.menuMobileLink.forEach(function (element) {
-			element.addEventListener('click', function (e) {
-				console.log(element);
-				_this.closeMenu();
 
-			});
-		})
-		document.addEventListener('mouseup', function (event) {
-			let container = event.target.closest(".menu-mobile--js.active"); // (1)
-			if (!container) {
-				_this.closeMenu();
 
-			}
-		});
 	},
 	// /mobileMenu
 
@@ -553,6 +541,17 @@ function eventHandler() {
 	// 		$(this).removeClass("on");
 
 	// 	})
+	$("[data-dropdown]").click(function () {
+		$($(this).data("dropdown")).toggleClass('active')
+	})
+
+	$(".mobile-dropdown-toggle").click(function (e) {
+		e.preventDefault();
+		$(this).next().addClass('active')
+	})
+	$(".mobile-dropdown-block__head").click(function () {
+		$(this).parents(".mobile-dropdown-block").removeClass('active')
+	})
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 	if (isIE11) {
 		$("body").prepend(`<p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p>`)

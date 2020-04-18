@@ -1,11 +1,47 @@
+:root {
+	@include media-breakpoint-up(lg) {
+
+		--btnW: #{rem(165)}
+	}
+}
+
+.dropdown-block--search {
+	// display: block !important;
+}
+
 .search-block {
 	min-height: rem(400);
-	// display: none;
 
 	&__btn {
-		width: rem(165);
+		width: var(--btnW, 100%);
+		@extend .btn-block;
+
+		@include media-breakpoint-up(md) {
+			margin-bottom: 0;
+		}
+
+		margin-bottom: rem(10);
+
 	}
 
+	.container {
+		position: relative;
+	}
+
+	&__link-top {
+		cursor: pointer;
+		text-transform: uppercase;
+		margin-bottom: rem(50);
+
+		.icon {
+			font-size: rem(12);
+			margin-right: rem(10);
+			stroke: $primary;
+			color: transparent;
+		}
+
+		.icon-angle-left {}
+	}
 
 	// 
 	@include media-breakpoint-up(xl) {}
@@ -25,15 +61,23 @@
 
 	@include media-breakpoint-down(md) {}
 
-	@include media-breakpoint-down(sm) {}
+	@include media-breakpoint-down(sm) {
+		min-height: 100vh;
+		height: 100%;
+	}
 
 	@include media-breakpoint-down(xs) {}
 }
 
 .search-line {
+
 	border-bottom: 1px solid $primary;
 
+	@include media-breakpoint-up(lg) {
+		margin-bottom: 0;
+	}
 
+	margin-bottom: rem(20);
 
 	&__delete {
 		position: absolute;
@@ -49,21 +93,47 @@
 
 	&__input-wrap {
 		margin-bottom: 0;
+
+		@include media-breakpoint-up(lg) {}
 	}
 
 	&__input {
 		border: none !important;
 		font-size: rem(36);
 		padding: 0;
-		height: initial;
-		line-height: 1.36;
+		// height: initial;
 		font-weight: 300;
 		box-shadow: none !important;
+
+		line-height: 1.2;
+
+		@include media-breakpoint-up(md) {
+			line-height: 1.36;
+			text-align: left;
+			resize: none;
+			height: rem(49) !important;
+			white-space: nowrap;
+		}
+
+		height: 2.6em !important;
+
+		text-align: center;
+
+		padding-top: 0;
+		padding-bottom: 0;
+
 	}
 }
 
 .search-result {
 	padding-top: rem(10);
+	width: 100%;
+
+	@include media-breakpoint-up(md) {
+		max-width: calc(100% - var(--btnW, 72px) - 30px);
+		// max-width: 673px;
+
+	}
 
 	&__item {
 		display: block;

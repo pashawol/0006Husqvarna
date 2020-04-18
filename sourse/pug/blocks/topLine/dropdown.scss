@@ -4,10 +4,17 @@
 	top: rem(-10);
 	background-color: #ffffff;
 	z-index: -1;
-	display: none;
 	padding: rem(45) rem(15) rem(15);
 	box-shadow: 0px 16px 24px rgba(39, 58, 96, 0.25);
 	width: calc(100%);
+	display: none;
+
+	@include media-breakpoint-down(sm) {
+
+		&.active {
+			display: block;
+		}
+	}
 
 	&__footer {
 		border-top: 1px solid $primary;
@@ -56,8 +63,47 @@
 
 	&--search {
 		width: 100%;
-		display: block;
+		// display: block;
 		top: 100%;
+	}
+
+
+	&--var {
+		// display: block;
+		width: 100%;
+		padding: rem(80) rem(30) rem(30);
+
+		@include media-breakpoint-up(xl) {
+
+			columns: 6;
+		}
+
+		@include media-breakpoint-up(lg) {
+
+			columns: 5;
+		}
+
+		@include media-breakpoint-up(md) {
+
+			columns: 4;
+		}
+
+		@include media-breakpoint-up(sm) {
+			columns: 3;
+		}
+
+		columns: 2;
+
+
+
+		li {
+			list-style: none;
+			margin-bottom: 0.5rem;
+		}
+
+		a {
+			color: $dark;
+		}
 	}
 
 	&__link {
@@ -86,8 +132,13 @@
 	&:hover {
 		z-index: 20;
 
-		.dropdown-block {
-			display: block;
+		>.dropdown-block {
+			z-index: 10;
+
+			@include media-breakpoint-up(md) {
+
+				display: block;
+			}
 		}
 	}
 
@@ -98,6 +149,8 @@
 		letter-spacing: 0.03em;
 		padding-right: rem(15);
 		cursor: pointer;
+		// z-index: 11;
+		position: relative;
 
 		.icon {
 			margin-right: rem(9);
@@ -108,8 +161,14 @@
 		}
 
 		&--var {
+			position: relative;
 			padding: rem(10) rem(15px);
+			z-index: 11;
 		}
+	}
+
+	&:hover>&__toggle {
+		z-index: 20;
 	}
 
 	&:hover>&__toggle>&__toggle-arrow {
@@ -122,6 +181,8 @@
 			color: $primary;
 		}
 	}
+
+
 
 	&__icon-wrap {
 		position: relative;

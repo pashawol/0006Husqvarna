@@ -2,7 +2,7 @@ mixin city()
 	+b.dropdown-city.dropdown-block
 		+e.head
 			+e.LABEL.title(for="city") Выбирете свой город
-			input.form-control(type="text" id='city')
+			input.form-control(type="text" id='city' autocomplete="off")
 			+e.btn(type="button") Искать
 		+e.body
 			ul
@@ -43,7 +43,8 @@ mixin basket()
 				- for (var x = 0; x < 4; x++)
 					+e.item
 						+e.item-img-descr
-							img(src="img/@2x/lawn-mover-small.png" alt='lawn-mover')
+							a(href="#")
+								img(src="img/@2x/lawn-mover-small.png" alt='lawn-mover')
 							div
 								| Триммер бензиновый  Husqvarna 122C
 								+e.price-bl

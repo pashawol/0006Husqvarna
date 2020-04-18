@@ -783,3 +783,29 @@ iframe {
 .btn-outline-primary {
 	color: $body-color;
 }
+
+.form-control.valid {
+	color: $success;
+
+	&:focus {
+
+		border-color: $success !important;
+	}
+}
+
+.form-control.invalid {
+	color: $danger;
+
+	&:focus {
+
+		border-color: $danger !important;
+	}
+}
+
+.invalid-alert {
+	text-align: center;
+	background: rgba(248, 0, 0, 0.25);
+	color: #4D4D4D;
+	font-size: rem(16);
+	padding: rem(3);
+}

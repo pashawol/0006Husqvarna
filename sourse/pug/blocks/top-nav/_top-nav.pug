@@ -1,61 +1,163 @@
-mixin mob-mnu()
-	-
-		//- let path = require('path');
-		//- let fs = require('fs');
-		//- var requestURL = 'top-nav.json';
-		//- var request = new XMLHttpRequest();
-		//- request.open('GET', requestURL);
-		//- request.responseType = 'json';
-		//- let dataJson = JSON.parse(json);
-	//- h1= dataJson['lala'] 
-
+mixin mob-mnu() 
 	+b.menu-mobile--js.d-lg-none
-		+b.toggle-menu-mobile--js
-			span
+		//- .active
 		+e.inner
-		
-			+mnu()
-			.text-right
+			.container
+				+mnu()
+					+e.LI.item.mobile-dropdown(itemprop="item" )
+						+e.link.mobile-dropdown-toggle(href="#" itemprop="url") 
+							| #[span] Продукция
+						+b.mobile-dropdown-block
+							.container 
+								+e.head 
+									+icon("angle-left")
+									| Назад
+								ul.sub
+									- for (var y = 0; y < 8; y++)
+										li.mobile-dropdown
+											+e.title.mobile-dropdown-toggle(href="#") Трава и газон
+											+b.mobile-dropdown-block
+												.container 
+													+e.head 
+														+icon("angle-left")
+														| Назад
+													ul
+														- for (var x = 0; x < 4; x++)
+															li: +e.link(href="#") Бензопилы 
+				.top-nav 
+					.mobile-dropdown
+						+e.item--city.mobile-dropdown-toggle
+							.d-flex
+								+e.SPAN.icon-wrap
+									+icon("mark")
+								span.text-primary Москва
+						+b.mobile-dropdown-block
+							.container
+								+e.head 
+									+icon("angle-left")
+									| Назад
+								+e.current 
+										+e.SPAN.icon-wrap
+											+icon("mark")
+										span.text-primary Москва
+								ul
+									- for (var x = 0; x < 3; x++)
+										li: +e.link(href="#") Санкт-Петербург
+										li: +e.link(href="#") Нижний Новгород
+										li: +e.link(href="#") Москва 
+										li: +e.link(href="#") Нижний Новгород
+										li: +e.link(href="#") Москва 
+					+e.item--basket
+						.d-flex
+							+e.SPAN.icon-wrap
+								+icon("basket")
+								+e.SPAN.count 99 
+							a.text-white(href="#") Корзина
+						| 236 990 ₽ 
+					+e.item.mobile-dropdown-toggle 
+						.d-flex
+							+e.SPAN.icon-wrap
+								+icon("user")
+							| Николай
+					+e.item(href="#")  
+						+e.SPAN.icon-wrap
+							+icon("compare") 
+						| Список сравнения
+					+e.item(href="#")  
+						+e.SPAN.icon-wrap
+							+icon("like")
+						| Избранные товары
+				+b.FOOTER.footer 
+					+e.group
+						+e.item
+							+e.icon-wrap
+								+icon("mark")
+							| Москва,  
+							br
+							| ул. Павловская, 27/29 
+							br
+							| (м. Тульская)
+					+e.group
+						+e.item
+							+e.icon-wrap
+								+icon("tel") 
+							div
+								a(href="tel:8495215-50-63") 8 495 215-50-63
+								br
+								a(href="tel:8800333-18-92") 8 800 333-18-92
+						+e.item
+							+e.icon-wrap
+								+icon("email") 
+							a(href="mailto:info@husq.ru") info@husq.ru
+					+e.group
+						+e.item
+							+e.icon-wrap
+								+icon("clock")
+							| пн&nbsp;&mdash; пт: 09:00&nbsp;&mdash; 20:00 
+							br
+							| сб&nbsp;&mdash; вс: 09:00&nbsp;&mdash; 18:00
+					a.btn.btn-primary.link-modal.my-3.btn-block(href="#modal-call") Заказать звонок
+		+e.copy.text-center.text-lg-left
+			.container
+				.row
+					.col-lg-auto.order-lg-last
+						img.lazy.res-i(src='#' data-src="img/@2x/payment-choice-long 1.png", alt="")
+					.col &copy;&nbsp;ОФИЦИАЛЬНЫЙ ПАРТНЕР HUSQVARNA В&nbsp;РОССИИ 2010&nbsp;&mdash; 2020
+
+
 	//  мобильное меню
 
 mixin search()
-	+b.dropdown-block--search
+	+b.dropdown-block--search#dropdown-search
 		+b.search-block
 			.container
+				.row.d-md-none
+					.col
+						+e.link-top.dropdown-close-js(data-dropdown="#dropdown-search")
+							+icon('angle-left')
+							| Назад
+
+					.col-auto
+						+e.link-top
+							+icon('cross')
+							| сбросить
 				.row
 					.col
 						+b.search-line
 							.row
-								.col-auto.position-static
-									+b.dropdown--var.--js
+								.col-auto.position-static.d-none.d-md-block
+									+b.dropdown--var.--js.position-static
 										+e.toggle--var Искать везде 
 											+e.toggle-arrow--js
-										//- +city()
+										+b.UL.dropdown-block--var
+											- for (var x = 0; x < 48; x++)
+												li: a(href="#")  Искать везде
 								.col
-									+input("Поиск")
-									+e.delete
+									+input("Поиск",'textarea')
+									+e.delete.d-none.d-md-block
 										+icon('cross')
-						+b.search-result
-							+e.item(href="#"): +e.lg  ТРИММЕРА
-							+e.item(href="#"): +e.lg  расходники для ТРИММЕРА
-							- for (var x = 0; x < 3; x++)
-								+e.item(href="#")
-									+b.DIV.goods
-										+e.DIV.item
+					.col-md-auto
+						+e.btn.btn.btn-primary(type="submit")  ИСКАТЬ
+				+b.search-result
+					+e.item(href="#"): +e.lg  ТРИММЕРА
+					+e.item(href="#"): +e.lg  расходники для ТРИММЕРА
+					- for (var x = 0; x < 2; x++)
+						+e.item(href="#")
+							+b.DIV.goods
+								+e.DIV.item
+									.row
+										.col-auto
+											+e.img-wrap
+												img(src="img/@2x/lawn-mover-small.png" alt='lawn-mover')
+										.col
 											.row
-												.col-auto
-													+e.img-wrap
-														img(src="img/@2x/lawn-mover-small.png" alt='lawn-mover')
-												.col-auto
+												.col-sm-auto
 													p Триммер бензиновый Husqvarna 122C
-												.col-auto
+												.col-sm-auto
 													+e.price-bl.text-center.m-0.p-0
 														.old-price 15 990 ₽
 														.new-price 11 490 ₽
-										 
-
-					.col-auto
-						+e.btn.btn.btn-primary(type="submit")  ИСКАТЬ
+					+e.lg.text-danger.ttu.text-md-left.text-center.my-2  Извините, но по вашему запросу  нечего не найдено
 mixin top-nav() 
 	// start top-nav
 	+b.top-nav.block-with-lazy
@@ -71,7 +173,7 @@ mixin top-nav()
 					+mnu()
 				.col-auto.position-static
 					+b.dropdown--search.--js.position-static
-						+b.search-toggle--js.text-white 
+						+b.search-toggle--js.text-white.dropdown-close-js(data-dropdown="#dropdown-search")
 							+icon("zoom")
 							span.d-none.d-lg-inline Поиск
 						+search()
@@ -79,9 +181,6 @@ mixin top-nav()
 					+e.link(href="#")
 						+icon("user")
 				.col-auto.d-md-none.position-relative
-					+b.dropdown--search.--js
-						+e.toggle
-							.top-nav__link
-								+icon("basket")
-						+search()
+					.top-nav__link
+						+icon("basket")
 	// end top-nav
