@@ -185,14 +185,14 @@ mixin filterBtnsBar()
 		//table catalog mixins
 mixin catalogGoodsTableItems()
 	+b.table-items-box(data-tab-for='table-box' data-tab-content='catalog-goods-display')
-		+item-prod-table-sample('category-6-png.png')
-		+item-prod-table-sample('category-6-png.png', 'star-bestseller', 'Бестселлер', '#0063da')(class="bestseller-item white-colored-item" style="background-color: #0063da")
-		+item-prod-table-sample('category-6-png.png', 'star-new-item', 'Новинка', '#18B58C')(class="new-item white-colored-item" style="background-color: #18B58C")
-		+item-prod-table-sample('category-6-png.png', 'action-item','Акция', '#F35321', '#18B58C')(class="action-item white-colored-item" style="background-color: #F35321")
-		+item-prod-table-sample('category-6-png.png', 'action-item','Акция', '#e83e8c')(class="action-item white-colored-item" style="background-color: #e83e8c")
+		+item-prod-table-sample('d-xl-none d-block' , 'category-6-png.png')
+		+item-prod-table-sample('', 'category-6-png.png', 'star-bestseller', 'Бестселлер', '#0063da')(class="bestseller-item white-colored-item" style="background-color: #0063da")
+		+item-prod-table-sample('','category-6-png.png', 'star-new-item', 'Новинка', '#18B58C')(class="new-item white-colored-item" style="background-color: #18B58C")
+		+item-prod-table-sample('','category-6-png.png', 'action-item','Акция', '#F35321', '#18B58C')(class="action-item white-colored-item" style="background-color: #F35321")
+		+item-prod-table-sample('','category-6-png.png', 'action-item','Акция', '#e83e8c')(class="action-item white-colored-item" style="background-color: #e83e8c")
 		//#0063da
 
-mixin item-prod-table-sample(i, iconSrc, spanTxt, spanBackground, btnBackground='#F35321')
+mixin item-prod-table-sample(showMoreBtnClasses='', i, iconSrc, spanTxt, spanBackground, btnBackground='#F35321')
 	+b.table-sample-item&attributes(attributes)
 		+e.header
 			if iconSrc
@@ -220,7 +220,7 @@ mixin item-prod-table-sample(i, iconSrc, spanTxt, spanBackground, btnBackground=
 					+e.char-item
 						span Номинальная мощность
 						span 0.6 кВт
-				+e.show-more-btn.toggle-chars-goods-table-js
+				+e.show-more-btn.toggle-chars-goods-table-js(class=showMoreBtnClasses)
 					span Характеристики
 					+icon('chevron-down')
 			+b.buy-block
@@ -235,6 +235,19 @@ mixin item-prod-table-sample(i, iconSrc, spanTxt, spanBackground, btnBackground=
 					+e.buy-btn(style="background:"+btnBackground+";" )
 						a(href="#") Купить
 		+b.description-of-table-items
+			+e.row-item.d-flex.d-xl-none
+				span HUS Usage
+				span Occasional use
+			+e.row-item.d-flex.d-xl-none
+				span Рабочий объем двигателя
+				span 21.7 см³
+			+e.row-item.d-flex.d-xl-none
+				span Рабочий объем цилиндра
+				span 1.3 куб. дюйм
+			+e.row-item.d-flex.d-xl-none
+				span Номинальная мощность
+				span 0.6 кВт
+			//
 			+e.row-item
 				span Номинальная потребляемая мощность
 				span 1100 Вт
@@ -254,6 +267,32 @@ mixin item-prod-table-sample(i, iconSrc, spanTxt, spanBackground, btnBackground=
 				span Макс. давление
 				span Макс. давление	4,6 бар
 
+mixin item-prod-table-sample-Charless(showMoreBtnClasses='', i, iconSrc, spanTxt, spanBackground, btnBackground='#F35321')
+	+b.table-sample-item&attributes(attributes)
+		+e.header
+			if iconSrc
+				+b.img-block
+					+icon(iconSrc)
+					+e.img-block-content
+						span(style="background:"+spanBackground+";" )= spanTxt
+						img.lazy(src="#" data-src=`img/@2x/${i}`, alt="some-img")
+			else
+				+b.img-block
+					+e.img-block-content
+						img.lazy(src="#" data-src=`img/@2x/${i}`, alt="some-img")
+			+b.char-block
+				+e.headline Триммер бензиновый Husqvarna 122C
+			+b.buy-block
+				+e.content
+					+e.labels
+						+e.label-link.active(type="button")
+							+icon("compare")
+						+e.label-link(type="button")
+							+icon("like-alt")
+					+e.old-price 15 990 ₽
+					+e.new-price 11 490 ₽
+					+e.buy-btn(style="background:"+btnBackground+";" )
+						a(href="#") Купить
 
 	//end table catalog mixins
 	//square catalog mixins

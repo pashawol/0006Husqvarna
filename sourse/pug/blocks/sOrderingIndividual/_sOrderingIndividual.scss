@@ -238,12 +238,13 @@
 				position: relative;
 				padding-bottom: rem(30px);
 				margin-bottom: 0;
+				cursor: pointer;
 				&.opened-block{
 					&:after{
 						display: none;
 					}
-					svg{
-						transform: rotate(180deg);
+					.icon{
+						transform: rotateX(180deg);
 						stroke: $primary;
 					}
 				}
@@ -256,23 +257,30 @@
 					left: 0;
 					bottom: 0;
 				}
-				svg{
+				.icon{
 					position: absolute;
 					right: 0;
 					top: 0;
 					color: transparent;
 					stroke: $body-color;
 					width: rem(16px);
+					@include mt();
 				}
 			}
 			&__prod-items-cont{
 				margin-top: rem(35px);
 			}
+			&__items-list-box{
+				display: none;
+				&.active{
+					display: block;
+				}
+			}
 			&__items-list-box-item{
-				display: flex;
 				flex-direction: column;
 				position: relative;
 				padding-top: rem(20px);
+				display: flex;
 			}
 			&__item-img-descr{
 				min-width: 100%;
