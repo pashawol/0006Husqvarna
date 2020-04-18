@@ -26,40 +26,38 @@ mixin fotoGalery()
 		+e.image-pills-bl
 			.swiper-wrapper
 				.swiper-slide
-					+e.image-pill.active(data-tab-for='1img' data-tab-pill='foto-gallery')
+					+e.image-pill.active
 						img.small-product-img(src='img/@2x/category-6.jpg' alt='')
 				.swiper-slide
-					+e.image-pill(data-tab-for='2img' data-tab-pill='foto-gallery')
+					+e.image-pill
 						img.small-product-img(src='img/@2x/category-2.jpg' alt='')
 				.swiper-slide
-					+e.image-pill(data-tab-for='3img' data-tab-pill='foto-gallery')
+					+e.image-pill
 						img.small-product-img(src='img/@2x/category-4.jpg' alt='')
 				.swiper-slide
-					+e.image-pill(data-tab-for='4img' data-tab-pill='foto-gallery')
+					+e.image-pill
 						img.small-product-img(src='img/@2x/category-5.jpg' alt='')
 				.swiper-slide
-					+e.image-pill(data-tab-for='5img' data-tab-pill='foto-gallery')
+					+e.image-pill
+						img.small-product-img(src='img/@2x/category-7.jpg' alt='')
+		+e.foto-galery-big-img
+			.swiper-wrapper
+				.swiper-slide
+					a(href="img/@2x/category-6.jpg" data-fancybox="prodImgGroup")
+						img.small-product-img(src='img/@2x/category-6.jpg' alt='')
+				.swiper-slide
+					a(href="img/@2x/category-2.jpg" data-fancybox="prodImgGroup")
+						img.small-product-img(src='img/@2x/category-2.jpg' alt='')
+				.swiper-slide
+					a(href="img/@2x/category-4.jpg" data-fancybox="prodImgGroup")
+						img.small-product-img(src='img/@2x/category-4.jpg' alt='')
+				.swiper-slide
+					a(href="img/@2x/category-5.jpg" data-fancybox="prodImgGroup")
+						img.small-product-img(src='img/@2x/category-5.jpg' alt='')
+				.swiper-slide
+					a(href="img/@2x/category-7.jpg" data-fancybox="prodImgGroup")
 						img.small-product-img(src='img/@2x/category-7.jpg' alt='')
 
-		+e.current-image.active(data-tab-for='1img' data-tab-content='foto-gallery')
-			a(href="img/@2x/slider.jpg" data-fancybox="prodImgGroup")
-				img.huge-product-img(src="img/@2x/slider.jpg" alt="")
-
-		+e.current-image(data-tab-for='2img' data-tab-content='foto-gallery')
-			a(href="img/@2x/category-2.jpg" data-fancybox="prodImgGroup")
-				img.huge-product-img(src="img/@2x/category-2.jpg" alt="")
-
-		+e.current-image(data-tab-for='3img' data-tab-content='foto-gallery')
-			a(href="img/@2x/category-4.jpg" data-fancybox="prodImgGroup")
-				img.huge-product-img(src="img/@2x/category-4.jpg" alt="")
-
-		+e.current-image(data-tab-for='4img' data-tab-content='foto-gallery')
-			a(href="img/@2x/category-5.jpg" data-fancybox="prodImgGroup")
-				img.huge-product-img(src="img/@2x/category-5.jpg" alt="")
-
-		+e.current-image(data-tab-for='5img' data-tab-content='foto-gallery')
-			a(href="img/@2x/category-7.jpg" data-fancybox="prodImgGroup")
-				img.huge-product-img(src="img/@2x/category-7.jpg" alt="")
 
 mixin productDesription()
 	+b.product-description-pills&attributes(attributes)

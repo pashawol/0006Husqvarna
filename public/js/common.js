@@ -564,7 +564,7 @@ function eventHandler() {
 	} //product card js
 
 
-	var photoGalery = new Swiper('.foto-galery-container__image-pills-bl', {
+	var photoGaleryThumb = new Swiper('.foto-galery-container__image-pills-bl', {
 		breakpoints: {
 			1: {
 				slidesPerView: 'auto',
@@ -577,12 +577,32 @@ function eventHandler() {
 				spaceBetween: 10
 			}
 		},
+		//loop: true,
 		on: {
 			click: function click() {
-				photoGalery.slideTo(photoGalery.clickedIndex - 1, 700, false);
+				//photoGaleryThumb.slideTo(photoGaleryThumb.clickedIndex - 1, 700, false);
+				photoGaleryThumb.updateSlidesClasses();
+				photoGalery.updateSlidesClasses();
 			}
 		}
 	});
+	var photoGalery = new Swiper('.foto-galery-container__foto-galery-big-img', {
+		thumbs: {
+			swiper: photoGaleryThumb
+		},
+		lazy: {
+			loadPrevNext: true
+		},
+		//loop: true,
+		on: {
+			click: function click() {
+				//photoGaleryThumb.slideTo(photoGaleryThumb.clickedIndex - 1, 700, false);
+				photoGaleryThumb.updateSlidesClasses();
+				photoGalery.updateSlidesClasses();
+			}
+		}
+	}); //
+
 	var ProdTabsSwiper = new Swiper('.product-description-pills__tabs-cont', {
 		slidesPerView: 'auto',
 		freeMode: true,
@@ -664,6 +684,7 @@ function eventHandler() {
 
 			if (window.scrollY > bottomOfBuyBlock) {
 				$('.buy-block-04').addClass('visible');
+				console.log(document.body);
 			} else {
 				$('.buy-block-04').removeClass('visible');
 			}
