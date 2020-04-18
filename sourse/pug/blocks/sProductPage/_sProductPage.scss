@@ -776,6 +776,79 @@
 			}
 			&__{}
 			&__{}
+			&.fixed-buy-block{
+				z-index: 1000;
+				background-color: white;
+				width: 100%;
+				position: fixed;
+				left: 0;
+				bottom: 0;
+				justify-content: space-between;
+
+				@include mt();
+				transform: translateY(-120vh);
+				&.visible{
+					transform: translateY(0);
+					box-shadow: 0 0 35px -10px black;
+				}
+
+				padding: rem(10px) 15px rem(20px) 15px;
+				@include media-breakpoint-up(md){
+					padding: rem(10px) rem(30px) rem(20px) rem(30px);
+				}
+				.buy-block-04__price-and-inp-bl{
+					margin-top: 0;
+					margin-left: 0;
+					margin-right: rem(15px);
+					width: 50%;
+					min-width: 250px;
+					.buy-block-04__price-block{
+						@include media-breakpoint-down(md){
+							align-self: center;
+							.old-price{
+								font-size: 16px;
+								line-height: 19px;
+							}
+							.new-price{
+								font-size: 24px;
+								line-height: 29px;
+							}
+						}
+					}
+
+					.amount-inp{
+						display: none;
+						@include media-breakpoint-up(sm){
+							display: flex;
+						}
+					}
+				}
+				.buy-block-04__btns-block{
+					width: 65%;
+					display: flex;
+					align-items: center;
+					.order-bnt, .btn-more{
+						height: rem(40px);
+					}
+					.btn-more{
+						padding: 0;
+						line-height: rem(40px);
+
+						display: none;
+						@include media-breakpoint-up(sm){
+							display: block;
+						}
+					}
+					.order-bnt{
+						max-width: 150px;
+						margin-left: auto;
+						@include media-breakpoint-up(sm){
+							max-width: 100%;
+							margin: 0 rem(15px) 0 0;
+						}
+					}
+				}
+			}
 		}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}

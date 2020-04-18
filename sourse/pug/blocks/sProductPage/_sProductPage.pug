@@ -6,7 +6,8 @@ mixin sProductPage()
 				.col-lg-8
 					+productHeader()(class="d-block d-lg-none")
 					+fotoGalery()(class="")
-					+buyBlock04()(class="d-block d-lg-none")
+					+buyBlock04()(class="d-block d-lg-none block-to-calculate-top-js")
+					+buyBlock04()(class="d-flex d-lg-none fixed-buy-block")
 					+productInfo()(class="d-block d-lg-none")
 					+actionsSlider04()(class="d-block d-lg-none")
 					+productDesription()(class="")
@@ -265,9 +266,9 @@ mixin productHeader()
 		+e.icons-cont
 			+e.SPAN.icon-action акция
 			.prod-item__labels
-				.prod-item__label-link.active(type="button")
+				button.prod-item__label-link.active(type="button")
 					+icon("compare")
-				.prod-item__label-link(type="button")
+				button.prod-item__label-link(type="button")
 					+icon("like-alt")
 		+e.prod-name Триммер Husqvarna 122C
 

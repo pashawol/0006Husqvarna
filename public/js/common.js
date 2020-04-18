@@ -657,12 +657,15 @@ function eventHandler() {
 	}); //fixed position to buy block
 
 	var page03 = document.querySelector('.product-card-page');
-	console.log(page03);
 
 	if (page03) {
 		window.addEventListener('scroll', function () {
-			if (window.matchMedia("(max-width: 992px)")) {
-				console.log(1);
+			var bottomOfBuyBlock = $('.block-to-calculate-top-js').offset().top + $('.block-to-calculate-top-js').outerHeight();
+
+			if (window.scrollY > bottomOfBuyBlock) {
+				$('.buy-block-04').addClass('visible');
+			} else {
+				$('.buy-block-04').removeClass('visible');
 			}
 		}, {
 			passive: true
