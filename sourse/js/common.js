@@ -656,8 +656,11 @@ function eventHandler() {
 	//11 comparsion
 	let comparsionSlider =  new Swiper('.comparsion-swiper-cont', {
 		slidesPerView: 'auto',
+		freeMode: true,
+		freeModeMomentum: true,
+		watchOverflow: true,
 	});
-	$('.prod-item__img-wrap .icon-cross').click(function () {
+	/*$('.prod-item__img-wrap .icon-cross').click(function () {
 		let thisSlide = this.closest('.swiper-slide');
 		let allSlides = thisSlide.parentElement.querySelectorAll('.swiper-slide');
 		let SlideIndex;
@@ -668,8 +671,9 @@ function eventHandler() {
 		}
 		if (allSlides.length > 2) {
 			comparsionSlider.removeSlide(SlideIndex);
+			comparsionSlider.update();
 		}
-	});
+	});*/
 
 
 

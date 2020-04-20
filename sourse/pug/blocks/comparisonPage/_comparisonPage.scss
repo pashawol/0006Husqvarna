@@ -2,176 +2,7 @@
 	// start .comparisonPage
 	.comparisonPage {
 		padding: rem(50px) 0 rem(50px) 0 !important;
-		.char-healdine-col-parent{
-			position: absolute;
-			@include media-breakpoint-up(xl){
-				position: static;
-			}
-		}
-		.char-healdine-col{
-			&__headline{
-				@extend .h5;
-				margin-bottom: 0;
-				&.first-headline{
-					height: 400px;
-					@include media-breakpoint-up(xl){
-						height: rem(400px);
-					}
-				}
-			}
-			&__chars-list-box{
-				padding: rem(20px) 0 rem(60px) 0;
-				@include media-breakpoint-up(xl){
-					padding: rem(30px) 0 rem(60px) 0;
-				}
 
-			}
-			&__chars-list-item{
-				font-weight: 300;
-				font-size: rem(18px);
-				line-height: rem(22px);
-				color: $deep-gray;
-				margin-bottom: rem(15px);
-
-				height: rem(65px);
-				@include media-breakpoint-up(xl){
-					height: rem(50px);
-					padding-left: rem(20px);
-				}
-			}
-		}
-		//comparation-prod-item
-		.prod-item-in-comparation{
-			//background-color: red;
-			width: 165px;
-			height: rem(340px);
-			padding: rem(20px);
-			margin: 0 auto rem(10px) auto ;
-			&:hover{
-				transform: none;
-				.icon-cross{
-					opacity: 1;
-				}
-			}
-			.prod-item__img-wrap{
-				width: 100%;
-				height: rem(120px);
-			}
-			.icon-cross{
-				position: absolute;
-				stroke: black;
-				right: 0;
-				top: 0;
-				font-size: 10px;
-				cursor: pointer;
-				opacity: 0;
-				@include mt();
-				&:hover{
-					stroke: $primary;
-				}
-			}
-			.prod-item__title{
-				//background-color: red;
-				margin-left: rem(-20px);
-				margin-right: rem(-20px);
-				a{
-					font-size: rem(16px);
-					line-height: rem(19px);
-				}
-			}
-			.prod-item__price--new{
-				margin-bottom: rem(15px);
-			}
-			&__{}
-
-		}
-		//comparation-slider
-		.comparation-slider-block-parent{
-			padding-left: 0;
-		}
-		.comparation-slider-block{
-			position: relative;
-
-			@include media-breakpoint-up(xl){
-				top: -30px;
-				margin-right: -30px;
-			}
-
-		}
-		.comparsion-swiper-cont{
-			.swiper-wrapper{
-
-			}
-			.swiper-slide{
-				width: 195px;
-				padding: 30px 15px 15px 15px;
-				//background-color: red;
-			}
-		}
-		//slide
-		.comparation-slide{
-			&__prod-item-box{
-				height: 400px;
-				@include media-breakpoint-up(xl){
-					height: rem(400px);
-				}
-			}
-			&__favorite-link{
-				display: block;
-				width: 100%;
-				text-align: center;
-				text-decoration: none;
-				.icon{
-					stroke: $primary;
-					color: transparent;
-					font-size: rem(15px);
-					line-height: rem(19px);
-					margin-right: rem(10px);
-					@include mt();
-				}
-				span {
-					font-weight: 300;
-					font-size: rem(16.3px);
-					line-height: rem(19px);
-					color: $dark;
-					@include mt();
-				}
-				&:hover{
-					span{
-						color: $primary;
-					}
-					.icon{
-						color: rgba($primary, .25);
-					}
-				}
-			}
-			&__chars-list-box{
-				padding: rem(45px) 0 rem(60px) 0;
-				margin-top: 0;
-				@include media-breakpoint-up(xl){
-					padding: rem(30px) 0 rem(60px) 0;
-					margin-top: rem(28px);
-				}
-
-			}
-			&__chars-list-item{
-				font-weight: 300;
-				font-size: rem(18px);
-				line-height: rem(22px);
-				color: $dark;
-				height: rem(50px);
-				//background-color: rgba(red, .3);
-
-				margin-bottom: rem(30px);
-				@include media-breakpoint-up(xl) {
-					margin-bottom: rem(15px);
-				}
-			}
-			&__{}
-			&__{}
-			&__{}
-			&__{}
-		}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}
@@ -197,3 +28,179 @@
 	@include media-breakpoint-down(xs) {} 
 
 } // end.comparisonPage
+
+	.char-healdine-col-parent{
+		position: absolute;
+		@include media-breakpoint-up(xl){
+			position: static;
+		}
+	}
+	.char-healdine-col{
+		&__headline{
+			@extend .h5;
+			margin-bottom: 0;
+			&.first-headline{
+				height: 400px;
+				@include media-breakpoint-up(xl){
+					height: rem(400px);
+				}
+			}
+		}
+		&__chars-list-box{
+			padding: rem(20px) 0 rem(60px) 0;
+			@include media-breakpoint-up(xl){
+				padding: rem(30px) 0 rem(60px) 0;
+			}
+
+		}
+		&__chars-list-item{
+			font-weight: 300;
+			font-size: rem(18px);
+			line-height: rem(22px);
+			color: $deep-gray;
+			margin-bottom: rem(15px);
+
+			height: rem(65px);
+			@include media-breakpoint-up(xl){
+				height: rem(50px);
+				padding-left: rem(20px);
+			}
+		}
+	}
+	//comparation-prod-item
+	.prod-item.prod-item-in-comparation{
+		//background-color: red;
+		width: 165px;
+		height: rem(340px);
+		box-shadow: 0 8px 16px rgba(39,58,96,.08);
+		padding: rem(20px);
+		margin: 0 auto rem(10px) auto ;
+		&:hover{
+			transform: none;
+			.icon-cross{
+				opacity: 1;
+			}
+		}
+		.prod-item__img-wrap{
+			width: 100%;
+			height: rem(120px);
+		}
+		.icon-cross{
+			position: absolute;
+			stroke: black;
+			right: 0;
+			top: 0;
+			font-size: 10px;
+			cursor: pointer;
+			opacity: 0;
+			@include mt();
+			&:hover{
+				stroke: $primary;
+			}
+		}
+		.prod-item__title{
+			//background-color: red;
+			margin-left: rem(-20px);
+			margin-right: rem(-20px);
+			a{
+				font-size: rem(16px);
+				line-height: rem(19px);
+			}
+		}
+		.prod-item__price--new{
+			margin-bottom: rem(15px);
+		}
+		&__{}
+
+	}
+	//comparation-slider
+	.comparation-slider-block-parent{
+		padding-left: 0;
+	}
+	.comparation-slider-block{
+		position: relative;
+
+		@include media-breakpoint-up(xl){
+			top: -30px;
+			margin-right: -30px;
+		}
+
+	}
+	.comparsion-swiper-cont{
+		overflow: visible;
+		@include media-breakpoint-up(sm){
+			overflow: hidden;
+		}
+		.swiper-wrapper{
+
+		}
+		.swiper-slide{
+			width: 195px;
+			padding: 30px 15px 15px 15px;
+			//background-color: red;
+		}
+	}
+	//slide
+	.comparation-slide{
+		&__prod-item-box{
+			height: 400px;
+			@include media-breakpoint-up(xl){
+				height: rem(400px);
+			}
+		}
+		&__favorite-link{
+			display: block;
+			width: 100%;
+			text-align: center;
+			text-decoration: none;
+			.icon{
+				stroke: $primary;
+				color: transparent;
+				font-size: rem(15px);
+				line-height: rem(19px);
+				margin-right: rem(10px);
+				@include mt();
+			}
+			span {
+				font-weight: 300;
+				font-size: rem(16.3px);
+				line-height: rem(19px);
+				color: $dark;
+				@include mt();
+			}
+			&:hover{
+				span{
+					color: $primary;
+				}
+				.icon{
+					color: rgba($primary, .25);
+				}
+			}
+		}
+		&__chars-list-box{
+			padding: rem(45px) 0 rem(60px) 0;
+			margin-top: 0;
+			@include media-breakpoint-up(xl){
+				padding: rem(30px) 0 rem(60px) 0;
+				margin-top: rem(28px);
+			}
+
+		}
+		&__chars-list-item{
+			font-weight: 300;
+			font-size: rem(18px);
+			line-height: rem(22px);
+			color: $dark;
+			height: rem(50px);
+			//background-color: rgba(red, .3);
+
+			margin-bottom: rem(30px);
+			@include media-breakpoint-up(xl) {
+				margin-bottom: rem(15px);
+			}
+		}
+		&__{}
+		&__{}
+		&__{}
+		&__{}
+	}
