@@ -1,0 +1,59 @@
+mixin comparisonPage()
+	// start comparisonPage
+	+b.SECTION.comparisonPage.section#comparisonPage&attributes(attributes)
+		.container
+			.row
+				.col-xl-2.char-healdine-col-parent
+					+b.char-healdine-col
+						+e.headline.first-headline Товары
+						+e.headline Двигатель
+						+e.chars-list-box
+							+e.chars-list-item HUS Usage
+							+e.chars-list-item Рабочий объем двигателя
+							+e.chars-list-item Рабочий объем цилиндра
+							+e.chars-list-item Номинальная мощность
+						+e.headline Трансмиссия
+						+e.chars-list-box
+							+e.chars-list-item HUS Usage
+							+e.chars-list-item Рабочий объем двигателя
+							+e.chars-list-item Рабочий объем цилиндра
+							+e.chars-list-item Номинальная мощность
+				.col-xl-10.comparation-slider-block-parent
+					.comparation-slider-block
+						.swiper-container.comparsion-swiper-cont
+							.swiper-wrapper
+								.swiper-slide
+									+comaparsionSlide()
+								.swiper-slide
+									+comaparsionSlide()
+								.swiper-slide
+									+comaparsionSlide()
+								.swiper-slide
+									+comaparsionSlide()
+								.swiper-slide
+									+comaparsionSlide()
+								.swiper-slide
+									+comaparsionSlide()
+								.swiper-slide
+									+comaparsionSlide()
+								.swiper-slide
+									+comaparsionSlide()
+	// end comparisonPage
+
+mixin comaparsionSlide()
+	+b.comparation-slide
+		+e.prod-item-box
+			+item-prod10('category-4.jpg', undefined)(class='prod-item-in-comparation')
+			+e.A.favorite-link(href="#")
+				+icon('like')
+				span В избранное
+		+e.chars-list-box
+			+e.chars-list-item Occasional use
+			+e.chars-list-item 21.7 см³
+			+e.chars-list-item 1.3 куб. дюйм
+			+e.chars-list-item 0.6 кВт
+		+e.chars-list-box
+			+e.chars-list-item Occasional use
+			+e.chars-list-item 21.7 см³
+			+e.chars-list-item 1.3 куб. дюйм
+			+e.chars-list-item 0.6 кВт
