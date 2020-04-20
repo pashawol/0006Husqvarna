@@ -232,6 +232,9 @@
 		}
 		.form-wrap__sent-btn-cont{
 			margin-top: rem(30px);
+			.form-wrap__input{
+				@extend .order-bnt;
+			}
 		}
 		.order-cont{
 			&__headline{

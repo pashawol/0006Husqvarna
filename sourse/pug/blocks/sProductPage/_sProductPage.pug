@@ -7,12 +7,12 @@ mixin sProductPage()
 					+productHeader()(class="d-block d-lg-none")
 					+fotoGalery()(class="")
 					+buyBlock04()(class="d-block d-lg-none block-to-calculate-top-js")
-					+buyBlock04()(class="d-flex d-lg-none fixed-buy-block")
+					+buyBlock04Fixed()(class="d-flex d-lg-none fixed-buy-block")
 					+productInfo()(class="d-block d-lg-none")
 					+actionsSlider04()(class="d-block d-lg-none")
 					+productDesription()(class="")
 				.col-lg-4.d-none.d-lg-block
-					+productHeader()(class="")(class="")
+					+productHeader()(class="")
 					+productInfo()(class="")
 					+buyBlock04()(class="")
 					+actionsSlider04()(class="")
@@ -27,36 +27,36 @@ mixin fotoGalery()
 			.swiper-wrapper
 				.swiper-slide
 					+e.image-pill.active
-						img.small-product-img(src='img/@2x/category-6.jpg' alt='')
+						+e.IMG.small-product-img(src='img/@2x/category-6.jpg' alt='')
 				.swiper-slide
 					+e.image-pill
-						img.small-product-img(src='img/@2x/category-2.jpg' alt='')
+						+e.IMG.small-product-img(src='img/@2x/category-2.jpg' alt='')
 				.swiper-slide
 					+e.image-pill
-						img.small-product-img(src='img/@2x/category-4.jpg' alt='')
+						+e.IMG.small-product-img(src='img/@2x/category-4.jpg' alt='')
 				.swiper-slide
 					+e.image-pill
-						img.small-product-img(src='img/@2x/category-5.jpg' alt='')
+						+e.IMG.small-product-img(src='img/@2x/category-5.jpg' alt='')
 				.swiper-slide
 					+e.image-pill
-						img.small-product-img(src='img/@2x/category-7.jpg' alt='')
+						+e.IMG.small-product-img(src='img/@2x/category-7.jpg' alt='')
 		+e.foto-galery-big-img
 			.swiper-wrapper
 				.swiper-slide
-					a(href="img/@2x/category-6.jpg" data-fancybox="prodImgGroup")
-						img.small-product-img(src='img/@2x/category-6.jpg' alt='')
+					a.fancy-box-link(href="img/@2x/category-6.jpg" data-fancybox="prodImgGroup")
+						img.big-product-img(src='img/@2x/category-6.jpg' alt='')
 				.swiper-slide
-					a(href="img/@2x/category-2.jpg" data-fancybox="prodImgGroup")
-						img.small-product-img(src='img/@2x/category-2.jpg' alt='')
+					a.fancy-box-link(href="img/@2x/category-2.jpg" data-fancybox="prodImgGroup")
+						img.big-product-img(src='img/@2x/category-2.jpg' alt='')
 				.swiper-slide
-					a(href="img/@2x/category-4.jpg" data-fancybox="prodImgGroup")
-						img.small-product-img(src='img/@2x/category-4.jpg' alt='')
+					a.fancy-box-link(href="img/@2x/category-4.jpg" data-fancybox="prodImgGroup")
+						img.big-product-img(src='img/@2x/category-4.jpg' alt='')
 				.swiper-slide
-					a(href="img/@2x/category-5.jpg" data-fancybox="prodImgGroup")
-						img.small-product-img(src='img/@2x/category-5.jpg' alt='')
+					a.fancy-box-link(href="img/@2x/category-5.jpg" data-fancybox="prodImgGroup")
+						img.big-product-img(src='img/@2x/category-5.jpg' alt='')
 				.swiper-slide
-					a(href="img/@2x/category-7.jpg" data-fancybox="prodImgGroup")
-						img.small-product-img(src='img/@2x/category-7.jpg' alt='')
+					a.fancy-box-link(href="img/@2x/category-7.jpg" data-fancybox="prodImgGroup")
+						img.big-product-img(src='img/@2x/category-7.jpg' alt='')
 
 
 mixin productDesription()
@@ -96,25 +96,25 @@ mixin product-Description-cont04()
 			+e.P.img-descr При наличии только одного рычага, высота стрижки газонокосилки Husqvarna LC 140 может быстро и просто регулироваться.
 mixin product-Characteristics-cont04()
 	+b.content-of-prod-pill-characteristics
-		table
-			tr
-				td Номинальная потребляемая мощность
-				td 1100 Вт
-			tr
-				td Напряжение сети
-				td 220 - 240 В
-			tr
-				td Макс. производительность
-				td 4000 л/ч
-			tr
-				td Максимальная высота всасывания
-				td 8 м
-			tr
-				td Макс. высота подачи
-				td 46 м
-			tr
-				td Макс. давление
-				td 4,6 бар
+		table.char-table
+			tr.char-tr
+				td.char-td Номинальная потребляемая мощность
+				td.char-td 1100 Вт
+			tr.char-tr
+				td.char-td Напряжение сети
+				td.char-td 220 - 240 В
+			tr.char-tr
+				td.char-td Макс. производительность
+				td.char-td 4000 л/ч
+			tr.char-tr
+				td.char-td Максимальная высота всасывания
+				td.char-td 8 м
+			tr.char-tr
+				td.char-td Макс. высота подачи
+				td.char-td 46 м
+			tr.char-tr
+				td.char-td Макс. давление
+				td.char-td 4,6 бар
 mixin product-Equipment-cont04()
 	| descriptions3
 mixin product-Documentation-cont04()
@@ -208,8 +208,8 @@ mixin product-Feedbacks-cont04()
 						span.time 15:47
 				+e.to-respont-txt в ответ Евгений
 				+e.reply-txt-bl
-					p Евгений, рекомендуем ознакомиться со статьей об максимальной и номинальной мощности двигателя.  Все встанет на свои места.
-					a(href='#') https://gardengear.ru/articles/traktora/maximum_and_rated_power_of_the_engines/
+					+e.P.reply-txt-par Евгений, рекомендуем ознакомиться со статьей об максимальной и номинальной мощности двигателя.  Все встанет на свои места.
+					+e.A.reply-txt-link(href='#') https://gardengear.ru/articles/traktora/maximum_and_rated_power_of_the_engines/
 				//+e.advantages-cont
 					+e.advantages-item
 						span Достоинства:
@@ -310,10 +310,10 @@ mixin productInfo()
 		+e.local-headline Наличие
 		+e.presense-item.d-none.d-lg-flex
 			span.location Магазин Дмитровка:
-			span.status.present В наличии
+			span.status(style="color: #18B58C") В наличии
 		+e.presense-item.last-item
 			span.location Магазин Дмитровка:
-			span.status.for-order Под заказ
+			span.status(style="color: #F35321") Под заказ
 		+e.local-headline Варинаты доставки
 		+e.delivery-items-cont
 			//
@@ -322,8 +322,10 @@ mixin productInfo()
 					+e.icon-cont
 						+icon('car')
 				+e.txt-col.col-auto
-					span Курьерская доставка по Москве
-					span от 200 до 500 руб.
+					span
+						|Курьерская доставка по Москве
+						br
+						|от 200 до 500 руб.
 				+e.time-col.col 1-2 дня
 			//
 			+e.delivery-item.row
@@ -331,8 +333,10 @@ mixin productInfo()
 					+e.icon-cont
 						+icon('plane')
 				+e.txt-col.col-auto
-					span Доставка по России
-					span от 500 руб.
+					span
+						|Доставка по России
+						br
+						|от 500 руб.
 				+e.time-col.col от 1-2 дня
 			//
 			+e.delivery-item.row
@@ -340,8 +344,10 @@ mixin productInfo()
 					+e.icon-cont
 						+icon('house')
 				+e.txt-col.col-auto
-					span Самовывоз
-					span от 250 руб.
+					span
+						|Самовывоз
+						br
+						|от 250 руб.
 				+e.time-col.col
 		+e.small-info-txt
 			| При заказе от 5 000 руб. доставка&#160;
@@ -358,3 +364,15 @@ mixin buyBlock04()
 		+e.btns-block
 			button.order-bnt Купить
 			a.link-modal.btn-more.bill-btn(href="#modal-order-request") Запросить счёт
+
+mixin buyBlock04Fixed()
+	+b.buy-block-04&attributes(attributes)
+		.container
+			+e.price-and-inp-bl
+				+e.price-block
+					.old-price 15 990 ₽
+					.new-price 999 490 ₽
+				+amountInpBlock("2")
+			+e.btns-block
+				button.order-bnt Купить
+				a.link-modal.btn-more.bill-btn(href="#modal-order-request") Запросить счёт

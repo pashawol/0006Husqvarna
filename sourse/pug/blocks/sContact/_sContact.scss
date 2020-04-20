@@ -203,8 +203,9 @@
 				outline: none;
 				color: $white;
 				width: 100%;
+				@extend .order-bnt;
 				&:hover{
-					box-shadow: 0px 12px rem(25) rgba(39, 58, 96, 0.15);
+					//box-shadow: 0px 12px rem(25) rgba(39, 58, 96, 0.15);
 				}
 			}
 		}

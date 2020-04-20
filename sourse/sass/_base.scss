@@ -768,15 +768,24 @@ iframe {
 	background-color: $primary;
 	border: none;
 	margin-top: rem(15px);
+	outline: none !important;
+	box-shadow: none !important;
 
+	@include mt();
 	&:hover {
-		color: white;
-		background-color: $primary;
-		box-shadow: 0px 0px 12px -3px darken($primary, 10);
+		//color: white;
+		//background-color: $primary;
+		//box-shadow: 0px 0px 12px -3px darken($primary, 10);
+		color: #fff;
+		background-color: #e23f0c;
+		border-color: #d53c0c;
 	}
 
 	&:active {
-		box-shadow: 0px 0px 6px -3px darken($primary, 10), inset 0px 0px 12px -5px black;
+		//box-shadow: 0px 0px 6px -3px darken($primary, 10), inset 0px 0px 12px -5px black;
+		color: #fff;
+		background-color: #d53c0c;
+		border-color: #c9380b;
 	}
 }
 

@@ -556,7 +556,7 @@ function eventHandler() {
 		lazy: {
 			loadPrevNext: true,
 		},
-		//loop: true,
+		loop: true,
 		on: {
 			click: () => {
 				//photoGaleryThumb.slideTo(photoGaleryThumb.clickedIndex - 1, 700, false);
@@ -615,27 +615,32 @@ function eventHandler() {
 		});
 	});
 	//smal actions slider04
-	let actionsSlider04 = new Swiper('.actions-slider04', {
-		autoplay: {
-			delay: 5000,
-		},
-		//pagination
-		pagination: {
-			el: $(this).find('.action-slider-puging'),
-			clickable: true,
-		},
+	$('.actionsSlider').each(function () {
+		let actionsSlider04 = new Swiper($(this).find('.actions-slider04'), {
+			autoplay: {
+				delay: 5000,
+			},
+			//pagination
+			pagination: {
+				el: $(this).find('.action-slider-puging'),
+				clickable: true,
+			},
+		});
 	});
+
 	//fixed position to buy block
 	let page03 = document.querySelector('.product-card-page');
 	if (page03) {
 		window.addEventListener('scroll', function () {
 			let bottomOfBuyBlock = $('.block-to-calculate-top-js').offset().top + $('.block-to-calculate-top-js').outerHeight();
-			if (window.scrollY > bottomOfBuyBlock) {
+			if (window.scrollY > bottomOfBuyBlock && window.matchMedia('(max-width: 992px)').matches) {
 				$('.buy-block-04').addClass('visible');
-				console.log(document.body)
+				document.body.style.paddingBottom = $('.buy-block-04.fixed-buy-block').outerHeight() + 'px';
+				//console.log();
 			}
 			else{
 				$('.buy-block-04').removeClass('visible');
+				document.body.style.paddingBottom = '0';
 			}
 		}, { passive: true });
 	}
