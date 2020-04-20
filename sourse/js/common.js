@@ -653,6 +653,23 @@ function eventHandler() {
 			this.classList.toggle('active');
 		});
 	});
+	//11 comparsion
+	let comparsionSlider =  new Swiper('.comparsion-swiper-cont', {
+		slidesPerView: 'auto',
+	});
+	$('.prod-item__img-wrap .icon-cross').click(function () {
+		let thisSlide = this.closest('.swiper-slide');
+		let allSlides = thisSlide.parentElement.querySelectorAll('.swiper-slide');
+		let SlideIndex;
+		for (let [index,el] of allSlides.entries()){
+			if(el == thisSlide){
+				SlideIndex = index;
+			}
+		}
+		if (allSlides.length > 2) {
+			comparsionSlider.removeSlide(SlideIndex);
+		}
+	});
 
 
 
