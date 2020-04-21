@@ -120,17 +120,17 @@ mixin mnu()
 			+e.LI.item--has-children(itemprop="item" )
 				+e.link(href="#" itemprop="url") 
 					| #[span] Продукция
-			+b.sub-menu
-				ul.container 
-					- for (var y = 0; y < 8; y++)
-						li
-							+e.title(href="#") Трава и газон
-							ul
-								- for (var x = 0; x < 4; x++)
-									li: +e.link(href="#")
-										+e.img-wrap
-											img(src="img/@2x/category-1.jpg", alt="")
-										| Бензопилы 
+				+b.sub-menu
+					ul.container 
+						- for (var y = 0; y < 8; y++)
+							li
+								+e.title(href="#") Трава и газон
+								ul
+									- for (var x = 0; x < 4; x++)
+										li: +e.link(href="#")
+											+e.img-wrap
+												img(src="img/@2x/category-1.jpg", alt="")
+											| Бензопилы 
 		each linkPatch, linkName in nav
 			+e.LI.item(itemprop="item" )
 				+e.link(href= linkPatch itemprop="url")= linkName
