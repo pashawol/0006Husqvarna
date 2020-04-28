@@ -1,7 +1,7 @@
 
 	// start .sProductPage
 	.sProductPage {
-
+		padding-top: rem(30) !important;
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

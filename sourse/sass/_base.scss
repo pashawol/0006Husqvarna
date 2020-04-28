@@ -673,6 +673,45 @@ iframe {
 	}
 }
 
+.breadcrumb-slider-js-prod-card04 {
+	padding-bottom: rem(30);
+
+	.breadcrumb {
+		background-color: transparent;
+		display: flex;
+		flex-wrap: nowrap;
+		padding: 0 0 0 0;
+	}
+
+	.breadcrumb-item {
+		width: auto;
+		padding: 0;
+
+		&:before {
+			content: '>';
+			padding-right: rem(10px);
+		}
+		&:first-child{
+			&:before{
+				content: none;
+			}
+		}
+
+		a {
+			line-height: rem(25px);
+			font-size: rem(16px);
+			padding-right: rem(10px);
+			color: $dark;
+		}
+
+		&.active {
+			a {
+				color: $primary;
+			}
+		}
+	}
+}
+
 //pagination
 .pagination-wrapper {
 	margin-bottom: rem(120px);
@@ -817,4 +856,9 @@ iframe {
 	color: #4D4D4D;
 	font-size: rem(16);
 	padding: rem(3);
+}
+
+//finall fixes
+.prod-item__price--old{
+	min-height: 1.222222rem;
 }

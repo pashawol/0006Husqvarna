@@ -52,7 +52,8 @@
 				line-height: rem(30px);
 				span{
 					font-weight: 300;
-					font-size: rem(18px);
+					font-size: rem(16.8px);
+					//16.8 to fix
 					color: $dark;
 					transition: color .3s;
 				}
@@ -72,6 +73,7 @@
 				padding: rem(10px) 0 rem(20px) rem(15px);
 				li{
 					a{
+						font-weight: 300;
 						color: $dark;
 						font-size: rem(16.8px);
 						line-height: rem(27px);
@@ -105,10 +107,14 @@
 				//background-color: red;
 				display: block;
 				color: $dark;
+				font-weight: 300;
 				font-size: rem(16.8px);
 				line-height: rem(24px);
 				padding: rem(4px) 0;
 				&:hover{
+					color: $primary;
+				}
+				&.active{
 					color: $primary;
 				}
 			}
@@ -206,35 +212,35 @@ body{
 			min-height: calc(100vh - 4.44444rem);
 			//
 			.check-box-filter-group{
-				order: 3;
+				//order: 3;
 				padding: 0 rem(30px);
 				@include media-breakpoint-up(lg){
-					order: 1;
+					//order: 1;
 					padding: 0;
 				}
 			}
 			.radio-filter-group{
-				order: 4;
+				//order: 4;
 				padding: 0 rem(30px);
 				@include media-breakpoint-up(lg){
-					order: 2;
+					//order: 2;
 					padding: 0;
 				}
 			}
 			.price-filter-group{
-				order: 1;
+				order: -1;
 				padding: 0 rem(30px);
 				@include media-breakpoint-up(lg){
-					order: 3;
+					order: 0;
 					padding: 0;
 				}
 			}
 			.check-box-alt-filter-group{
-				order: 2;
+				//order: 2;
 				padding: 0 rem(30px);
 				max-width: rem(350px);
 				@include media-breakpoint-up(lg){
-					order: 4;
+					//order: 4;
 					padding: 0;
 				}
 			}
@@ -848,6 +854,11 @@ body{
 						transition: color .3s ease-in-out;
 						&:hover{
 							color: rgba(white, .7);
+						}
+					}
+					&.active{
+						svg{
+							color: white;
 						}
 					}
 				}
