@@ -303,6 +303,16 @@ function eventHandler() {
 		// spaceBetween: 30,
 		watchOverflow: true,
 	});
+	//prod card breadcrumbs
+	var breadSl = new Swiper('.breadcrumb-slider-js-prod-card04', {
+		slidesPerView: 'auto',
+		// spaceBetween: 30,
+		freeMode: true,
+		freeModeMomentum: true,
+		// spaceBetween: 30,
+		watchOverflow: true,
+	});
+
 	//my tabs
 	function CustomTabs2(selectorsArr) {
 		for (let selector of selectorsArr) {
