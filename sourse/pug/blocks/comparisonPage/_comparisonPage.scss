@@ -176,6 +176,15 @@
 					color: rgba($primary, .25);
 				}
 			}
+
+			&.active{
+				span{
+
+				}
+				.icon{
+					color: $primary;
+				}
+			}
 		}
 		&__chars-list-box{
 			padding: rem(45px) 0 rem(60px) 0;

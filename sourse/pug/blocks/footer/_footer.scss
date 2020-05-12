@@ -18,7 +18,10 @@
 	}
 
 	p {
-		max-width: rem(360);
+		max-width: rem(465);
+		@include media-breakpoint-up(lg){
+			max-width: rem(360);
+		}
 	}
 
 	&__logo {

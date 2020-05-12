@@ -11,7 +11,7 @@ mixin item-prod(i, slider ,t="Триммер бензиновый  Husqvarna 122
 				+e.label-link(type="button")
 					+icon("like-alt")
 
-			a(href="#")
+			+e.A.img-link(href="#")
 				if !slider
 					img.lazy(src="#" data-src=`img/@2x/${i}`, alt="")
 					//img.swiper-lazy(src="img/@2x/trimer-img.png", alt="")
