@@ -294,8 +294,12 @@
 	background-image: url(../img/svg/angle-right.svg);
 	background-size: rem(6 * 1.4) rem(12 * 1.4);
 	background-repeat: no-repeat;
-	background-position: center right;
 
+
+	background-position: calc(100% - 15px) 50%;
+	@include media-breakpoint-up(sm){
+		background-position: center right;
+	}
 }
 
 .mobile-dropdown {}

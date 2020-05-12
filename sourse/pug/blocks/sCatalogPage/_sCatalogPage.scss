@@ -529,6 +529,8 @@ body{
 .banner{
 	position: relative;
 
+	margin-bottom: rem(30px);
+
 	min-height: rem(470px);
 	@include media-breakpoint-up(sm) {
 		min-height: rem(350px);
@@ -570,7 +572,6 @@ body{
 	padding-left: rem(15px);
 	font-size: rem(16.8px);
 	font-weight: 300;
-	margin-top: rem(30px);
 	color: $body-color;
 }
 //square pills
@@ -758,7 +759,6 @@ body{
 		justify-content: space-between;
 	}
 	&__display-filter-icon{
-
 		width: rem(30px);
 		height: rem(30px);
 		border: 1px solid $light;
@@ -766,13 +766,15 @@ body{
 		outline: none !important;
 		background-color: white;
 		padding: 0;
+
+		text-align: center;
 		svg{
 			display: inline-block;
 			line-height: rem(30px);
 			font-size: rem(20px);
 			color: $primary;
 		}
-		&.active,{
+		&.active{
 			background-color: $primary;
 			border: 1px solid $primary;
 			svg{

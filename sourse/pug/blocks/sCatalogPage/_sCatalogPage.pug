@@ -24,9 +24,9 @@ mixin sCatalogPage(baner='true')
 								span Цена по возрастанию3
 						input.hidden-input-custom-select.d-none(type="text" value='Цена по возрастанию')
 						+e.display-filter-icons-cont.d-none.d-md-flex
-							+e.BUTTON.display-filter-icon.active(data-tab-for='square-box' data-tab-pill='catalog-goods-display')
+							+e.A.display-filter-icon.active(data-tab-for='square-box' data-tab-pill='catalog-goods-display' href="#")
 								+icon('9-dots-icon')
-							+e.BUTTON.display-filter-icon(data-tab-for='table-box' data-tab-pill='catalog-goods-display')
+							+e.A.display-filter-icon(data-tab-for='table-box' data-tab-pill='catalog-goods-display' href="#")
 								+icon('6-dots-icon')
 					+catalogGoodsSquareItems()
 					+catalogGoodsTableItems()

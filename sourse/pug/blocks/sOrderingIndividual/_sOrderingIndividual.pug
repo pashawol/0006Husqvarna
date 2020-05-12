@@ -22,22 +22,35 @@ mixin sOrderingIndividual()
 							.delivery-radio-group
 								+in-r('delivery-type', true)
 									+e.SPAN.item
-										+icon('car')
+										.icon-cont
+											+icon('car')
 										+e.delivery-type Курьерская доставка по Москве
-										+e.delivery-price от 200 до 500 ₽
+										+e.delivery-price 500 ₽
 										+e.delivery-time 1-2 дня
 								+in-r('delivery-type')
 									+e.SPAN.item
-										+icon('plane')
+										.icon-cont
+											+icon('plane')
 										+e.delivery-type  Доставка по России
-										+e.delivery-price от 500 ₽
+										+e.delivery-price 500 ₽
 										+e.delivery-time от 1-2 дней
 								+in-r('delivery-type')
 									+e.SPAN.item
-										+icon('house')
+										.icon-cont
+											+icon('house')
 										+e.delivery-type  Самовывоз
-										+e.delivery-price от 250 ₽
+										+e.delivery-price 0 ₽
 										+e.delivery-time
+								+in-r('delivery-type')
+									+e.SPAN.item.dpd-item
+										.icon-cont
+											img(src="img/DPD-logo.svg" alt="")
+										+e.delivery-type
+											span.d-sm-block='Доставка DPD '
+											span.d-sm-block до пункта самовывоза
+										+e.delivery-price от 250 ₽
+										+e.delivery-time от 1-2 дней
+										a.chose-delivery-btn(href="#") Выбрать ПВЗ
 						+e.adress-inp
 							+input('', 'text', 'Адрес*', 'user-address')(required)
 						+e.message-inp

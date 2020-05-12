@@ -100,15 +100,66 @@
 						&:hover{
 							border: 1px solid $primary;
 						}
-						svg{
+						//
+						&.dpd-item{
+							padding-bottom: rem(75px);
+							height: rem(173px);
+
+							.custom-radio__delivery-time{
+								margin-bottom: 0;
+							}
+							@include media-breakpoint-up(sm){
+								height: rem(145px); // + 28 = 173
+							}
+							.chose-delivery-btn{
+								position: absolute;
+								left: rem(12);
+								bottom: rem(12);
+								width: calc(100% - 1.33332rem);
+								height: rem(50);
+								line-height: rem(50);
+								text-align: center;
+								padding: 0;
+
+								@extend .btn-more; // .authorization-btn
+
+								background-color: white !important;
+								&:hover{
+									background-color: white !important;
+								}
+							}
+						}
+
+						.icon-cont{
+							background-color: white;
 							position: absolute;
-							top: rem(20px);
-							font-size: 20px;
 							left: rem(10px);
+
+							width: rem(50);
+							height: rem(50);
+							border: 1px solid $primary;
+							display: flex;
+
+							top: rem(19px);
+							@include media-breakpoint-up(sm){
+								top: rem(9px);
+							}
+							img{
+								max-width: rem(38);
+								max-height: 100%;
+								margin: auto;
+							}
+						}
+
+						.icon{
+							margin: auto;
+							color: $primary;
+							font-size: 20px;
 							@include media-breakpoint-up(xl){
 								left: rem(20px);
 							}
 						}
+						//
 						flex-direction: column;
 						flex-wrap: wrap;
 						align-items: flex-start;
@@ -117,7 +168,7 @@
 							align-items: center;
 							flex-direction: row;
 							flex-wrap: nowrap;
-							min-height: rem(67px);
+							min-height: rem(70px);
 						}
 					}
 					&__delivery-type{
@@ -126,14 +177,14 @@
 						margin-top: rem(15px);
 						@include media-breakpoint-up(sm){
 							margin-top: 0;
-							min-width: rem(210px);
+							min-width: rem(240px);
 						}
 						@include media-breakpoint-up(xl){
 							margin-left: rem(90px);
 						}
 					}
 					&__delivery-price{
-						min-width: rem(100px);
+						min-width: rem(70px);
 						white-space: nowrap;
 						text-align: left;
 						margin-left: rem(70px);
@@ -168,6 +219,7 @@
 		}
 		.way-to-pay{
 			padding-bottom: rem(60px);
+			margin-bottom: rem(30px);
 			position: relative;
 			&:after{
 				content: '';
@@ -231,7 +283,6 @@
 			//
 		}
 		.form-wrap__sent-btn-cont{
-			margin-top: rem(30px);
 			.form-wrap__input{
 				@extend .order-bnt;
 			}
