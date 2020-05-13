@@ -138,6 +138,10 @@ mixin mnu()
 											+e.img-wrap
 												img(src="img/@2x/category-1.jpg", alt="")
 											| Бензопилы 
+									li: +e.link(href="#")
+										+e.img-wrap
+											img(src="img/@2x/category-1.jpg", alt="")
+										| Бензопилы 
 		each linkPatch, linkName in nav
 			+e.LI.item(itemprop="item" )
 				+e.link(href= linkPatch itemprop="url")= linkName
