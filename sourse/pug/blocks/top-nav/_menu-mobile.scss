@@ -297,6 +297,10 @@
 
 
 	background-position: calc(100% - 15px) 50%;
+	&.menu__link{
+		background-position: calc(100% - 30px) 50%;
+		
+	}
 	@include media-breakpoint-up(sm){
 		background-position: center right;
 	}
